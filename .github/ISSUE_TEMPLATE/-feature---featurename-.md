@@ -1,9 +1,9 @@
 ---
-name: "[FEATURE] <featureName>"
+name: "[FEATURE]"
 about: Suggest an idea for this project
 title: ''
 labels: ''
-assignees: filypsdias
+assignees: ''
 
 ---
 
