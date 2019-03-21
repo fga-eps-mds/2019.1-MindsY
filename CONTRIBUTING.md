@@ -38,8 +38,8 @@ Para a criação de novas features, deve-se seguir os seguintes passos:
 ## Issues
 
 As Issues e Bugs encontrados devem ser reportados baseados nos templates pré determinados encontrados nos links abaixo:
-* [Bugs](.docs/ISSUE_TEMPLATE/BUG_REPORT.md)
-* [Issues]()
+* [Bugs](https://github.com/fga-eps-mds/2019.1-Grupo-2/wiki/BugReportTemplate)
+* [Issues](https://github.com/fga-eps-mds/2019.1-Grupo-2/wiki/IssueTemplate)
 
 ## Pull Requests
 
