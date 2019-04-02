@@ -1,10 +1,8 @@
-    
 FROM node:9.11.2-slim as node
 WORKDIR /app
-COPY mindsy/package.json /app/
+COPY ./ /app
 RUN npm i npm@latest -g
 RUN npm install
-COPY /mindsy /app/
 ARG env=prod
 RUN npm run build
 
