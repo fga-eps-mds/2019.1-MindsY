@@ -16,15 +16,10 @@ Links úteis:
   3. Faça as suas alterações.
   4. Para validar as suas alterações, rode o docker através dos seguintes comandos:
   ```bash
-   $ docker build -t mindsy/angular:latest .
-   $ docker run -d --name app-producao -p 80:80  mindsy/angular
+   $ sudo docker-compose up
   ```
-    * Obs: O docker-compose.yml já está em desenvolvimento e será lançado o mais breve possível. 
-  
   5. O ambiente para desenvolvimento de versões testes de [Angular](https://github.com/mindsy/AngularTraining) e de [Docker](https://github.com/mindsy/DockerTraining). 
   
-  <img src="https://gifimage.net/wp-content/uploads/2018/11/docker-gif-4.gif" width=200px align=center> <img src="http://cameronmcefee.com/img/work/the-octocat/walk-3.gif" width=200px align=center> <img src="https://assets.horsenation.com/wp-content/uploads/2013/08/aa-typing.gif" width=300px align=center> 
-
 ## Documentação
 
 Para contribuir com a documentação do projeto, siga as instruções abaixo:

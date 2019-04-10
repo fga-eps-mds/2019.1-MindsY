@@ -1,27 +1,42 @@
-# Mindsy
+<p align="center">
+  <img width="200" height="100" src="https://raw.githubusercontent.com/fga-eps-mds/2019.1-MindsY/develop/img/mindsybanner.png">
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+<h1 align="center"> MindsY - Sistema gerenciador de relatórios psicológicos</h1>
 
-## Development server
+  <p align="center">
+    <a href="https://fga-eps-mds.github.io/2019.1-MindsY/"><strong>Mindsy GitHub Pages &raquo;</strong></a>
+    <br>
+  </p>
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Sobre a MindsY
 
-## Code scaffolding
+<p align="justify"> &emsp;&emsp;
+  MindsY é um sistema feito em <a href="http://flask.pocoo.org/">Flask</a> e <a href="https://angular.io/" margin=50> Angular</a>, cujo objetivo é facilitar o trabalho de neuropsicólogos na realização e análise de testes realizados em seus pacientes.</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Guia de Contribuição
+Orientações para contribuir com a MindsY podem ser encontradas <a href="https://github.com/fga-eps-mds/2019.1-MindsY/blob/develop/CONTRIBUTING.md" margin=50> aqui</a>.
 
-## Build
+### Instalação
+  Para obter a MindsY você deve possuir:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* [Git](https://git-scm.com/)
+* [Docker](https://www.docker.com/get-docker)
+* [Docker-compose](https://docs.docker.com/compose/install/#install-compose)
 
-## Running unit tests
+### Configuração
+  Clone o repositório
+  ```
+    git clone https://github.com/fga-eps-mds/2019.1-MindsY
+  ```
+  Inicialize a MindsY
+  ```
+    docker-compose up
+  ```
+  
+Para verficiar o funcionamento acesse <a href="http://localhost:4000">http://localhost:4000</a>
+  
+### Licença
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<p align="justify">&emsp;&emsp; MindsY é distribuído sob a licença MIT disponível <a href="https://github.com/fga-eps-mds/2019.1-MindsY/blob/develop/LICENSE">aqui</a>.</p>
