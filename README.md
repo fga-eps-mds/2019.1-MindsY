@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fga-eps-mds/2019.1-MindsY.svg?branch=develop)](https://travis-ci.org/fga-eps-mds/2019.1-MindsY)
+
 <p align="center">
   <img width="200" height="100" src="https://raw.githubusercontent.com/fga-eps-mds/2019.1-MindsY/develop/img/mindsybanner.png">
 </p>
