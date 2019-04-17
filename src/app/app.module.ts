@@ -1,7 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
+import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
+
+//import { AlertModule } from 'ngx-bootstrap';
+
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { SectionHomeComponent } from './layouts/section-home/section-home.component';
@@ -14,7 +19,8 @@ import { SectionHomeComponent } from './layouts/section-home/section-home.compon
     SectionHomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]
