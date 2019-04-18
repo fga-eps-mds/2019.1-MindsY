@@ -10,6 +10,7 @@ import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { SectionHomeComponent } from './layouts/section-home/section-home.component';
 import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
 
+
 const appRoutes: Routes = [
   { path: '', component: SectionHomeComponent },
   { path: 'profileview',      component: SectionProfileComponent },
