@@ -11,7 +11,7 @@ import { SectionHomeComponent } from './layouts/section-home/section-home.compon
 import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: SectionHomeComponent },
+  { path: '', component: SectionHomeComponent },
   { path: 'profileview',      component: SectionProfileComponent },
 ];
 
