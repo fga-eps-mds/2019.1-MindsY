@@ -7,5 +7,5 @@
   import { AppComponent} from './app.component';
 
   export const ROUTES: Routes = [
-    { path: '', component: SectionHomeComponent  },
-    { path: 'profileuser', component: SectionProfileComponent  }]
+    { path: 'home', component: SectionHomeComponent  },
+    { path: 'profileview', component: SectionProfileComponent  }]
