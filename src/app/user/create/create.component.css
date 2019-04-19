@@ -6,6 +6,7 @@ body {
     color: #777;
     font-family: sans-serif;
     font-weight: 300;
+    
   
   }
 
@@ -17,20 +18,24 @@ body {
     width: 500px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      
 } 
 
 .center-box {
-    margin-left: 40%;
-    margin-right: 40%;
+    margin-left: -250px;
+    margin-right:-280px;
+    margin-top: -250px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 40%;
     box-sizing: border-box;
     padding: 40px;
-    width: 300px;
+    width: 800px;
     height: 400px;
     column-gap: 100px;
-    
+    color: gray;
+    background-color: #efefef ; 
+    border-radius: 20px; 
 }
 
 #coluna-1 { 
@@ -38,6 +43,7 @@ body {
     width:30%; 
     float:left;
     margin-right: 12px;
+    padding: 6px;
 }
 
 #coluna-2 { 
@@ -45,7 +51,7 @@ body {
     width:30%; 
     float:right;
     margin-left: 12px;
-   
+    padding: 6px;
 } 
 
 .clearfix { 
@@ -78,6 +84,7 @@ input[type="email"]
     font-weight: 400;
     font-size: 15px;
     transition: 0.2s ease;  
+    background: #efefef;
 }
 
 input[type="submit"] {
@@ -87,13 +94,15 @@ input[type="submit"] {
     height: 32px;
     background: #0675B7;
     border: none;
-    border-radius: 2px;
+    border-radius: 10px;
     color: #fff;
     font-family: sans-serif;
     font-weight: 500;
     text-transform: uppercase;
     transition: 0.2s ease;
-    cursor: pointer;  
+    cursor: pointer; 
+    margin-left: 300px;
+    float: left; 
 }
 
 input[type="submit"]:hover,
