@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #efefef;
+    font-size: 16px;
+    color: #777;
+    font-family: sans-serif;
+    font-weight: 300;
+  
+  }
+
+ #Signup-box {
+    position: absolute;
+    margin: 5% auto;
+    height: 400px;
+    width: 400px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  
+} 
+
+#coluna-1 { 
+    width:50%; 
+    float:left; }
+
+#coluna-2 { 
+    width:50%; 
+    float:right; }
+
+.clearfix { 
+    clear:both; }
+
+h1 {
+    margin: 0 0 20px 0;
+    font-weight: 300;;
+    font-size: 28px;
+}
+
+
+input[type="text"],
+input[type="password"]
+input[type="password"]
+input[type="tel"]
+input[type="email"]
+{
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaa;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;  
+}
+
+input[type="submit"] {
+    margin-bottom: 50px;
+    width: 120px;
+    height: 32px;
+    background: #0675B7;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+    cursor: pointer;  
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus
+{
+    background: #ff6722;
+    transition: 0.2s ease;
+}
+
