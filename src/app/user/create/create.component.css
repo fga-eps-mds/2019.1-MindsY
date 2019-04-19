@@ -10,27 +10,49 @@ body {
   }
 
  #Signup-box {
-    position: absolute;
+    text-align: center;
+    position: relative;
     margin: 5% auto;
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  
 } 
 
+.center-box {
+    margin-left: 40%;
+    margin-right: 40%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 300px;
+    height: 400px;
+    column-gap: 100px;
+    
+}
+
 #coluna-1 { 
-    width:50%; 
-    float:left; }
+    text-align: left;
+    width:30%; 
+    float:left;
+    margin-right: 12px;
+}
 
 #coluna-2 { 
-    width:50%; 
-    float:right; }
+    text-align: right;
+    width:30%; 
+    float:right;
+    margin-left: 12px;
+   
+} 
 
 .clearfix { 
     clear:both; }
 
 h1 {
+    text-align: center;
     margin: 0 0 20px 0;
     font-weight: 300;;
     font-size: 28px;
@@ -40,7 +62,7 @@ h1 {
 input[type="text"],
 input[type="password"]
 input[type="password"]
-input[type="tel"]
+input[type="text"]
 input[type="email"]
 {
     display: block;
@@ -59,6 +81,7 @@ input[type="email"]
 }
 
 input[type="submit"] {
+    text-align: center;
     margin-bottom: 50px;
     width: 120px;
     height: 32px;
