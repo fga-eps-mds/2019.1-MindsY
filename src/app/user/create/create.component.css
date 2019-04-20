@@ -9,6 +9,7 @@ body {
     color: #777;
     font-family: sans-serif;
     font-weight: 300;
+
   }  
 
  #signup-box {
@@ -19,6 +20,7 @@ body {
     width: 500px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+   
 } 
 
 .center-box {
@@ -36,6 +38,7 @@ body {
     color: gray;
     background-color: #efefef ; 
     border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 #coluna-1 { 
