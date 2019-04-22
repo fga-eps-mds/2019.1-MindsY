@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './user/login/login.component';
 
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
     SidebarComponent,
     SectionHomeComponent,
     SectionProfileComponent
+    LoginComponent
   ],
   exports: [],
   imports: [
