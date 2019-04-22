@@ -116,10 +116,10 @@ export class SectionHomeComponent implements OnInit {
               label: "Pacientes",
               data: [65, 59, 80, 81],
               backgroundColor: [
-                'rgba(105, 0, 132, .2)',
+                'rgba(255, 228, 0, .6)',
               ],
               borderColor: [
-                'rgba(200, 99, 132, .7)',
+                'rgba(100, 89.4, 0, .7)',
               ],
               borderWidth: 2
             }
