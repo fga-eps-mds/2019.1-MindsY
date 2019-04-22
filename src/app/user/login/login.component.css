@@ -26,6 +26,7 @@ body {
     padding: 40px;
     width: 300px;
     height: 400px;  
+    border-radius: 20px;
 }
  
 h1 {
@@ -85,5 +86,6 @@ input[type="submit"]:focus
     background-image: url('../../../../img/login_woman.jpg');
     background-size: cover;
     background-position: center;  
+    border-radius: 20px;
 }
   

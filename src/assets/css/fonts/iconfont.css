@@ -1,21 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-
-
-/* FONTS */
-
 /*
     Icon Font orion-font generated from orioniconlibrary.com
   */
 
   @font-face {
   font-family: "orion-font";
-  src: url("assets/css/fonts/orion-font.eot");
-  src: url("assets/css/fonts/orion-font.eot?#iefix") format("embedded-opentype"),
-       url("assets/css/fonts/orion-font.woff2") format("woff2"),
-       url("assets/css/fonts/orion-font.woff") format("woff"),
-       url("assets/css/fonts/orion-font.ttf") format("truetype"),
-       url("assets/css/fonts/orion-font.svg#orion-font") format("svg");
+  src: url("./orion-font.eot");
+  src: url("./orion-font.eot?#iefix") format("embedded-opentype"),
+       url("./orion-font.woff2") format("woff2"),
+       url("./orion-font.woff") format("woff"),
+       url("./orion-font.ttf") format("truetype"),
+       url("./orion-font.svg#orion-font") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -23,7 +17,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "orion-font";
-    src: url("assets/css/fonts/orion-font.svg#orion-font") format("svg");
+    src: url("./orion-font.svg#orion-font") format("svg");
   }
 }
 
@@ -132,3 +126,5 @@
 .o-user-details-1::before { content: "\f320"; }
 .o-wifi-router-1::before { content: "\f321"; }
 .o-wireframe-1::before { content: "\f322"; }
+
+  

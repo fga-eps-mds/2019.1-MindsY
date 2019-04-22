@@ -1,0 +1,60 @@
+/*HOVER BORDER FADE */
+
+    .hvr-fade-primary {
+    box-shadow: none, 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+    overflow: hidden;
+    border: 0px solid rgb(0, 0, 0,0);
+    -webkit-transition-property: color, border;
+    transition-property: color, border;
+    transition: all .2s ease-in-out;
+  }
+  .hvr-fade-primary:hover, .hvr-fade-primary:focus, .hvr-fade-primary:active {
+    border: 2px solid rgb(0, 42.7, 35.7,1);
+    transform: scale(1.03);
+    color: gray;
+  }
+
+  .hvr-circle {
+  box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+   border:4.5px solid rgb(61.2, 94.9, 93.7,1);
+  -webkit-transition-property: color, border;
+  transition-property: color, border;
+  transition: all .2s ease-in-out;
+}
+.hvr-circle:hover, .hvr-circle:focus, .hvr-circle:active {
+  border: 6px solid rgb(0, 54.1, 52.2,1);
+  transform: scale(1.03);
+  color: gray;
+}
+
+  .hvr-fade-primary-warning {
+
+    box-shadow: none, 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+    overflow: hidden;
+    border: 0px solid rgb(0, 0, 0,0);
+    -webkit-transition-property: color, border;
+    transition-property: color, border;
+    transition: all .2s ease-in-out;
+  }
+  .hvr-fade-warning:hover, .hvr-fade-warning:focus, .hvr-fade-warning:active {
+    border: 2px solid rgb(100, 88.6, 11.8,1);
+    transform: scale(1.03);
+    color: gray;
+  }
+
+
+  .hvr-fade-primary-success {
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: none, 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+    overflow: hidden;
+    border: 0px solid rgb(0, 0, 0,0);
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    -webkit-transition-property: color, border;
+    transition-property: color, border;
+  }
+  .hvr-fade-success:hover, .hvr-fade-success:focus, .hvr-fade-success:active {
+    border: 2px solid rgb(3.5, 72.9, 0,1);
+    color: white;
+  }
