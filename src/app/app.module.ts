@@ -23,7 +23,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     SidebarComponent,
     SectionHomeComponent,
-    SectionProfileComponent
+    SectionProfileComponent,
     LoginComponent
   ],
   exports: [],
