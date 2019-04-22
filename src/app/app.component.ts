@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import * as $ from 'jquery';
+declare var jquery:any;
+declare var $ :any;
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mindsy';
+
+  ngOnInit(){
+
+  }
 }
