@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/login/login.component';
+import { CreateComponent } from './user/create/create.component';
 
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    CreateComponent,
     NavbarComponent,
     SidebarComponent,
     SectionHomeComponent,
