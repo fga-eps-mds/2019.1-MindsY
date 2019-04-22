@@ -27,7 +27,7 @@ export class SectionHomeComponent implements OnInit {
           });
       });
 
-      
+
 
       function updateValue() {
 
@@ -94,6 +94,32 @@ export class SectionHomeComponent implements OnInit {
               ],
               borderColor: [
                 'rgba(13.3, 77.3, 0, .7)',
+              ],
+              borderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true
+        }
+      });
+
+
+      //line
+      var canvas2 : any = document.getElementById("lineChartTest");
+      var ctxL2 = canvas2.getContext('2d');
+      var myLineChart2 = new Chart(ctxL2, {
+        type: 'line',
+        data: {
+          labels: ["Semana 1", "Semana 2", "Semana 3", "Semana 4"],
+          datasets: [{
+              label: "Pacientes",
+              data: [65, 59, 80, 81],
+              backgroundColor: [
+                'rgba(255, 228, 0, .6)',
+              ],
+              borderColor: [
+                'rgba(100, 89.4, 0, .7)',
               ],
               borderWidth: 2
             }
