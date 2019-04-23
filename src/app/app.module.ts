@@ -11,11 +11,16 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { SectionHomeComponent } from './layouts/section-home/section-home.component';
 import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
+import { SectionEditprofileComponent } from './layouts/section-editprofile/section-editprofile.component';
+
+
 
 
 const appRoutes: Routes = [
   { path: '', component: SectionHomeComponent },
   { path: 'profileview',      component: SectionProfileComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'editprofile', component: SectionEditprofileComponent }
 ];
 
 @NgModule({
@@ -26,7 +31,8 @@ const appRoutes: Routes = [
     SidebarComponent,
     SectionHomeComponent,
     SectionProfileComponent,
-    LoginComponent
+    LoginComponent,
+    SectionEditprofileComponent
   ],
   exports: [],
   imports: [
