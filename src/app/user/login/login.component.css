@@ -89,8 +89,8 @@ input[type="submit"]:focus
     right: 0;
     box-sizing: border-box;
     padding: 40px;
-    width: 250px;
-    height: 400px;
+    width: 270px;
+    height: 390px;
     background-image: url('../../../assets/img/cerebro.jpg');
     background-size: cover;
     background-position: center;  
