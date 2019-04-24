@@ -1,5 +1,5 @@
 body {
-  background-image: url('../../../../img/quebra_cabeca.jpg');
+  background-image: url('../../../assets/img/quebra_cabeca.jpg');
   background-repeat: round;
   position: absolute;
   width: 100%;
@@ -89,7 +89,7 @@ input[type="submit"]:focus
     padding: 40px;
     width: 250px;
     height: 400px;
-    background-image: url('../../../../img/cerebro.jpg');
+    background-image: url('../../../assets/img/cerebro.jpg');
     background-size: cover;
     background-position: center;  
     border-radius: 20px;
