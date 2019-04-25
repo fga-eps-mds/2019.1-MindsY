@@ -2,7 +2,7 @@
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 <p align="center">
-  <img width="200" height="100" src="https://raw.githubusercontent.com/fga-eps-mds/2019.1-MindsY/develop/img/mindsybanner.png">
+  <img src="./img/mindsybanner.png">
 </p>
 
 <h1 align="center"> MindsY - Sistema gerenciador de relatórios psicológicos</h1>
