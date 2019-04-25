@@ -12,12 +12,6 @@ body {
   font-weight: 300;
 
   }
-
-a {
-    text-decoration: none;
-    color: #0675B7;
-  }
-
  
 
 #Login-box {
@@ -36,8 +30,12 @@ a {
     text-decoration: none;
     margin-right: 3%;
     margin-top: 4px;
-    color: #777;
+    color: #0675B7;
     float: right;
+    font-size: 15px;
+    
+        
+      
  }
 
 .right-box {
@@ -54,7 +52,7 @@ a {
 h1 {
     margin: 0 0 20px 0;
     font-weight: 300;;
-    font-size: 30px;
+    font-size: 35px;
 }
 
 input[type="text"],
@@ -107,7 +105,7 @@ input[type="submit"]:focus
     padding: 40px;
     width: 270px;
     height: 390px;
-    background-image: url('../../../assets/img/cerebro.jpg');
+    background-image: url('../../../assets/img/Mindsy_page-0001.jpg');
     background-size: cover;
     background-position: center;  
     border-radius: 20px;
