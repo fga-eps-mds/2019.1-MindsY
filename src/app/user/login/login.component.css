@@ -12,6 +12,12 @@ body {
   font-weight: 300;
 
   }
+
+strong { 
+    font-weight: bold;
+    color: #0675B7;
+    cursor: pointer;
+  }
  
 
 #Login-box {
