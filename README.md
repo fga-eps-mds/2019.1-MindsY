@@ -1,5 +1,7 @@
-[![Build Status](https://travis-ci.org/fga-eps-mds/2019.1-MindsY.svg?branch=develop)](https://travis-ci.org/fga-eps-mds/2019.1-MindsY) [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/fga-eps-mds/2019.1-MindsY.svg)](http://isitmaintained.com/project/fga-eps-mds/2019.1-MindsY "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/fga-eps-mds/2019.1-MindsY.svg)](http://isitmaintained.com/project/fga-eps-mds/2019.1-MindsY "Percentage of issues still open")
+[![Build Status](https://travis-ci.org/fga-eps-mds/2019.1-MindsY.svg?branch=develop)](https://travis-ci.org/fga-eps-mds/2019.1-MindsY) [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/fga-eps-mds/2019.1-MindsY.svg)](http://isitmaintained.com/project/fga-eps-mds/2019.1-MindsY "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/fga-eps-mds/2019.1-MindsY.svg)](http://isitmaintained.com/project/fga-eps-mds/2019.1-MindsY "Percentage of issues still open") 
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+
+[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=fga-eps-mds_2019.1-MindsY)](https://sonarcloud.io/dashboard/index/fga-eps-mds_2019.1-MindsY)
 
 <p align="center">
   <img src="./img/mindsybanner.png">
