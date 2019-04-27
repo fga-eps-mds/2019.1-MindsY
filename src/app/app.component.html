@@ -1,62 +1,59 @@
-
-
 <app-navbar></app-navbar>
-<div class="d-flex align-items-stretch  "  >
-  <div id="sidebar" class="sidebar py-3 " style="background: #FFFFFF">
-    <div class=" text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
-    <ul class="sidebar-menu list-unstyled">
-      <li class="sidebar-list-item">
-        <a href="index.html" class="sidebar-link text-muted active">
-          <i class="o-home-1 mr-3 "></i>
-          <span>Home</span></a>
-      </li>
-      <li class="sidebar-list-item">
-        <a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted">
-          <i class="o-medical-chart-1 mr-3 "></i>
-          <span>Pacientes</span>
-
-        </a>
-        <div id="pages" class="collapse">
-          <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
-            <li class="sidebar-list-item">
-              <a href="#" class="sidebar-link text-muted pl-lg-4">Geral</a>
-            </li>
-            <li class="sidebar-list-item">
-              <a href="#" data-toggle="collapse" data-target="#newpacient" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted pl-lg-4">
-                <span>Novo</span>
-              </a>
-              <div id="newpacient" class="collapse">
-                <ul class="sidebar-menu list-unstyled border-left border-green border-thick">
+<div class="d-flex align-items-stretch w-100" >
+   <div id="sidebar" class="sidebar py-3 " style="     width: 12rem; background: #FFFFFF">
+      <div class=" text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
+      <ul class="sidebar-menu list-unstyled">
+         <li class="sidebar-list-item">
+            <a href="index.html" class="sidebar-link text-muted active">
+            <i class="o-home-1 mr-3 "></i>
+            <span>Home</span></a>
+         </li>
+         <li class="sidebar-list-item">
+            <a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted">
+            <i class="o-medical-chart-1 mr-3 "></i>
+            <span>Pacientes</span>
+            </a>
+            <div id="pages" class="collapse">
+               <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
                   <li class="sidebar-list-item">
-                    <a href="#" class="sidebar-link text-muted pl-lg-5">Teste</a>
+                     <a href="#" class="sidebar-link text-muted pl-lg-4">Geral</a>
                   </li>
                   <li class="sidebar-list-item">
-                    <a href="#" class="sidebar-link text-muted pl-lg-5">Paciente</a>
+                     <a href="#" data-toggle="collapse" data-target="#newpacient" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted pl-lg-4">
+                     <span>Novo</span>
+                     </a>
+                     <div id="newpacient" class="collapse">
+                        <ul class="sidebar-menu list-unstyled border-left border-green border-thick">
+                           <li class="sidebar-list-item">
+                              <a href="#" class="sidebar-link text-muted pl-lg-5">Teste</a>
+                           </li>
+                           <li class="sidebar-list-item">
+                              <a href="#" class="sidebar-link text-muted pl-lg-5">Paciente</a>
+                           </li>
+                        </ul>
+                     </div>
                   </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li class="sidebar-list-item">
-        <a href="charts.html" class="sidebar-link text-muted">
-          <i class="o-statistic-1 mr-3 "></i>
-          <span>Estatísticas Gerais</span>
-        </a>
-      </li>
+               </ul>
+            </div>
+         </li>
+         <li class="sidebar-list-item">
+            <a href="charts.html" class="sidebar-link text-muted">
+            <i class="o-statistic-1 mr-3 "></i>
+            <span>Estatísticas Gerais</span>
+            </a>
+         </li>
+      </ul>
+      <div class=" text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">INFORMAÇÕES EXTRAS</div>
+      <ul class="sidebar-menu list-unstyled">
+         <li class="sidebar-list-item">
+            <a href="#" class="sidebar-link text-muted">
+            <i class="o-database-1 mr-3 " ></i>
+            <span>Procurar Psicólogo</span>
+            </a>
+         </li>
+      </ul>
+   </div>
 
-    </ul>
-    <div class=" text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">INFORMAÇÕES EXTRAS</div>
-    <ul class="sidebar-menu list-unstyled">
-      <li class="sidebar-list-item">
-        <a href="#" class="sidebar-link text-muted">
-          <i class="o-database-1 mr-3 " ></i>
-          <span>Procurar Psicólogo</span>
-        </a>
-      </li>
-    </ul>
-  </div>
+   <router-outlet></router-outlet>
 
-<router-outlet></router-outlet>
 </div>
