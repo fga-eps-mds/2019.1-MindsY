@@ -1,8 +1,9 @@
-[![Build Status](https://travis-ci.org/fga-eps-mds/2019.1-MindsY.svg?branch=develop)](https://travis-ci.org/fga-eps-mds/2019.1-MindsY) [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/fga-eps-mds/2019.1-MindsY.svg)](http://isitmaintained.com/project/fga-eps-mds/2019.1-MindsY "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/fga-eps-mds/2019.1-MindsY.svg)](http://isitmaintained.com/project/fga-eps-mds/2019.1-MindsY "Percentage of issues still open")
+[![Build Status](https://travis-ci.org/fga-eps-mds/2019.1-MindsY.svg?branch=develop)](https://travis-ci.org/fga-eps-mds/2019.1-MindsY) [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/fga-eps-mds/2019.1-MindsY.svg)](http://isitmaintained.com/project/fga-eps-mds/2019.1-MindsY "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/fga-eps-mds/2019.1-MindsY.svg)](http://isitmaintained.com/project/fga-eps-mds/2019.1-MindsY "Percentage of issues still open") ![Coverage](https://sonarcloud.io/api/project_badges/measure?project=fga-eps-mds_2019.1-MindsY&metric=coverage) ![Qualiity Gate](https://sonarcloud.io/api/project_badges/measure?project=fga-eps-mds_2019.1-MindsY&metric=alert_status)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
+
 <p align="center">
-  <img width="200" height="100" src="https://raw.githubusercontent.com/fga-eps-mds/2019.1-MindsY/develop/img/mindsybanner.png">
+  <img src="./img/mindsybanner.png">
 </p>
 
 <h1 align="center"> MindsY - Sistema gerenciador de relatórios psicológicos</h1>
@@ -35,7 +36,7 @@ Orientações para contribuir com a MindsY podem ser encontradas <a href="https:
   ```
   Inicialize a MindsY
   ```
-    docker-compose up
+    docker-compose up --build
   ```
   
 Para verficiar o funcionamento acesse <a href="http://localhost:4000">http://localhost:4000</a>
