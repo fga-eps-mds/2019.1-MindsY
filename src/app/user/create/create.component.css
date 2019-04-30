@@ -96,7 +96,7 @@ input[type="email"]
     background: transparent;
 }
 
-input[type="submit"] {
+button {
     text-align: center;
     margin-bottom: 50px;
     width: 120px;

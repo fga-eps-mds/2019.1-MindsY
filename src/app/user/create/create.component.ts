@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-create',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  register() {
+    console.log("***Register***");
+    this.userService.createUser()
+    .subscribe((data: any) => data =
+      console.log("OKOK")
+    );
   }
 
 }
