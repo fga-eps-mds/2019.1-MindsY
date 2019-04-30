@@ -11,7 +11,7 @@ import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { SectionHomeComponent } from './layouts/section-home/section-home.component';
 import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: SectionHomeComponent },
@@ -33,6 +33,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

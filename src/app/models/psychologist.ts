@@ -1,5 +1,7 @@
 export class Psychologist {
 
+    constructor() {}
+
     name: string;
     email: string;
     number: string;
