@@ -1,0 +1,35 @@
+#.travis.yml
+
+matrix:
+  include:
+    - language: node_js
+      node_js:
+        - "node"
+      addons:
+       chrome: stable
+      before_script:
+      - npm install -g @angular/cli
+      - npm install -g codeclimate-test-reporter
+      - npm install
+      - set -e
+      cache:
+        directories:
+          - "node_modules"
+      script:
+       - npm install 
+       - ng update
+       - npm update
+       - ng build --prod
+
+    - language: java
+      addons:
+        sonarcloud:
+          organization: "fga-eps-mds"
+      script:
+        - sonar-scanner -Dsonar.verbose=true -X
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
+  webhooks: https://fathomless-fjord-24024.herokuapp.com/notify

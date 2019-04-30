@@ -1,7 +1,7 @@
 # 2019.1 Grupo 2
 
 Links úteis:
- - [Documentação (Wiki)](#documentacao)
+ - [Documentação (Wiki)](#documentação)
  - [Features](#features)
  - [Issues](#issues)
  - [Pull Requests](#pull-requests)
@@ -13,8 +13,13 @@ Links úteis:
   git clone https://github.com/fga-eps-mds/2019.1-Grupo-2.git
   ```
   2. Abra o projeto [2019.1-Grupo-2](https://github.com/fga-eps-mds/2019.1-Grupo-2/tree/master)
-  3. Faça as suas contribuições
-
+  3. Faça as suas alterações.
+  4. Para validar as suas alterações, rode o docker através dos seguintes comandos:
+  ```bash
+   $ sudo docker-compose up
+  ```
+  5. O ambiente para desenvolvimento de versões testes de [Angular](https://github.com/mindsy/AngularTraining) e de [Docker](https://github.com/mindsy/DockerTraining). 
+  
 ## Documentação
 
 Para contribuir com a documentação do projeto, siga as instruções abaixo:
