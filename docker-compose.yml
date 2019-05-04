@@ -1,7 +1,18 @@
 version: '3'
+
 services:
-  mindsy:
+  2019.1-MindsY:
     image: 'mindsy'
-    build: '.'
+    build: 
+      context: .
+      dockerfile: Dockerfile
     ports:
      - "4000:80"
+
+  mindsy-microservice-psychologist:
+    image: 'psychologist'
+    build:
+      context: ../mindsy-microservice-psychologist
+      dockerfile: Dockerfile
+    ports: 
+      - "3000:5000"
