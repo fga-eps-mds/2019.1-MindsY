@@ -12,11 +12,13 @@ import { SectionHomeComponent } from './layouts/section-home/section-home.compon
 import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EditpacientComponent } from './layouts/editpacient/editpacient.component';
 
 const appRoutes: Routes = [
   { path: '', component: SectionHomeComponent },
   { path: 'profileview',      component: SectionProfileComponent},
-  {path: 'create-psychologist', component: CreateComponent},
+  { path: 'create-psychologist', component: CreateComponent},
+  { path: 'editpacient', component: EditpacientComponent},
 ];
 
 @NgModule({
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     SidebarComponent,
     SectionHomeComponent,
     SectionProfileComponent,
-    LoginComponent
+    LoginComponent,
+    EditpacientComponent
   ],
   exports: [],
   imports: [
