@@ -4,7 +4,7 @@
   import { SidebarComponent } from './layouts/sidebar/sidebar.component';
   import { SectionHomeComponent } from './layouts/section-home/section-home.component';
   import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
-  import { AppComponent} from './app.component';
+  import { AppComponent } from './app.component';
 
   export const ROUTES: Routes = [
     { path: 'home', component: SectionHomeComponent  },
