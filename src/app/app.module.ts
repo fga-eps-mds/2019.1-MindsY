@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { TextMaskModule } from 'angular2-text-mask';
 
 import { AppComponent } from './app.component';
 import { EditpacientComponent } from '../app/patient/edit/edit.component';
@@ -33,7 +34,7 @@ const appRoutes: Routes = [
     SectionHomeComponent,
     SectionProfileComponent,
     LoginComponent,
-    EditpacientComponent
+    EditpacientComponent,
   ],
   exports: [],
   imports: [
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    TextMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]

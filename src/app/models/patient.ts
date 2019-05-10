@@ -4,6 +4,8 @@ export class Patient {
 
     name: string;
     scholarity: string;
+    phone: string;
+    cpf: string;
     birthDate: Date;
     momsName: string;
     dadsName: string;

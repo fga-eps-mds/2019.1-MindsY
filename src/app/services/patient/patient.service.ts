@@ -7,7 +7,7 @@ import { Patient } from 'src/app/models/index';
 })
 export class PatientService {
 
-  apiURL: string = 'http//localhost:';
+  apiURL: string = 'http//localhost:'; //TODO inserir porta do microserviço de paciente
 
   constructor(private http: HttpClient) { }
 

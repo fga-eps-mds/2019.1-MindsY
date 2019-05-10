@@ -15,34 +15,29 @@
 
               <form class="form-horizontal">
 
-                 <label class="col-md- form-control-label" style="color: black; " >Nome do Paciente: </label><br>
+                 <label class="col-md- form-control-label" style="color: black;" >Nome do Paciente: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="nome"  class="col-md-5 form-control-label" style="color: #040303" placeholder="Joaquim Pereiro"/>
+                    <input type="text" name="nome"  class="col-md-5 form-control-label" placeholder="Joaquim Pereira"/>
                  </div>
 
                  <label class="col-md- form-control-label" style="color: black; " >CPF: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="cargo"  class="col-md-5 form-control-label" style="color: #040303" value="05758316180"/>
+                    <input type="text" name="cargo"  class="col-md-5 form-control-label" placeholder="CPF" [(ngModel)]="patient.cpf" [textMask]="{mask: maskcpf}"/>
                  </div>
 
                  <label class="col-md- form-control-label" style="color: black;" >E-mail: </label><br>
                  <div class="form-group row">
-                  <input type="text" name="email"  class="col-md-5 form-control-label" style="color: #040303" value="joaquim@gmail.com"/>
+                  <input type="text" name="email"  class="col-md-5 form-control-label" placeholder="joaquim@gmail.com"/>
                  </div>
-
-                 <!-- <label class="col-md- form-control-label" style="color: black; " >Telefone para contato: </label><br>
-                 <div class="form-group row">
-                    <input type="text" name="crp"  class="col-md-3 form-control-label" style="color: #040303" value="13123125"/>
-                 </div> -->
                  
                  <label class="col-md- form-control-label" style="color: black; " >Telefone para Contato: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="telefone"  class="col-md-3 form-control-label" style="color: #040303" value="(61) 9 9655-0710"/>
+                     <input type="text" name="telefone" class="col-md-5 form-control-label" placeholder="DDD + Telefone" [(ngModel)]="patient.phone" [textMask]="{mask: maskphone}"/>
                  </div>
 
                  <label class="col-md- form-control-label" style="color: black;" >Data de Nascimento: </label><br>
                  <div class="form-group row">
-                    <input type="date" name="data-nascimento"  class="col-md-3 form-control-label" style="color: #040303" value="1990-08-18"/>
+                    <input type="date" name="data-nascimento"  class="col-md-5 form-control-label" value="19-08-17"/>
                  </div>
 
                  <div class="line"></div>
