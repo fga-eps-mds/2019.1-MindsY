@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { PatientService } from 'src/app/services/index';
 import { Patient } from 'src/app/models/index';
 import { PatientMasks } from 'src/app/patient/patient-masks';
+import { AbstractControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-editpacient',

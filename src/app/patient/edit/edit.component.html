@@ -6,41 +6,49 @@
               <!-- Form Elements -->
               <div class="col-lg-12 mb-5">
                  <div class="col-xl-7 col-lg-7  mb-xl-0 pt-5">
-
-                     <h3 class="h6 text-uppercase pl-5"><img src="./../../../assets/img/user_blue.png" alt="" style="max-width: 10rem;float: right" class="img-fluid rounded-circle shadow"></h3>
-                      
-                    <h3 class="h6 text-uppercase pt-5"><span class="" style="border-bottom: 3px solid gray; font-size: 1.5rem">-- Nome do Paciente --</span></h3>
-                    <h3 class="h6 text-uppercase  " style="color: gray"><span>Perfil do Paciente</span></h3>
-                 
-                    
+                    <!-- <h3 class="h6 text-uppercase pl-5"><img src="./../../../assets/img/user_blue.png" alt="" style="max-width: 10rem;float: right" class="img-fluid rounded-circle shadow"></h3>                    -->
+                    <h3 class="h6 text-uppercase pt-1"><span class="" style="border-bottom: 3px solid gray; font-size: 1.5rem">-- Nome do Paciente --</span></h3>
+                    <h3 class="h6 text-uppercase  " style="color: gray"><span>Perfil do Paciente</span></h3> 
                   </div>
-                
               </div>
            </div>
-           <div class="card-body px-5">
 
+           <div class="card-body px-5">
               <form class="form-horizontal">
 
                  <i class="fa fa-user pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;" >Nome do Paciente: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="nome"  class="col-md-5 form-control-label" placeholder="Joaquim Pereira"/>
+                    <input type="text" name="nome" class="col-md-5 form-control-label" [(ngModel)]="patient.name" #nome="ngModel" minlength="3" placeholder="Nome do Paciente"/>
+                 </div>
+                 <div class="row">
+                     <div *ngIf="nome.erros && (nome.dirty)" class="alert alert-danger col-md-5">
+                        <div [hidden]="!nome.errors.minlength">
+                           Nome não pode ficar vazio
+                        </div>
+                     </div>
                  </div>
 
                  <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; " >CPF: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="cargo"  class="col-md-5 form-control-label" placeholder="CPF" [(ngModel)]="patient.cpf" [textMask]="{mask: maskcpf}"/>
+                    <input type="text" name="cpf"  class="col-md-5 form-control-label" minlength="16" placeholder="___.___.___-__" [(ngModel)]="patient.cpf" #cpf="ngModel" [textMask]="{mask: maskcpf}"/>
+                 </div>
+                 <div class="row">
+                     <div *ngIf="cpf.errors && (cpf.dirty)" class="alert alert-danger col-md-5">
+                        <div [hidden]="!cpf.errors.minlength">
+                           CPF deve conter 11 digitos.
+                        </div>
+                     </div>
                  </div>
 
                  <i class="fa fa-envelope pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;" >E-mail: </label><br>
                  <div class="form-group row">
                   <input type="text" name="email"  class="col-md-5 form-control-label" placeholder="exemplo@exemplo.com" [(ngModel)]="patient.email" #email="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
-               
                  </div>
                  <div class="row">
-                     <div *ngIf="email.errors && (email.dirty)" class="alert alert-danger col-md-5" >
+                     <div *ngIf="email.errors && (email.dirty)" class="alert alert-danger col-md-5">
                            <div [hidden]="!email.errors.required">
                               Email é obrigatório.
                            </div>
@@ -60,12 +68,12 @@
                  <i class="fa fa-calendar pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;" >Data de Nascimento: </label><br>
                  <div class="form-group row">
-                    <input type="date" name="data-nascimento"  class="col-md-5 form-control-label" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data Nascimento"/>
+                    <input type="text" name="data-nascimento"  class="col-md-5 form-control-label" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data Nascimento"/>
                  </div>
 
                  <div class="line"></div>
                  <div class="col-md- form-control-label">
-                    <div class="col-md-6 ">
+                    <div class="col-md-6">
                        <a href="profileview" class="btn btn-success">Salvar</a> |
                        <a href="" class="btn btn-info">Voltar</a>
                     </div>
@@ -75,6 +83,7 @@
         </div>
      </section>
   </div>
+
   <footer class="footer shadow align-self-end py-3 px-xl-5 w-100" style="background:#EFEDE6">
      <div class="container-fluid">
         <div class="row">
@@ -82,7 +91,7 @@
               <p class="mb-2 mb-md-0">MINDSY &copy; 2019</p>
            </div>
            <div class="col-md-6 text-center text-md-right text-black-400">
-              <p class="mb-0">Design by <a href="https://fga-eps-mds.github.io/2019.1-MindsY/docs.html" class="external text-gray-400">Mindsy Team</a></p>
+              <p class="mb-0">Design by <a href="https://fga-eps-mds.github.io/2019.1-MindsY/docs.html" class="external text-blue-400">Mindsy Team</a></p>
               <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
            </div>
         </div>
