@@ -15,29 +15,43 @@
 
               <form class="form-horizontal">
 
+                 <i class="fa fa-user pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;" >Nome do Paciente: </label><br>
                  <div class="form-group row">
                     <input type="text" name="nome"  class="col-md-5 form-control-label" placeholder="Joaquim Pereira"/>
                  </div>
 
+                 <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; " >CPF: </label><br>
                  <div class="form-group row">
                     <input type="text" name="cargo"  class="col-md-5 form-control-label" placeholder="CPF" [(ngModel)]="patient.cpf" [textMask]="{mask: maskcpf}"/>
                  </div>
 
+                 <i class="fa fa-envelope pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;" >E-mail: </label><br>
                  <div class="form-group row">
-                  <input type="text" name="email"  class="col-md-5 form-control-label" placeholder="joaquim@gmail.com"/>
+                  <input type="text" name="email"  class="col-md-5 form-control-label" placeholder="exemplo@exemplo.com" [(ngModel)]="patient.email" #email="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+                     <div *ngIf="email.errors && (email.dirty)" class="alert alert-danger">
+                        <div [hidden]="!email.errors.required">
+                            Email é obrigatório.
+                        </div>
+                        <div [hidden]="!email.errors.pattern">
+                            O formato deve seguir o padrão:
+                            <small><b>exemplo@exemplo.com</b></small>
+                        </div>
+                    </div>
                  </div>
                  
+                 <i class="fa fa-phone pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; " >Telefone para Contato: </label><br>
                  <div class="form-group row">
                      <input type="text" name="telefone" class="col-md-5 form-control-label" placeholder="DDD + Telefone" [(ngModel)]="patient.phone" [textMask]="{mask: maskphone}"/>
                  </div>
 
+                 <i class="fa fa-calendar pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;" >Data de Nascimento: </label><br>
                  <div class="form-group row">
-                    <input type="date" name="data-nascimento"  class="col-md-5 form-control-label" value="19-08-17"/>
+                    <input type="date" name="data-nascimento"  class="col-md-5 form-control-label" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data Nascimento"/>
                  </div>
 
                  <div class="line"></div>
