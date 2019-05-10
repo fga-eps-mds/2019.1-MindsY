@@ -5,10 +5,16 @@
            <div class="col-xl-12 col-lg-12 mb-4 mb-xl-0">
               <!-- Form Elements -->
               <div class="col-lg-12 mb-5">
-                 <div class="col-xl-9 col-lg-9  mb-xl-0 pt-5">
-                    <h3 class="h6 text-uppercase "><span class="" style="border-bottom: 3px solid gray; font-size: 1.5rem">-- Nome do Paciente --</span></h3>
+                 <div class="col-xl-7 col-lg-7  mb-xl-0 pt-5">
+
+                     <h3 class="h6 text-uppercase pl-5"><img src="./../../../assets/img/user_blue.png" alt="" style="max-width: 10rem;float: right" class="img-fluid rounded-circle shadow"></h3>
+                      
+                    <h3 class="h6 text-uppercase pt-5"><span class="" style="border-bottom: 3px solid gray; font-size: 1.5rem">-- Nome do Paciente --</span></h3>
                     <h3 class="h6 text-uppercase  " style="color: gray"><span>Perfil do Paciente</span></h3>
-                 </div>
+                 
+                    
+                  </div>
+                
               </div>
            </div>
            <div class="card-body px-5">
@@ -31,17 +37,20 @@
                  <label class="col-md- form-control-label" style="color: black;" >E-mail: </label><br>
                  <div class="form-group row">
                   <input type="text" name="email"  class="col-md-5 form-control-label" placeholder="exemplo@exemplo.com" [(ngModel)]="patient.email" #email="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
-                     <div *ngIf="email.errors && (email.dirty)" class="alert alert-danger">
-                        <div [hidden]="!email.errors.required">
-                            Email é obrigatório.
-                        </div>
-                        <div [hidden]="!email.errors.pattern">
-                            O formato deve seguir o padrão:
-                            <small><b>exemplo@exemplo.com</b></small>
-                        </div>
-                    </div>
+               
                  </div>
-                 
+                 <div class="row">
+                     <div *ngIf="email.errors && (email.dirty)" class="alert alert-danger col-md-5" >
+                           <div [hidden]="!email.errors.required">
+                              Email é obrigatório.
+                           </div>
+                           <div [hidden]="!email.errors.pattern">
+                              O formato deve seguir o padrão:
+                              <small><b>exemplo@exemplo.com</b></small>
+                           </div>
+                       </div>
+                 </div>
+                    
                  <i class="fa fa-phone pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; " >Telefone para Contato: </label><br>
                  <div class="form-group row">
