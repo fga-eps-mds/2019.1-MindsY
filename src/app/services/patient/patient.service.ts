@@ -8,7 +8,7 @@ import {Patients} from './patients-mock';
 })
 export class PatientService {
 
-  readonly apiURL: string = 'http//localhost:3001'; //TODO inserir porta do microserviço de paciente
+  readonly apiURL: string = 'http//localhost:3001';
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +17,16 @@ export class PatientService {
   public deletePatient(patient: Patient) {}
 
   public editPatient(patient: Patient) {
-    return this.http.put(this.apiURL + '/edit/id', patient);
+
+    patient.registry_number_pat.replace('.', '');
+    patient.registry_number_pat.replace('-', '');
+    patient.registry_number_pat.replace(' ', '');
+
+    patient.registry_number_acc.replace('.', '');
+    patient.registry_number_acc.replace('-', '');
+    patient.registry_number_acc.replace(' ', '');
+
+    return this.http.put(this.apiURL + '/edit_patient/', patient);
   }
 
   public getPatient(id: string) {}

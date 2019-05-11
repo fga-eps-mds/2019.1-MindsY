@@ -16,7 +16,7 @@ export class ListPatientsComponent implements OnInit {
 
   ngOnInit() {
     this.patients = this.patientService.getAllPatients('01-122454');
-    this.columns = ['cpf', 'name'];
+    this.columns = ['registry_number_pat', 'name'];
   }
 
 }
