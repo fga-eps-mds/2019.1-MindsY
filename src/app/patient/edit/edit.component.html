@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div class="page-holder w-100 d-flex flex-wrap " style="background: #ECECEC ">
   <div class="container-fluid px-xl-5">
      <section class="py-2 ">
@@ -17,35 +19,25 @@
               <form class="form-horizontal">
 
                  <i class="fa fa-user pr-2" aria-hidden="true"></i>
-                 <label class="col-md- form-control-label" style="color: black;" >Nome do Paciente: </label><br>
+                 <label class="col-md- form-control-label" style="color: black;">Nome do Paciente: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="nome" class="col-md-5 form-control-label" [(ngModel)]="patient.name" #nome="ngModel" minlength="3" placeholder="Nome do Paciente"/>
+                    <input type="text" name="name" [(ngModel)]="patient.name" #name="ngModel" class="col-md-5 form-control-label" minlength="2" placeholder="Nome do Paciente" required/>
                  </div>
                  <div class="row">
-                     <div *ngIf="nome.erros && (nome.dirty)" class="alert alert-danger col-md-5">
-                        <div [hidden]="!nome.errors.minlength">
-                           Nome não pode ficar vazio
+                     <div *ngIf="name.errors && (name.dirty)" class="alert alert-danger col-md-5">
+                        <div [hidden]="!name.errors.required">
+                           Nome é obrigatório
                         </div>
-                     </div>
-                 </div>
-
-                 <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
-                 <label class="col-md- form-control-label" style="color: black; " >CPF: </label><br>
-                 <div class="form-group row">
-                    <input type="text" name="cpf"  class="col-md-5 form-control-label" minlength="16" placeholder="___.___.___-__" [(ngModel)]="patient.cpf" #cpf="ngModel" [textMask]="{mask: maskcpf}"/>
-                 </div>
-                 <div class="row">
-                     <div *ngIf="cpf.errors && (cpf.dirty)" class="alert alert-danger col-md-5">
-                        <div [hidden]="!cpf.errors.minlength">
-                           CPF deve conter 11 digitos.
+                        <div [hidden]="!name.errors.minlength">
+                           Nome inválido
                         </div>
                      </div>
                  </div>
 
                  <i class="fa fa-envelope pr-2" aria-hidden="true"></i>
-                 <label class="col-md- form-control-label" style="color: black;" >E-mail: </label><br>
+                 <label class="col-md- form-control-label" style="color: black;">E-mail: </label><br>
                  <div class="form-group row">
-                  <input type="text" name="email"  class="col-md-5 form-control-label" placeholder="exemplo@exemplo.com" [(ngModel)]="patient.email" #email="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+                  <input type="text" name="email" [(ngModel)]="patient.email" #email="ngModel" class="col-md-5 form-control-label" placeholder="exemplo@exemplo.com" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
                  </div>
                  <div class="row">
                      <div *ngIf="email.errors && (email.dirty)" class="alert alert-danger col-md-5">
@@ -58,24 +50,74 @@
                            </div>
                        </div>
                  </div>
-                    
+
                  <i class="fa fa-phone pr-2" aria-hidden="true"></i>
-                 <label class="col-md- form-control-label" style="color: black; " >Telefone para Contato: </label><br>
+                 <label class="col-md- form-control-label" style="color: black; ">Telefone para Contato: </label><br>
                  <div class="form-group row">
-                     <input type="text" name="telefone" class="col-md-5 form-control-label" placeholder="DDD + Telefone" [(ngModel)]="patient.phone" [textMask]="{mask: maskphone}"/>
+                     <input type="text" name="number" [(ngModel)]="patient.number" #number="ngModel" class="col-md-5 form-control-label" placeholder="DDD + Telefone" [textMask]="{mask: maskphone}"/>
+                 </div>
+
+
+                 <i class="fa fa-pencil pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black">Escolaridade</label><br>
+                 <div class="form-group row">
+                    <input type="text" name="scholarity" [(ngModel)]="patient.scholarity" #scholarity="ngModel" class="col-md-5 form-control-label" placeholder="Escolaridade"/>
+                 </div>
+
+                 <i class="fa fa-info pr-2"></i>
+                 <label class="col-md- form-control-label" style="color: black">Observações</label><br>
+                 <div class="form-group row">
+                    <input type="text" name="observation" [(ngModel)]="patient.observation" #observation="ngModel" class="col-md-5 form-control-label" placeholder="Observações"/>
                  </div>
 
                  <i class="fa fa-calendar pr-2" aria-hidden="true"></i>
-                 <label class="col-md- form-control-label" style="color: black;" >Data de Nascimento: </label><br>
+                 <label class="col-md- form-control-label" style="color: black;">Data de Nascimento: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="data-nascimento"  class="col-md-5 form-control-label" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data Nascimento"/>
+                    <input type="text" name="dt_birth" [(ngModel)]="patient.dt_birth" dt_birth="ngModel"  class="col-md-5 form-control-label" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data Nascimento"/>
                  </div>
+               
+
+                 <i class="fa fa-hand-paper-o pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black;">Domínio Manual: </label><br>
+                 <div class="form-group row">
+                    <input type="text" name="manual_domain" [(ngModel)]="patient.manual_domain" #manual_domain="ngModel"  class="col-md-5 form-control-label" placeholder="Domínio Manual"/>
+                 </div>
+
+                 <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black; ">CPF Paciente: </label><br>
+                 <div class="form-group row">
+                    <input type="text" name="registry_number_pat" [(ngModel)]="patient.registry_number_pat" #registry_number_pat="ngModel" class="col-md-5 form-control-label" placeholder="___.___.___-__" [textMask]="{mask: maskcpf}"/>
+                 </div>
+
+                 <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black; ">CPF Responsável: </label><br>
+                 <div class="form-group row">
+                    <input type="text" name="registry_number_acc" [(ngModel)]="patient.registry_number_acc" #registry_number_acc="ngModel" class="col-md-5 form-control-label" placeholder="___.___.___-__" [textMask]="{mask: maskcpf}"/>
+                 </div>
+                
+
+                 <i class="fa fa-universal-access pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black; ">Grau de Parentesco: </label><br>
+                 <div class="form-group row">
+                    <!-- <input type="text" name="kinship_degree" [(ngModel)]="patient.kinship_degree" #kinship_degree="ngModel" class="col-md-5 form-control-label" placeholder="Grau de Parentesco"/> -->
+                    <select name="kinship_degree" [(ngModel)]="patient.kinship_degree" #kinship_degree="ngModel" class="col-md-5 form-control-label">
+                     <option value="" selected hidden>Grau de Parentesco</option>
+                     <option value="Irmã">Irmã</option>
+                     <option value="Irmão">Irmão</option>
+                     <option value="Mãe">Mãe</option>
+                     <option value="Pai">Pai</option>
+                     <option value="Padrasto">Padrasto</option>
+                     <option value="Madrasta">Madrasta</option>  
+                     <option value="Outro">Outro</option>
+                    </select>
+                 </div>
+                
 
                  <div class="line"></div>
                  <div class="col-md- form-control-label">
                     <div class="col-md-6">
-                       <a href="profileview" class="btn btn-success">Salvar</a> |
-                       <a href="" class="btn btn-info">Voltar</a>
+                       <button class="btn btn-success" (click)="edit()">Salvar</button> |
+                       <button class="btn btn-info" [routerLink]="['/']">Voltar</button>
                     </div>
                  </div>
               </form>
