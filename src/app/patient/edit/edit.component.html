@@ -61,13 +61,18 @@
                  <i class="fa fa-pencil pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black">Escolaridade</label><br>
                  <div class="form-group row">
-                    <input type="text" name="scholarity" [(ngModel)]="patient.scholarity" #scholarity="ngModel" class="col-md-5 form-control-label" placeholder="Escolaridade"/>
-                 </div>
-
-                 <i class="fa fa-info pr-2"></i>
-                 <label class="col-md- form-control-label" style="color: black">Observações</label><br>
-                 <div class="form-group row">
-                    <input type="text" name="observation" [(ngModel)]="patient.observation" #observation="ngModel" class="col-md-5 form-control-label" placeholder="Observações"/>
+                    <!-- <input type="text" name="scholarity" [(ngModel)]="patient.scholarity" #scholarity="ngModel" class="col-md-5 form-control-label" placeholder="Escolaridade"/> -->
+                    <select name="scholarity" [(ngModel)]="patient.scholarity" #scolarity="ngModel" class="col-md-5 form-control-label">
+                     <option value="" selected disabled hidden>Escolaridade</option>
+                     <option value="Infantil Incompleto">Infantil Incompleto</option>
+                     <option value="Infantil Completo">Infantil Completo</option>
+                     <option value="Médio Incompleto">Médio Incompleto</option>
+                     <option value="Médio Completo">Médio Completo</option>
+                     <option value="Superior Incompleto">Superior Incompleto</option>
+                     <option value="Superior Completo">Superior Completo</option>  
+                     <option value="Mestrado">Mestrado</option>
+                     <option value="Doutorado">Doutorado</option>
+                    </select>
                  </div>
 
                  <i class="fa fa-calendar pr-2" aria-hidden="true"></i>
@@ -80,7 +85,12 @@
                  <i class="fa fa-hand-paper-o pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;">Domínio Manual: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="manual_domain" [(ngModel)]="patient.manual_domain" #manual_domain="ngModel"  class="col-md-5 form-control-label" placeholder="Domínio Manual"/>
+                    <!-- <input type="text" name="manual_domain" [(ngModel)]="patient.manual_domain" #manual_domain="ngModel"  class="col-md-5 form-control-label" placeholder="Domínio Manual"/> -->
+                    <select name="manual_domain" [(ngModel)]="patient.manual_domain" #manual_domain="ngModel" class="col-md-5 form-control-label">
+                     <option value="Mão Direita">Mão Direita</option>
+                     <option value="Mão Esquerda">Mão Esquerda</option>
+                    </select>
+
                  </div>
 
                  <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
@@ -94,8 +104,7 @@
                  <div class="form-group row">
                     <input type="text" name="registry_number_acc" [(ngModel)]="patient.registry_number_acc" #registry_number_acc="ngModel" class="col-md-5 form-control-label" placeholder="___.___.___-__" [textMask]="{mask: maskcpf}"/>
                  </div>
-                
-
+            
                  <i class="fa fa-universal-access pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; ">Grau de Parentesco: </label><br>
                  <div class="form-group row">
@@ -112,6 +121,11 @@
                     </select>
                  </div>
                 
+                 <i class="fa fa-info pr-2"></i>
+                 <label class="col-md- form-control-label" style="color: black">Observações</label><br>
+                 <div class="form-group row">
+                    <textarea type="text" name="observation" [(ngModel)]="patient.observation" #observation="ngModel" class="col-md-5 form-control-label" placeholder="Observações"> </textarea>
+                 </div>
 
                  <div class="line"></div>
                  <div class="col-md- form-control-label">
