@@ -15,8 +15,9 @@ export class ListPatientsComponent implements OnInit {
   constructor(private patientService: PatientService) { }
 
   ngOnInit() {
+    //TODO: Pegar is do psicólogo que está logado.
     this.patients = this.patientService.getAllPatients('01-122454');
-    this.columns = ['registry_number_pat', 'name'];
+    this.columns = ['name', 'registry_number_pat', 'number'];
   }
 
 }

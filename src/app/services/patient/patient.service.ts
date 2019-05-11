@@ -33,7 +33,7 @@ export class PatientService {
 
   public getAllPatients(idPsychologist: string) {
     return Patients;
-    //return this.http.get(this.apiURL + '/list/' + idPsychologist);
+    // return this.http.get(this.apiURL + '/list/' + idPsychologist);
   }
 
 }
