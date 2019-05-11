@@ -10,12 +10,13 @@ import { Patient } from 'src/app/models';
 export class ListPatientsComponent implements OnInit {
 
   patients: Patient[];
+  columns: string[];
 
   constructor(private patientService: PatientService) { }
 
   ngOnInit() {
     this.patients = this.patientService.getAllPatients('01-122454');
-    console.log(this.patients);
+    this.columns = ['cpf', 'name'];
   }
 
 }
