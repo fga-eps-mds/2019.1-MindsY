@@ -16,7 +16,7 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { SectionHomeComponent } from './layouts/section-home/section-home.component';
 import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
-import { ListPacientsComponent } from './patient/list-pacients/list-pacients.component';
+import { ListPatientsComponent } from './patient/list-patients/list-patients.component';
 
 
 const appRoutes: Routes = [
@@ -24,6 +24,8 @@ const appRoutes: Routes = [
   { path: 'profileview',      component: SectionProfileComponent},
   { path: 'create-psychologist', component: CreateComponent},
   { path: 'edit-patient', component: EditpacientComponent},
+  { path: 'list-patients', component: ListPatientsComponent},
+
 ];
 
 @NgModule({
@@ -36,7 +38,7 @@ const appRoutes: Routes = [
     SectionProfileComponent,
     LoginComponent,
     EditpacientComponent,
-    ListPacientsComponent,
+    ListPatientsComponent,
   ],
   exports: [],
   imports: [

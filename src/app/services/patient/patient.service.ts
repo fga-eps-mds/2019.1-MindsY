@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Patient } from 'src/app/models/index';
+import {Patients} from './patients-mock';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
 
-  apiURL: string = 'http//localhost:'; //TODO inserir porta do microserviço de paciente
+  readonly apiURL: string = 'http//localhost:3001'; //TODO inserir porta do microserviço de paciente
 
   constructor(private http: HttpClient) { }
 
@@ -19,8 +20,11 @@ export class PatientService {
     return this.http.put(this.apiURL + '/edit/id', patient);
   }
 
-  public getPatient(id: String) {}
+  public getPatient(id: string) {}
 
-  public getAllPatients() {}
+  public getAllPatients(idPsychologist: string) {
+    return Patients;
+    //return this.http.get(this.apiURL + '/list/' + idPsychologist);
+  }
 
 }
