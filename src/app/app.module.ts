@@ -10,7 +10,7 @@ import { EditpacientComponent } from '../app/patient/edit/edit.component';
 import { ROUTES } from './app.routes';
 
 import { LoginComponent } from './psychologist/login/login.component';
-import { CreateComponent } from './psychologist/create/create.component';
+import { CreatePsychologistComponent } from './psychologist/create/createPsychologist.component';
 
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
@@ -18,23 +18,13 @@ import { SectionHomeComponent } from './layouts/section-home/section-home.compon
 import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
 import { ListPatientsComponent } from './patient/list-patients/list-patients.component';
 
-
-const appRoutes: Routes = [
-  { path: '', component: SectionHomeComponent },
-  { path: 'profileview',      component: SectionProfileComponent},
-  { path: 'create-psychologist', component: CreateComponent},
-  { path: 'edit-patient', component: EditpacientComponent},
-  { path: 'list-patients', component: ListPatientsComponent},
-
-];
-
 @NgModule({
   declarations: [
     AppComponent,
-    CreateComponent,
     NavbarComponent,
     SidebarComponent,
     SectionHomeComponent,
+    CreatePsychologistComponent,
     SectionProfileComponent,
     LoginComponent,
     EditpacientComponent,
@@ -45,10 +35,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    ),
+    RouterModule.forRoot(ROUTES),
     TextMaskModule
   ],
   providers: [],
