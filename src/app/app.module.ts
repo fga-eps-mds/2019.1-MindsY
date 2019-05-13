@@ -10,7 +10,7 @@ import { EditpacientComponent } from '../app/patient/edit/edit.component';
 import { ROUTES } from './app.routes';
 
 import { LoginComponent } from './psychologist/login/login.component';
-import { CreateComponent } from './psychologist/create/create.component';
+import { CreatePsychologistComponent } from './psychologist/create/createPsychologist.component';
 
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
@@ -21,10 +21,10 @@ import { ListPatientsComponent } from './patient/list-patients/list-patients.com
 @NgModule({
   declarations: [
     AppComponent,
-    CreateComponent,
     NavbarComponent,
     SidebarComponent,
     SectionHomeComponent,
+    CreatePsychologistComponent,
     SectionProfileComponent,
     LoginComponent,
     EditpacientComponent,
