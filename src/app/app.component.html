@@ -3,7 +3,7 @@
 <app-navbar></app-navbar>
 <div class="d-flex align-items-stretch " >
   <div id="sidebar" class="sidebar py-3 " style="background: #FFFFFF">
-    <div class=" text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
+    <div class=" text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MINDSY</div>
     <ul class="sidebar-menu list-unstyled">
       <li class="sidebar-list-item">
         <a href="index.html" class="sidebar-link text-muted active">
@@ -19,10 +19,10 @@
         <div id="pages" class="collapse">
           <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
             <li class="sidebar-list-item">
-              <a href="#" class="sidebar-link text-muted pl-lg-4">Geral</a>
+              <a [routerLink]="['/list-patients']"  class="sidebar-link text-muted pl-lg-4">Geral</a>
             </li>
             <li class="sidebar-list-item">
-              <a href="#" data-toggle="collapse" data-target="#newpacient" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted pl-lg-4">
+              <a data-toggle="collapse" data-target="#newpacient" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted pl-lg-4">
                 <span>Novo</span>
               </a>
               <div id="newpacient" class="collapse">
