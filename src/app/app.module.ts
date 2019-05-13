@@ -13,11 +13,7 @@ import { SectionProfileComponent } from './layouts/section-profile/section-profi
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-const appRoutes: Routes = [
-  { path: '', component: SectionHomeComponent },
-  { path: 'profileview',      component: SectionProfileComponent},
-  {path: 'create-psychologist', component: CreateComponent},
-];
+
 
 @NgModule({
   declarations: [
@@ -34,10 +30,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]
