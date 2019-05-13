@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/login/login.component';
-import { CreateComponent } from './user/create/create.component';
+import { CreateAccountComponent } from './user/create/createAccount.component';
 import { ROUTES } from './app.routes';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    CreateComponent,
+    CreateAccountComponent,
     NavbarComponent,
     SidebarComponent,
     SectionHomeComponent,

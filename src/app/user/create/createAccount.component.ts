@@ -4,10 +4,10 @@ import { Psychologist } from 'src/app/models/psychologist';
 
 @Component({
   selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  templateUrl: './createAccount.component.html',
+  styleUrls: ['./createAccount.component.css']
 })
-export class CreateComponent implements OnInit {
+export class CreateAccountComponent implements OnInit {
 
   public psychologist: Psychologist = new Psychologist();
 
