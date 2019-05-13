@@ -12,6 +12,7 @@ import { SectionHomeComponent } from './layouts/section-home/section-home.compon
 import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
 
 const appRoutes: Routes = [
   { path: '', component: SectionHomeComponent },
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     SidebarComponent,
     SectionHomeComponent,
     SectionProfileComponent,
-    LoginComponent
+    LoginComponent,
+    CreatePatientComponent
   ],
   exports: [],
   imports: [
