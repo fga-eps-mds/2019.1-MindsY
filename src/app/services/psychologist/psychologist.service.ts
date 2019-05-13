@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Psychologist } from 'src/app/models/psychologist';
+import { Psychologist } from 'src/app/models/index';
 
 @Injectable({
   providedIn: 'root'

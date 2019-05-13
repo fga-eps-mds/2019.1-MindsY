@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/user/user.service';
-import { Psychologist } from 'src/app/models/psychologist';
+import { UserService } from 'src/app/services/psychologist/psychologist.service';
+import { Psychologist } from 'src/app/models/index';
 
 @Component({
   selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  templateUrl: './createPsychologist.component.html',
+  styleUrls: ['./createPsychologist.component.css']
 })
-export class CreateComponent implements OnInit {
+export class CreatePsychologistComponent implements OnInit {
 
   public psychologist: Psychologist = new Psychologist();
 
