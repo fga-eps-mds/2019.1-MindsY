@@ -1,0 +1,47 @@
+<div class="page-holder w-100 d-flex flex-wrap " style="background: #ECECEC ">
+  <div class="container-fluid px-xl-5">
+     <section class="py-2 ">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 mb-4 mb-xl-0">
+              <!-- Form Elements -->
+              <div class="col-lg-12 mb-5">
+                 <div class="col-xl-7 col-lg-7  mb-xl-0 pt-5">
+                    <!-- <h3 class="h6 text-uppercase pl-5"><img src="./../../../assets/img/user_blue.png" alt="" style="max-width: 10rem;float: right" class="img-fluid rounded-circle shadow"></h3>                    -->
+                    <h3 class="h6 text-uppercase pt-1"><span class="" style="border-bottom: 3px solid gray; font-size: 1.5rem">-- Pacientes em atendimento --</span></h3>
+                  </div>
+              </div>
+            </div>
+            <table class="table table-hover">
+               <thead style="background-color: #379392">
+                  <tr>
+                     <th scope="col">NOME COMPLETO</th>
+                     <th scope="col">CPF</th>
+                     <th scope="col">TELEFONE</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let patient of patients">
+                     <th *ngFor="let col of columns" scope="row" >
+                        {{patient[col]}}
+                     </th>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </section>
+   </div>
+
+  <footer class="footer shadow align-self-end py-3 px-xl-5 w-100" style="background:#EFEDE6">
+     <div class="container-fluid">
+        <div class="row">
+           <div class="col-md-6 text-center text-md-left text-black">
+              <p class="mb-2 mb-md-0">MINDSY &copy; 2019</p>
+           </div>
+           <div class="col-md-6 text-center text-md-right text-black-400">
+              <p class="mb-0">Design by <a href="https://fga-eps-mds.github.io/2019.1-MindsY/docs.html" class="external text-blue-400">Mindsy Team</a></p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+           </div>
+        </div>
+     </div>
+  </footer>
+</div>
