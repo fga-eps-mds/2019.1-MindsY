@@ -24,7 +24,7 @@
                     <input type="text" name="name" [(ngModel)]="patient.name" #name="ngModel"  class="col-md-4 form-control-label" minlength="2" placeholder="Nome do Paciente" required/>
                  </div>
                  <div class="row">
-                     <div *ngIf="name.errors && (name.dirty)" class="alert alert-danger col-md-5">
+                     <div *ngIf="name.errors && (name.dirty)" class="alert alert-danger col-md-4">
                         <div [hidden]="!name.errors.required">
                            Nome é obrigatório
                         </div>
@@ -33,17 +33,17 @@
                         </div>
                      </div>
                  </div>
-                 <div class="col-md-6" style="float: right; position:static">
-                  <iframe src="./../../../assets/PDFslides_fluxoSang.pdf" width="100%" height="650px" class="centerImg padB40"></iframe>
-                  </div>
+                 <div class="col-md-6" style="float: right; margin-right: 100px; margin-top: -4.3%">
+                     <iframe src="./../../../assets/PDFslides_fluxoSang.pdf" width="130%" height="691px" class="centerImg padB40"></iframe>
+                 </div>
 
                  <i class="fa fa-envelope pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;">E-mail: </label><br>
                  <div class="form-group row">
-                  <input type="text" name="email" [(ngModel)]="patient.email" #email="ngModel" class="col-md-8 form-control-label" placeholder="exemplo@exemplo.com" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+                  <input type="text" name="email" [(ngModel)]="patient.email" #email="ngModel" class="col-md-10 form-control-label" placeholder="exemplo@exemplo.com" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
                  </div>
                  <div class="row">
-                     <div *ngIf="email.errors && (email.dirty)" class="alert alert-danger col-md-5">
+                     <div *ngIf="email.errors && (email.dirty)" class="alert alert-danger col-md-10">
                            <div [hidden]="!email.errors.required">
                               Email é obrigatório.
                            </div>
@@ -57,7 +57,7 @@
                  <i class="fa fa-phone pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; ">Telefone para Contato: </label><br>
                  <div class="form-group row">
-                     <input type="text" name="number" [(ngModel)]="patient.number" #number="ngModel" class="col-md-8 form-control-label" placeholder="DDD + Telefone" [textMask]="{mask: maskphone}"/>
+                     <input type="text" name="number" [(ngModel)]="patient.number" #number="ngModel" class="col-md-10 form-control-label" placeholder="DDD + Telefone" [textMask]="{mask: maskphone}"/>
                  </div>
 
 
@@ -65,7 +65,7 @@
                  <label class="col-md- form-control-label" style="color: black">Escolaridade</label><br>
                  <div class="form-group row">
                     <!-- <input type="text" name="scholarity" [(ngModel)]="patient.scholarity" #scholarity="ngModel" class="col-md-5 form-control-label" placeholder="Escolaridade"/> -->
-                    <select name="scholarity" [(ngModel)]="patient.scholarity" #scolarity="ngModel" class="col-md-8 form-control-label">
+                    <select name="scholarity" [(ngModel)]="patient.scholarity" #scolarity="ngModel" class="col-md-10 form-control-label">
                      <option value="" selected disabled hidden>Escolaridade</option>
                      <option value="Infantil Incompleto">Infantil Incompleto</option>
                      <option value="Infantil Completo">Infantil Completo</option>
@@ -81,7 +81,7 @@
                  <i class="fa fa-calendar pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;">Data de Nascimento: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="dt_birth" [(ngModel)]="patient.dt_birth" dt_birth="ngModel"  class="col-md-8 form-control-label" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data Nascimento"/>
+                    <input type="text" name="dt_birth" [(ngModel)]="patient.dt_birth" dt_birth="ngModel"  class="col-md-10 form-control-label" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data Nascimento"/>
                  </div>
                
 
@@ -89,7 +89,7 @@
                  <label class="col-md- form-control-label" style="color: black;">Domínio Manual: </label><br>
                  <div class="form-group row">
                     <!-- <input type="text" name="manual_domain" [(ngModel)]="patient.manual_domain" #manual_domain="ngModel"  class="col-md-5 form-control-label" placeholder="Domínio Manual"/> -->
-                    <select name="manual_domain" [(ngModel)]="patient.manual_domain" #manual_domain="ngModel" class="col-md-8 form-control-label">
+                    <select name="manual_domain" [(ngModel)]="patient.manual_domain" #manual_domain="ngModel" class="col-md-10 form-control-label">
                      <option value="Mão Direita">Mão Direita</option>
                      <option value="Mão Esquerda">Mão Esquerda</option>
                     </select>
@@ -99,20 +99,20 @@
                  <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; ">CPF Paciente: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="registry_number_pat" [(ngModel)]="patient.registry_number_pat" #registry_number_pat="ngModel" class="col-md-8 form-control-label" placeholder="___.___.___-__" [textMask]="{mask: maskcpf}"/>
+                    <input type="text" name="registry_number_pat" [(ngModel)]="patient.registry_number_pat" #registry_number_pat="ngModel" class="col-md-10 form-control-label" placeholder="___.___.___-__" [textMask]="{mask: maskcpf}"/>
                  </div>
 
                  <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; ">CPF Responsável: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="registry_number_acc" [(ngModel)]="patient.registry_number_acc" #registry_number_acc="ngModel" class="col-md-8 form-control-label" placeholder="___.___.___-__" [textMask]="{mask: maskcpf}"/>
+                    <input type="text" name="registry_number_acc" [(ngModel)]="patient.registry_number_acc" #registry_number_acc="ngModel" class="col-md-10 form-control-label" placeholder="___.___.___-__" [textMask]="{mask: maskcpf}"/>
                  </div>
             
                  <i class="fa fa-universal-access pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; ">Grau de Parentesco: </label><br>
                  <div class="form-group row">
                     <!-- <input type="text" name="kinship_degree" [(ngModel)]="patient.kinship_degree" #kinship_degree="ngModel" class="col-md-5 form-control-label" placeholder="Grau de Parentesco"/> -->
-                    <select name="kinship_degree" [(ngModel)]="patient.kinship_degree" #kinship_degree="ngModel" class="col-md-8 form-control-label">
+                    <select name="kinship_degree" [(ngModel)]="patient.kinship_degree" #kinship_degree="ngModel" class="col-md-10 form-control-label">
                      <option value="" selected hidden>Grau de Parentesco</option>
                      <option value="Irmã">Irmã</option>
                      <option value="Irmão">Irmão</option>
@@ -127,7 +127,7 @@
                  <i class="fa fa-info pr-2"></i>
                  <label class="col-md- form-control-label" style="color: black">Observações</label><br>
                  <div class="form-group row">
-                    <textarea type="text" name="observation" [(ngModel)]="patient.observation" #observation="ngModel" class="col-md-8 form-control-label" placeholder="Observações"> </textarea>
+                    <textarea type="text" name="observation" [(ngModel)]="patient.observation" #observation="ngModel" class="col-md-10 form-control-label" placeholder="Observações"> </textarea>
                  </div>
 
                  <div class="line"></div>
