@@ -17,6 +17,7 @@ export class EditpacientComponent implements OnInit {
   public patient: Patient = new Patient;
   maskphone = PatientMasks.MASK_PHONE;
   maskcpf = PatientMasks.MASK_CPF;
+  maskcep = PatientMasks.MASK_CEP;
 
   ngOnInit() {}
 
