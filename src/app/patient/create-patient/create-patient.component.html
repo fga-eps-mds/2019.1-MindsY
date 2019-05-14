@@ -16,15 +16,15 @@
            </div>
 
            <div class="card-body px-5">
-              <form class="form-horizontal" style="padding-left: 25%">
+              <form class="form-horizontal" style="padding-left: 20%">
 
                  <i class="fa fa-user pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="text-align: center" style="color: black;">Nome do Paciente: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="name" [(ngModel)]="patient.name" #name="ngModel" class="col-md-5 form-control-label" minlength="8" placeholder="Nome do Paciente" required/>
+                    <input type="text" name="name" [(ngModel)]="patient.name" #name="ngModel" class="col-md-8 form-control-label" minlength="8" placeholder="Nome do Paciente" required/>
                  </div>
                  <div class="row">
-                     <div *ngIf="name.errors && (name.dirty)" class="alert alert-danger col-md-5">
+                     <div *ngIf="name.errors && (name.dirty)" class="alert alert-danger col-md-8">
                         <div [hidden]="!name.errors.required">
                            Nome é obrigatório
                         </div>
