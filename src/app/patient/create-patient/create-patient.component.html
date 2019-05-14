@@ -37,10 +37,10 @@
                  <i class="fa fa-envelope pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;">E-mail: </label><br>
                  <div class="form-group row">
-                  <input type="text" name="email" [(ngModel)]="patient.email" #email="ngModel" class="col-md-5 form-control-label" placeholder="exemplo@exemplo.com" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+                  <input type="text" name="email" [(ngModel)]="patient.email" #email="ngModel" class="col-md-8 form-control-label" placeholder="exemplo@exemplo.com" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
                  </div>
                  <div class="row">
-                     <div *ngIf="email.errors && (email.dirty)" class="alert alert-danger col-md-5">
+                     <div *ngIf="email.errors && (email.dirty)" class="alert alert-danger col-md-8">
                            <div [hidden]="!email.errors.required">
                               Email é obrigatório.
                            </div>
