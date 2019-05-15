@@ -3,14 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { PatientService } from 'src/app/services/index';
 import { Patient } from 'src/app/models/index';
 import { PatientMasks } from 'src/app/patient/patient-masks';
-import { AbstractControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-editpacient',
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
-export class EditpacientComponent implements OnInit {
+export class EditPacientComponent implements OnInit {
 
   constructor(private patientService: PatientService) { }
 
@@ -19,7 +19,9 @@ export class EditpacientComponent implements OnInit {
   maskcpf = PatientMasks.MASK_CPF;
   maskcep = PatientMasks.MASK_CEP;
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.patientService.getPatientInfo(this.patient.id_patient);
+  }
 
   edit() {
     this.patientService.editPatient(this.patient)

@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
 
 import { AppComponent } from './app.component';
-import { EditpacientComponent } from '../app/patient/edit/edit.component';
+import { EditPacientComponent } from '../app/patient/edit/edit.component';
 import { ROUTES } from './app.routes';
 
 import { LoginComponent } from './psychologist/login/login.component';
@@ -27,7 +27,7 @@ import { ListPatientsComponent } from './patient/list-patients/list-patients.com
     CreatePsychologistComponent,
     SectionProfileComponent,
     LoginComponent,
-    EditpacientComponent,
+    EditPacientComponent,
     ListPatientsComponent,
   ],
   exports: [],

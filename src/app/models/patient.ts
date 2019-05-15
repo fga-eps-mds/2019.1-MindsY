@@ -2,6 +2,7 @@ export class Patient {
 
     constructor() {}
 
+    id_patient: Number; 
     name: string;
     email?: string;
     number: string;
