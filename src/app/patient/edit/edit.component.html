@@ -18,10 +18,14 @@
            <div class="card-body px-5">
               <form class="form-horizontal">
 
+               <div class="col-md-6" style="float: right; margin-right: 100px; margin-top: 2.5%">
+                        <iframe src="./../../../assets/PDFslides_fluxoSang.pdf" width="115%" height="705px" class="centerImg padB40"></iframe>
+               </div>
+
                  <i class="fa fa-user pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label " style="color: black;">Nome do Paciente: </label><br>
                  <div class="form-group row mr-2">
-                    <input type="text" name="name" [(ngModel)]="patient.name" #name="ngModel"  class="col-md-4 form-control-label" minlength="2" placeholder="Nome do Paciente" required/>
+                    <input type="text" name="name" [(ngModel)]="patient.name" #name="ngModel"  class="col-md-10 form-control-label" minlength="2" placeholder="Nome do Paciente" required/>
                  </div>
                  <div class="row">
                      <div *ngIf="name.errors && (name.dirty)" class="alert alert-danger col-md-4">
@@ -33,9 +37,7 @@
                         </div>
                      </div>
                  </div>
-                 <div class="col-md-6" style="float: right; margin-right: 100px; margin-top: -4.3%">
-                     <iframe src="./../../../assets/PDFslides_fluxoSang.pdf" width="130%" height="691px" class="centerImg padB40"></iframe>
-                 </div>
+                
 
                  <i class="fa fa-envelope pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;">E-mail: </label><br>
