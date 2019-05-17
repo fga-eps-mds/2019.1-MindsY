@@ -13,7 +13,7 @@
     { path: '', component: SectionHomeComponent },
     { path: 'profileview',      component: SectionProfileComponent},
     { path: 'create-psychologist', component: CreatePsychologistComponent},
-    { path: 'edit-patient', component: EditpacientComponent},
+    { path: 'edit-patient/:id', component: EditpacientComponent},
     { path: 'list-patients', component: ListPatientsComponent}, 
     { path: 'create-patient', component: CreatePatientComponent} ];
-
+  
