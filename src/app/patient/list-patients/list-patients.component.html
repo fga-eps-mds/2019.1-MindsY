@@ -1,3 +1,9 @@
+
+<head>
+      <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+</head>
 <div class="page-holder w-100 d-flex flex-wrap " style="background: #ECECEC ">
   <div class="container-fluid px-xl-5">
      <section class="py-2 ">
@@ -11,22 +17,30 @@
                   </div>
               </div>
             </div>
-            <table class="table table-hover">
-               <thead style="background-color: #379392">
-                  <tr>
-                     <th scope="col">NOME COMPLETO</th>
-                     <th scope="col">CPF</th>
-                     <th scope="col">TELEFONE</th>
-                  </tr>
-               </thead>
-               <tbody>
-                  <tr *ngFor="let patient of patients">
-                     <th *ngFor="let col of columns" scope="row" >
-                        {{patient[col]}}
-                     </th>
-                  </tr>
-               </tbody>
-            </table>
+
+            <!-- TABELA FEITA NO ARQUIVO JS -->
+
+            <!-- FIM TABELA -->
+            <div class="col-xl-12 col-lg-12 ">
+               <table class="table">
+                  
+                     <thead style="background-color: #379392">
+                           <tr>
+                              <th scope="col">NOME COMPLETO</th>
+                              <th scope="col">CPF</th>
+                              <th scope="col">TELEFONE</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr *ngFor="let patient of patients">
+                              <th *ngFor="let col of columns" scope="row" >
+                                 {{patient[col]}}
+                              </th>
+                           </tr>
+                        </tbody>
+                  
+               </table>
+            </div>
          </div>
       </section>
    </div>
@@ -45,3 +59,9 @@
      </div>
   </footer>
 </div>
+
+<script>
+   $(document).ready(function() {
+    $('#example').DataTable();
+   } );
+</script>

@@ -18,7 +18,6 @@ import { SectionHomeComponent } from './layouts/section-home/section-home.compon
 import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
 import { ListPatientsComponent } from './patient/list-patients/list-patients.component';
 
-
 const appRoutes: Routes = [
   { path: '', component: SectionHomeComponent },
   { path: 'profileview',      component: SectionProfileComponent},

@@ -7,6 +7,9 @@ import {Patients} from './patients-mock';
   providedIn: 'root'
 })
 export class PatientService {
+  subscribe(arg0: (data: any[]) => void) {
+    throw new Error("Method not implemented.");
+  }
 
   readonly apiURL: string = 'http//localhost:3001';
 
