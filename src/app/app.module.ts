@@ -29,7 +29,7 @@ import { CreatePatientComponent } from './patient/create-patient/create-patient.
     SectionProfileComponent,
     LoginComponent,
     CreatePatientComponent,
-    EditpacientComponent,
+    EditPacientComponent,
     ListPatientsComponent,
   ],
   exports: [],
