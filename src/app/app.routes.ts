@@ -4,7 +4,7 @@
   import { SectionHomeComponent } from './layouts/section-home/section-home.component';
   import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
   import { CreatePsychologistComponent } from './psychologist/create/createPsychologist.component';
-  import { EditpacientComponent } from './patient/edit/edit.component';
+  import { EditPacientComponent } from './patient/edit/edit.component';
   import { ListPatientsComponent } from './patient/list-patients/list-patients.component';
   import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
 
@@ -13,7 +13,6 @@
     { path: '', component: SectionHomeComponent },
     { path: 'profileview',      component: SectionProfileComponent},
     { path: 'create-psychologist', component: CreatePsychologistComponent},
-    { path: 'edit-patient/:id', component: EditpacientComponent},
+    { path: 'edit-patient/:id', component: EditPacientComponent},
     { path: 'list-patients', component: ListPatientsComponent}, 
     { path: 'create-patient', component: CreatePatientComponent} ];
-  
