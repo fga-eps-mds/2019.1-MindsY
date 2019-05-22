@@ -17,6 +17,7 @@ import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { SectionHomeComponent } from './layouts/section-home/section-home.component';
 import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
 import { ListPatientsComponent } from './patient/list-patients/list-patients.component';
+import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ListPatientsComponent } from './patient/list-patients/list-patients.com
     CreatePsychologistComponent,
     SectionProfileComponent,
     LoginComponent,
-    EditPacientComponent,
+    CreatePatientComponent,
+    EditpacientComponent,
     ListPatientsComponent,
   ],
   exports: [],
