@@ -18,6 +18,7 @@ import { SectionHomeComponent } from './layouts/section-home/section-home.compon
 import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
 import { ListPatientsComponent } from './patient/list-patients/list-patients.component';
 import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
+import { CreateReportComponent } from './patient/report/create-report/create-report.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CreatePatientComponent } from './patient/create-patient/create-patient.
     CreatePatientComponent,
     EditPacientComponent,
     ListPatientsComponent,
+    CreateReportComponent,
   ],
   exports: [],
   imports: [
