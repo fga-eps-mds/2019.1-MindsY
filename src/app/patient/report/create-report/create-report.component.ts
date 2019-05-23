@@ -14,9 +14,10 @@ export class CreateReportComponent implements OnInit {
 
   ngOnInit() {
     this.name = 'Paciente';
-    var HTMLstring = '<div><p style="text-align:center"><b>Hello, world</b></p><p>Meu nome é: '+ this.name +'</p></div>';
-    $('#summernote').summernote('pasteHTML', HTMLstring,{
-      placeholder: 'teste'
+    //var HTMLstring = '<div><p style="text-align:center"><b>Hello, world</b></p><p>Meu nome é: '+ this.name +'</p></div>';
+    $('#summernote').summernote({
+      height: 2500
+
     });
 
   }

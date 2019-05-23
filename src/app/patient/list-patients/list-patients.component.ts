@@ -18,6 +18,7 @@ export class ListPatientsComponent implements OnInit {
     //TODO: Pegar is do psicólogo que está logado.
     this.patients = this.patientService.getAllPatients('01-122454');
     this.columns = ['name', 'registry_number_pat', 'number'];
+    
   }
 
 }
