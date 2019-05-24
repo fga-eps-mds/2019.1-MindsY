@@ -20,7 +20,7 @@ import { ListPatientsComponent } from './patient/list-patients/list-patients.com
 
 const appRoutes: Routes = [
   { path: '', component: SectionHomeComponent },
-  { path: 'profileview',      component: SectionProfileComponent},
+  { path: 'profileview', component: SectionProfileComponent},
   { path: 'create-psychologist', component: CreateComponent},
   { path: 'edit-patient', component: EditpacientComponent},
   { path: 'list-patients', component: ListPatientsComponent},
@@ -37,7 +37,7 @@ const appRoutes: Routes = [
     SectionProfileComponent,
     LoginComponent,
     EditpacientComponent,
-    ListPatientsComponent,
+    ListPatientsComponent
   ],
   exports: [],
   imports: [
