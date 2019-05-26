@@ -23,10 +23,12 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "core-js": "^2.5.4",
-    "jquery": "^3.0.0",
+    "jquery": "^3.4.1",
     "ngx-bootstrap": "^4.0.1",
+    "ngx-summernote": "^0.6.5",
     "popper.js": "^1.15.0",
     "rxjs": "~6.3.3",
+    "summernote": "^0.8.12",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },

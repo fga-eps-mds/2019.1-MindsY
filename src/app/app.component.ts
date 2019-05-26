@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import * as $ from 'jquery';
-declare var jquery:any;
-declare var $ :any;
+declare var $: any;
+
 
 @Component({
   selector: 'app-root',
