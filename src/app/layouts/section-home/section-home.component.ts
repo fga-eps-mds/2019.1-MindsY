@@ -28,7 +28,7 @@ export class SectionHomeComponent implements OnInit {
 
       function updateValue() {
 
-          $('#count').html(Math.floor(Math.random() * (1000 - 1)) + 1);
+          //$('#count').html(Math.floor(Math.random() * (1000 - 1)) + 1);
           $('#count').each(function() {
 
               $(this).prop('Counter', 0).animate({
