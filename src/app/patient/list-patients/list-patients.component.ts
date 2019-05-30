@@ -37,7 +37,6 @@ export class ListPatientsComponent implements OnInit {
 
     //this.dataTable = $(this.table.nativeElement);
     //this.dataTable.DataTable();
-
   }
 
 

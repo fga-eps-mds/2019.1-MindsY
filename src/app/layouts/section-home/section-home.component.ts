@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
-declare var jquery:any;
-declare var $ :any;
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-section-home',
   templateUrl: './section-home.component.html',

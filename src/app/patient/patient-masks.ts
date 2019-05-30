@@ -4,4 +4,7 @@ export class PatientMasks {
 
     static MASK_PHONE: any[] =
         ['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/];
+
+    static MASK_CEP: any[] = 
+        [ /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/ ];
 }

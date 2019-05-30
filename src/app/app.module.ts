@@ -6,17 +6,18 @@ import { FormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
 
 import { AppComponent } from './app.component';
-import { EditpacientComponent } from '../app/patient/edit/edit.component';
+import { EditPacientComponent } from '../app/patient/edit/edit.component';
 import { ROUTES } from './app.routes';
 
 import { LoginComponent } from './psychologist/login/login.component';
-import { CreateComponent } from './psychologist/create/create.component';
+import { CreatePsychologistComponent } from './psychologist/create/createPsychologist.component';
 
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { SectionHomeComponent } from './layouts/section-home/section-home.component';
 import { SectionProfileComponent } from './layouts/section-profile/section-profile.component';
 import { ListPatientsComponent } from './patient/list-patients/list-patients.component';
+<<<<<<< HEAD
 
 const appRoutes: Routes = [
   { path: '', component: SectionHomeComponent },
@@ -26,28 +27,36 @@ const appRoutes: Routes = [
   { path: 'list-patients', component: ListPatientsComponent},
 
 ];
+=======
+import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
+import { CreateReportComponent } from './patient/report/create-report/create-report.component';
+>>>>>>> 13fec17e50c54a48caec7ed25bf16a94d4891513
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateComponent,
     NavbarComponent,
     SidebarComponent,
     SectionHomeComponent,
+    CreatePsychologistComponent,
     SectionProfileComponent,
     LoginComponent,
+<<<<<<< HEAD
     EditpacientComponent,
     ListPatientsComponent
+=======
+    CreatePatientComponent,
+    EditPacientComponent,
+    ListPatientsComponent,
+    CreateReportComponent,
+>>>>>>> 13fec17e50c54a48caec7ed25bf16a94d4891513
   ],
   exports: [],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    ),
+    RouterModule.forRoot(ROUTES),
     TextMaskModule
   ],
   providers: [],

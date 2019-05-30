@@ -39,4 +39,8 @@ export class PatientService {
     // return this.http.get(this.apiURL + '/list/' + idPsychologist);
   }
 
+  public getPatientInfo(idPatient: Number) {
+    return this.http.get(this.apiURL + '/patient-information/' + idPatient);
+  }
+
 }
