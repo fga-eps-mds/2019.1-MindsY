@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-declare var $: any;
+
+import {Component, ViewChild, OnInit} from '@angular/core';
+import * as $ from 'jquery';
 
 
 @Component({
@@ -7,10 +8,14 @@ declare var $: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
 export class AppComponent {
   title = 'mindsy';
 
   ngOnInit(){
-
+    
   }
+
+  
 }
