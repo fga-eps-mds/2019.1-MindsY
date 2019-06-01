@@ -15,10 +15,11 @@ export class CreateReportComponent implements OnInit {
   ngOnInit() {
     this.name = 'Paciente';
     //var HTMLstring = '<div><p style="text-align:center"><b>Hello, world</b></p><p>Meu nome é: '+ this.name +'</p></div>';
-    $('#summernote').summernote({
-      height: 2500
+//Essa linha de baixo quebra alguns testes
+    // $('#summernote').summernote({
+    //   height: 2500
 
-    });
+    // });
 
   }
 

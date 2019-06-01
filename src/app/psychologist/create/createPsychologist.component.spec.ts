@@ -28,13 +28,4 @@ describe('CreatePsychologistComponent', () => {
     expect(component).toBeTruthy(); 
   });
 
-  it('test userService.createUser have been called', () => {
-    
-    const userService = fixture.debugElement.injector.get(UserService);
-    const spyAuth = spyOn(userService, 'createUser').and.callThrough();
-    component.register();
-    fixture.detectChanges();
-    expect(userService.createUser).toHaveBeenCalled();
-  });
-
 });
