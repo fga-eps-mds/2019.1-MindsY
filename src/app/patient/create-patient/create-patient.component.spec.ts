@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CreatePatientComponent } from './create-patient.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { TextMaskModule } from 'angular2-text-mask';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CreatePatientComponent', () => {
   let component: CreatePatientComponent;
@@ -8,7 +12,8 @@ describe('CreatePatientComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreatePatientComponent ]
+      declarations: [ CreatePatientComponent ],
+      imports: [HttpClientModule, FormsModule, TextMaskModule, RouterTestingModule],
     })
     .compileComponents();
   }));
