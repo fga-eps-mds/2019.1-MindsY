@@ -1,0 +1,15 @@
+
+  <form #formReport="ngForm">
+      <p class="h3 text-center mb-4"> Editar Avaliação </p>
+      <div class="form-group">
+          <i class="fa fa-user prefix grey-text"></i> Anamnese
+          <input type="text" id="orangeForm-anamnese" class="form-control" name="anamnese" placeholder="{{ report.anamnese }}" [(ngModel)]="report.anamnese" #anamnese="ngModel" required>
+         
+      </div>
+
+      <div class="form-group text-center">
+          <!--<input type="button" class="btn btn-primary" (click)="updateReport()" value="Atualizar"> -->
+
+      </div>
+
+  </form>
