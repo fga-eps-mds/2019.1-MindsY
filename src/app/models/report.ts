@@ -1,7 +1,7 @@
 export class Report {
 
-    constructor() {}
 
+    constructor() {}
 
     dt_start: string;
     dt_end: string;
