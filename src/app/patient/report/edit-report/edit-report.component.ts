@@ -43,14 +43,11 @@ export class EditReportComponent implements OnInit {
 
 
   onSubmit(f: NgForm){
-   return this.reportService.updateReport(f).subscribe( data => {  data = console.log(data)});
-
-   /*
-   .subscribe(
+   return this.reportService.updateReport(f)
+   .add(
      (data: any) => data =
      console.log(data)
    );
-   */
   }
 
 
