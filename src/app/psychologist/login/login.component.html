@@ -17,14 +17,14 @@
         agora e aproveite o melhor da MindsY
       </p>
       
-      <input type="text" name="crp" placeholder="CRP:"/>
-      <input type="password" name="password" placeholder="Senha:"/>
+      <input [(ngModel)]="loginObject.crp" type="text" name="crp" placeholder="CRP"/>
+      <input [(ngModel)]="loginObject.password" type="password" name="senha" placeholder="Senha"/>
 
       <a class="forgotPassword-link">
         Esqueceu a senha?
     </a>
 
-      <input type="submit" name="signin-button" value="Login"/>
+    <button (click)="login()">Login</button>
     </div>
 
     
