@@ -21,7 +21,7 @@ matrix:
        - npm update
        - ng build --prod
 
-       after_script:
+      after_script:
        - ng test --watch=false --code-coverage
 
     - language: java
