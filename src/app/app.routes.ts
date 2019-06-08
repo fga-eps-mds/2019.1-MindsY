@@ -8,8 +8,7 @@
   import { ListPatientsComponent } from './patient/list-patients/list-patients.component';
   import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
   import { CreateReportComponent } from './patient/report/create-report/create-report.component';
-
-
+  import { LoginComponent } from './psychologist/login/login.component';
 
   export const ROUTES: Routes = [
     { path: '', component: SectionHomeComponent },
@@ -18,4 +17,5 @@
     { path: 'edit-patient/:id', component: EditPacientComponent},
     { path: 'list-patients', component: ListPatientsComponent},
     { path: 'create-patient', component: CreatePatientComponent},
-    { path: 'create-report', component: CreateReportComponent} ];
+    { path: 'create-report', component: CreateReportComponent},
+    { path: 'login', component: LoginComponent} ];
