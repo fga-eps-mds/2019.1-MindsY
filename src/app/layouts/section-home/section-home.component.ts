@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
 import * as $ from 'jquery';
-
 @Component({
   selector: 'app-section-home',
   templateUrl: './section-home.component.html',
@@ -30,7 +29,7 @@ export class SectionHomeComponent implements OnInit {
 
       function updateValue() {
 
-         
+          //$('#count').html(Math.floor(Math.random() * (1000 - 1)) + 1);
           $('#count').each(function() {
 
               $(this).prop('Counter', 0).animate({

@@ -20,7 +20,13 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
-    reporters: ['progress', 'kjhtml'],
+    customLaunchers: {
+      Chrome_travis_ci: {
+          base: 'Chrome',
+          flags: ['--headless', '--disable-gpu', '--no-sandbox', '--remote-debugging-port=9222']
+      }
+  },
+    reporters: ['coverage-istanbul', 'progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -29,4 +35,8 @@ module.exports = function (config) {
     singleRun: false,
     restartOnFileChange: true
   });
+
+  if(process.env.TRAVIS){
+    config.browsers = ['Chrome_travis_ci'];
+  }
 };
