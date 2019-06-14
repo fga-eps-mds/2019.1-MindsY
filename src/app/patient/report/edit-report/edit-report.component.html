@@ -1,110 +1,113 @@
 
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-      <p class="h3 text-center mb-4"> Editar Avaliação </p>
-      <div class="form-group">
-          <i class="fa fa-user prefix grey-text"></i> Anamnese
-          <input type="text" id="anamnese" class="form-control" name="anamnese"  ngModel required [(ngModel)]="report.anamnese" #anamnese="ngModel">
-          <!--{{ report.anamnese }}-->
-          
-      </div>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+<div class="page-holder w-100 d-flex flex-wrap " style="background: #ECECEC ">
+    <div class="container-fluid px-xl-5">
+  <p class="h3 text-center mb-4"> Editar Avaliação </p>
+  
 
-      <div class="form-group text-center">
-          <button class="btn btn-primary" value="Atualizar">Editar</button>
+  <div class="form-group text-center">
+    <button class="btn btn-primary" value="Atualizar">Editar</button>
 
-      </div>
-    </form>
-      <div class="col-xl-12 col-lg-12 mb-4 mb-xl-0">
-        <h3 class="h6 text-uppercase  " style="color: gray">
-          <span style="border-bottom: 1.5px solid #524A00;"><i class="fas fa-child pr-1" style="font-size: 1.2rem; color: #524A00"></i>Dados do Paciente:</span>
-        </h3> 
-                    
-        <label class="col-md- form-control-label" style="color: black;"><strong style="color: #233F3B">Nome do Paciente:</strong> -- Nome do paciente -- </label><br>
-        <label class="col-md- form-control-label" style="color: black;"><strong style="color: #233F3B">Data de Nascimento:</strong> XX/XX/XXXX </label><br>
+  </div>
 
-      <div id="summernote" ng-model="report.anamnese">
-          <br>
-          <br>
-          <br>
-          <p style="text-align:center">
-            <strong>RELATÓRIO NEUROPSICOLÓGICO</strong>
-          </p>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>                  
-          <p style="text-align:center"><strong>-- Nome do(a) Paciente --</strong></p>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <p style="text-align:center"><strong>-- Nome do(a) Psicólogo(a) --</strong></p>
-          <p style="text-align:center"><strong><i>Neuropsicóloga</i></strong></p>
-          <p style="text-align:center"><strong>CRP: 01/16115</strong></p>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <p style="text-align:center"><strong>RELATÓRIO NEUROPSICOLÓGICO</strong></p>
-          <br>
-          <br>
-          <ol>
-            <li style="text-align: left;">
-              <strong _ngcontent-xiq-c2=""><u>Identificação do(a) Paciente</u></strong>
-            </li>
-          
-            <br>
-          <p style="text-align: left;">
-            <strong _ngcontent-xiq-c2="">Nome:</strong> -- Nome do(a) Paciente -- 
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-            <strong _ngcontent-xiq-c2="">Data Nasc.:</strong> XX/XX/XXXX
-          </p>
-          <p style="text-align: left;">
-              <strong _ngcontent-xiq-c2="">Escolaridade:</strong> -- Escolaridade do(a) Paciente --
-          </p>
-          <p style="text-align: left;">
-              <strong _ngcontent-xiq-c2="">Reprovação:</strong> -- Reprovação do(a) Paciente --
-          </p>
-          <p style="text-align: left;">
-              <strong _ngcontent-xiq-c2="">Período de Avaliação:</strong> -- Período de Avaliação do(a) Paciente --
-          </p>
-          <p style="text-align: left;">
-              <strong _ngcontent-xiq-c2="">Dominância Manual:</strong> -- Dominância do(a) Paciente --
-          </p>
-          <p style="text-align: left;">
-              <strong _ngcontent-xiq-c2="">Mãe:</strong> -- Mãe do(a) Paciente --
-          </p>
-          <p style="text-align: left;">
-              <strong _ngcontent-xiq-c2="">Pai:</strong> -- Pai do(a) Paciente --
-          </p>
-          <br>
-          <li style="text-align: left;">
-              <strong _ngcontent-xiq-c2="">Anamnese</strong>
-          </li>
-           <p [(ngModel)]="report.anamnese" #anamnese="ngModel" ></p>
+  <div class="col-xl-12 col-lg-12 mb-4 mb-xl-0">
+    <h3 class="h6 text-uppercase  " style="color: gray">
+      <span style="border-bottom: 1.5px solid #524A00;"><i class="fas fa-child pr-1"
+          style="font-size: 1.2rem; color: #524A00"></i>Dados do Paciente:</span>
+    </h3>
 
-          <br>
-          <br>
-          <li style="text-align: left;">
-              <strong _ngcontent-xiq-c2="">Procedimentos de Avaliação</strong>
-          </li>
-          <br>
-          <br>
-          <li style="text-align: left;">
-              <strong _ngcontent-xiq-c2="">Conclusão</strong>
-          </li>
-          <br>
-          <br>
-        </ol>
-      </div>
+    <label class="col-md- form-control-label" style="color: black;"><strong style="color: #233F3B">Nome do
+        Paciente:</strong> -- Nome do paciente -- </label><br>
+    <label class="col-md- form-control-label" style="color: black;"><strong style="color: #233F3B">Data de
+        Nascimento:</strong> XX/XX/XXXX </label><br>
+    <!-- <textarea ngModel name="anamnese" #anamnese="ngModel" [(ngModel)]="report.anamnese" cols="30" rows="10" ></textarea> -->
+    <div class="mt-3 mb-5 " style="border: 1.5px solid black; background: white">
+      <br>
+      <br>
+      <br>
+      <p style="text-align:center">
+        <strong>RELATÓRIO NEUROPSICOLÓGICO</strong>
+      </p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p style="text-align:center"><strong>-- Nome do(a) Paciente --</strong></p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p style="text-align:center"><strong>-- Nome do(a) Psicólogo(a) --</strong></p>
+      <p style="text-align:center"><strong><i>Neuropsicóloga</i></strong></p>
+      <p style="text-align:center"><strong>CRP: 01/16115</strong></p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p style="text-align:center"><strong>RELATÓRIO NEUROPSICOLÓGICO</strong></p>
+      <br>
+      <br>
+      <ol>
+        <li style="text-align: left;">
+          <strong _ngcontent-xiq-c2=""><u>Identificação do(a) Paciente</u></strong>
+        </li>
+
+        <br>
+        <p style="text-align: left;">
+          <strong _ngcontent-xiq-c2="">Nome:</strong> -- Nome do(a) Paciente --
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <strong _ngcontent-xiq-c2="">Data Nasc.:</strong> XX/XX/XXXX
+        </p>
+        <p style="text-align: left;">
+          <strong _ngcontent-xiq-c2="">Escolaridade:</strong> -- Escolaridade do(a) Paciente --
+        </p>
+        <p style="text-align: left;">
+          <strong _ngcontent-xiq-c2="">Reprovação:</strong> -- Reprovação do(a) Paciente --
+        </p>
+        <p style="text-align: left;">
+          <strong _ngcontent-xiq-c2="">Período de Avaliação:</strong> -- Período de Avaliação do(a) Paciente --
+        </p>
+        <p style="text-align: left;">
+          <strong _ngcontent-xiq-c2="">Dominância Manual:</strong> -- Dominância do(a) Paciente --
+        </p>
+        <p style="text-align: left;">
+          <strong _ngcontent-xiq-c2="">Mãe:</strong> -- Mãe do(a) Paciente --
+        </p>
+        <p style="text-align: left;">
+          <strong _ngcontent-xiq-c2="">Pai:</strong> -- Pai do(a) Paciente --
+        </p>
+        <br>
+        <li style="text-align: left;">
+          <strong _ngcontent-xiq-c2="">Anamnese</strong>
+        </li>
+        <textarea ngModel name="anamnese" #anamnese="ngModel" [(ngModel)]="report.anamnese"  style="width:95%; height: 200px;"></textarea>
+   
+        <br>
+        <br>
+        <li style="text-align: left;">
+          <strong _ngcontent-xiq-c2="">Procedimentos de Avaliação</strong>
+        </li>
+        <br>
+        <br>
+        <li style="text-align: left;">
+          <strong _ngcontent-xiq-c2="">Conclusão</strong>
+        </li>
+        <br>
+        <br>
+      </ol>
     </div>
+  </div>
+</div>
+</div>
+</form>
