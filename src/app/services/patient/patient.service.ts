@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Patient } from 'src/app/models/index';
-import {Patients} from './patients-mock';
+import { UserService } from '../psychologist/psychologist.service';
+import { Patients } from './patients-mock';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,15 @@ export class PatientService {
     throw new Error("Method not implemented.");
   }
 
-  readonly apiURL: string = 'http//localhost:3001';
+  apiURL: string = 'http//0.0.0.0:5000';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private userService: UserService) { }
 
-  public createPatient(patient: Patient) {}
+  public createPatient(patient: Patient) {
+    return this.http.post(this.apiURL + '/register', patient);
+  }
 
   public deletePatient(patient: Patient) {}
 
@@ -34,9 +39,8 @@ export class PatientService {
 
   public getPatient(id: string) {}
 
-  public getAllPatients(idPsychologist: string) {
-    return Patients;
-    // return this.http.get(this.apiURL + '/list/' + idPsychologist);
+  public getAllPatients(crp: String) {
+    return this.http.get(this.apiURL + '/list-patients/' + crp);
   }
 
   public getPatientInfo(idPatient: Number) {

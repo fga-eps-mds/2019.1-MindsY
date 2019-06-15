@@ -130,7 +130,7 @@
                  <div class="line"></div>
                  <div class="col-md- form-control-label">
                     <div class="col-md-6" style="padding-left: 16%;">
-                       <button class="btn btn-success" >Cadastrar</button> |
+                       <button (click)="register()" class="btn btn-success" >Cadastrar</button> |
                        <button class="btn btn-info" [routerLink]="['/']">Voltar</button>
                     </div>
                  </div>
@@ -139,6 +139,8 @@
         </div>
      </section>
   </div>
+
+
 
   <footer class="footer shadow align-self-end py-3 px-xl-5 w-100" style="background:#EFEDE6">
      <div class="container-fluid">

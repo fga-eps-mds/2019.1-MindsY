@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { UserService } from 'src/app/services/psychologist/psychologist.service';
 import { Psychologist } from 'src/app/models/index';
 
@@ -11,7 +13,9 @@ export class CreatePsychologistComponent implements OnInit {
 
   public psychologist: Psychologist = new Psychologist();
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private route: Router) { }
 
   ngOnInit() {}
 
@@ -20,6 +24,7 @@ export class CreatePsychologistComponent implements OnInit {
     .subscribe((data: any) => data =
       console.log(data)
     );
+    this.route.navigate(['/login']);
   }
 
 }

@@ -10,6 +10,7 @@
   import { CreateReportComponent } from './patient/report/create-report/create-report.component';
   import { EditReportComponent } from './patient/report/edit-report/edit-report.component';
 
+  import { LoginComponent } from './psychologist/login/login.component';
 
   export const ROUTES: Routes = [
     { path: '', component: SectionHomeComponent },
@@ -19,4 +20,5 @@
     { path: 'list-patients', component: ListPatientsComponent},
     { path: 'create-patient', component: CreatePatientComponent},
     { path: 'create-report', component: CreateReportComponent},
-    { path: 'edit-report', component: EditReportComponent} ];
+    { path: 'edit-report', component: EditReportComponent},
+    { path: 'login', component: LoginComponent} ];

@@ -79,7 +79,7 @@ input[type="password"]
     transition: 0.2s ease;
 }
 
-input[type="submit"] {
+button {
     margin-bottom: 28px;
     margin-top: 50px;
     margin-left: 73px;
@@ -96,8 +96,8 @@ input[type="submit"] {
     cursor: pointer;
   
   }
-input[type="submit"]:hover,
-input[type="submit"]:focus
+button:hover,
+button:focus
 {
     background: #ff6722;
     transition: 0.2s ease;
