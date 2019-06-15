@@ -5,10 +5,7 @@
   <p class="h3 text-center mb-4"> Editar Avaliação </p>
   
 
-  <div class="form-group text-center">
-    <button class="btn btn-primary" value="Atualizar">Editar</button>
-
-  </div>
+  
 
   <div class="col-xl-12 col-lg-12 mb-4 mb-xl-0">
     <h3 class="h6 text-uppercase  " style="color: gray">
@@ -23,7 +20,7 @@
     <!-- <textarea ngModel name="anamnese" #anamnese="ngModel" [(ngModel)]="report.anamnese" cols="30" rows="10" ></textarea> -->
 
 
-      <span (click)="initModal()"  class="success-checkmark">
+      <span (click)="showPopupModal()" class="success-checkmark hover-btnChangeScale">
         <div class="check-icon">
           <span class="icon-line line-tip"></span>
           <span class="icon-line line-long"></span>
@@ -31,10 +28,37 @@
           <div class="icon-fix"></div>
         </div>
       </span>
-      <input type="button" class="btn btn-primary" (click)="initSubmit()" value="Cadastrar">
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-      
+      <!-- <input type="button" class="btn btn-primary" (click)="initSubmit()" value="Cadastrar"> -->
+  
+      <div id="myModal_piso" class="modal" >
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span id="piso" (click)="closePopupModal()"  class="close">x</span>
+            <div class="content"  >
+              <div class="container-fluid" >
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card" >
+                        <div class="card-body table-responsive" style = "overflow-x:auto;">
+                      <p>Deseja salvar suas alterações?</p>      
+                        
+                            
+                            <button class="btn btn-primary" style="right:0" (click)="closePopupModal()" >Voltar</button>
+                            <button class="btn btn-success" style="right:0" value="Atualizar">Editar</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <div class="form-group text-center">
+              <button class="btn btn-primary" value="Atualizar">Editar</button>
+          
+            </div>
     <div class="mt-3 mb-5 " style="border: 1.5px solid black; background: white">
       <br>
       <br>
@@ -105,7 +129,7 @@
         <li style="text-align: left;">
           <strong _ngcontent-xiq-c2="">Anamnese</strong>
         </li>
-        <textarea ngModel name="anamnese" #anamnese="ngModel" [(ngModel)]="report.anamnese"  style="width:95%; height: 200px;"></textarea>
+        <textarea id="text-anamnese" (ngModelChange)="initSubmit(report.anamnese)" ngModel name="anamnese" #anamnese="ngModel" [(ngModel)]="report.anamnese"  style="width:95%; height: 200px;"></textarea>
    
         <br>
         <br>
@@ -126,21 +150,4 @@
 </div>
 </form>
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" style="z-index: 9999;" role="dialog" style="position:fixed">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
-            </div>
-            <div class="modal-body">
-                <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+
