@@ -45,7 +45,9 @@ export class EditReportComponent implements OnInit {
       this.report = data
     );    
 
-    $('#summernote').summernote();    
+    //window.print();
+
+   // $('#summernote').summernote();    
     $(".check-icon").hide();
   }
 
@@ -119,7 +121,7 @@ export class EditReportComponent implements OnInit {
    .add(
      (data: any) => data =
      console.log(data)
-   );;
+   );
   }
 
   load() {

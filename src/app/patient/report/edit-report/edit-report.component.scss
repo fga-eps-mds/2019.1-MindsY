@@ -215,3 +215,17 @@
         top: 38px;
     }
 }
+
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    #relatorio, #relatorio * {
+      visibility: visible;
+    }
+    #relatorio {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
