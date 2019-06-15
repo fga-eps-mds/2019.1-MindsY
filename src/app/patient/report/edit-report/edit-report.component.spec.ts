@@ -1,25 +1,33 @@
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { EditReportComponent } from './edit-report.component';
+import { EditReportComponent } from './edit-report.component';
 
-// describe('EditReportComponent', () => {
-//   let component: EditReportComponent;
-//   let fixture: ComponentFixture<EditReportComponent>;
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { TextMaskModule } from 'angular2-text-mask';
+import { RouterTestingModule } from '@angular/router/testing';
 
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [ EditReportComponent ]
-//     })
-//     .compileComponents();
-//   }));
+describe('EditReportComponent', () => {
+  let component: EditReportComponent;
+  let fixture: ComponentFixture<EditReportComponent>;
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(EditReportComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ EditReportComponent ],
+      imports: [HttpClientModule, FormsModule, TextMaskModule, RouterTestingModule]
+    })
+    .compileComponents();
+  }));
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(EditReportComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+

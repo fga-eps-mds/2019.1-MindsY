@@ -8,6 +8,7 @@ import { HttpClient, HttpHeaders, HttpRequest, HttpErrorResponse} from '@angular
 import {first} from "rxjs/operators";
 import { Router,NavigationEnd } from '@angular/router';
 import { load } from '@angular/core/src/render3';
+
 declare var $: any;
 
 @Component({
@@ -25,20 +26,10 @@ export class EditReportComponent implements OnInit {
   constructor(
     private reportService: ReportService,
     private router: Router
-  ) { 
-    this.router.events.subscribe((e) => {
-      if (e instanceof NavigationEnd) {
-        this.functionSummernote();
-      }
-   });
-  }
-
-  ngAfterViewInit() {
-    this.functionSummernote();
-  }
+  ) { }
 
   ngOnInit() {    
-    
+    this.report = new Report();
 
     this.reportService.getReport(1) 
     .subscribe((data: any) => data =
@@ -51,21 +42,10 @@ export class EditReportComponent implements OnInit {
     $(".check-icon").hide();
   }
 
-  functionSummernote(){
-    var markupStr = this.report.anamnese.toString(); 
-    // $('.note-editable #anamnese').html('<textarea ngModel name="anamnese" #anamnese="ngModel" cols="30" rows="10" >'+ markupStr +'</textarea>');
-  }
 
-  initSubmit(nik){
+  initSubmit(){
       if($(".check-icon").show()){
-        // $("textarea").each(function(){
-        //   console.log("VALOR DO TEXT AREA: " + $.trim($(this).val().substring(1, $(this).val().length - 1)));
-        //   console.log("VALOR DO REPORT ANAMNESE: " + nik.substring(1, this.anamnese_length));
-        //   if($.trim($(this).val().substring(0, $(this).val().length)) == nik.substring(0, this.anamnese_length)){
-        //     $(".check-icon").hide();
-        //   }
-          
-        // });
+       
       }
       else{
       $(".check-icon").hide();
@@ -75,11 +55,6 @@ export class EditReportComponent implements OnInit {
     }
   }
 
-  initModal(){
-
-    // alert('The paragraph was clicked<br><button class="btn btn-primary" value="Atualizar">Atualizar</button>');
-    $('#dialog_id').dialog();
-  }
   showPopupModal(){
     var modal2 = document.getElementById('myModal_piso');
   
