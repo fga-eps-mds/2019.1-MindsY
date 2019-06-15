@@ -12,6 +12,7 @@ export class SectionHomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
       $('.count').each(function() {
           $(this).prop('Counter', 0).animate({
               Counter: $(this).text()

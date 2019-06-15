@@ -11,6 +11,7 @@ matrix:
       - npm install -g @angular/cli
       - npm install -g codeclimate-test-reporter
       - npm install
+      - npm install karma-jquery --save
       - set -e
       cache:
         directories:

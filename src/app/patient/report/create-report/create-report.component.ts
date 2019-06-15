@@ -21,6 +21,12 @@ export class CreateReportComponent implements OnInit {
 
     // });
 
+    
+   // window.print();
   }
+
+
+
+
 
 }
