@@ -20,7 +20,7 @@ export class CreatePsychologistComponent implements OnInit {
   ngOnInit() {}
 
   register() {
-    this.userService.createUser(this.psychologist)
+    this.userService.createPsychologist(this.psychologist)
     .subscribe((data: any) => data =
       console.log(data)
     );
