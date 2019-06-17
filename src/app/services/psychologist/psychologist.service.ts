@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Psychologist } from 'src/app/models/index';
+import { catchError } from 'rxjs/operators';
+
 
 
 @Injectable({
@@ -9,6 +11,11 @@ import { Psychologist } from 'src/app/models/index';
 export class UserService {
 
   apiURL: string = 'http://localhost:5000';
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +30,7 @@ export class UserService {
       'crp': psychologist.crp
     };
 
-    return this.http.post(this.apiURL + '/psychologist', JSON.stringify(body));
+    return this.http.post(this.apiURL + '/psychologist', JSON.stringify(body), this.httpOptions);
 
   }
 
