@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { UserService } from 'src/app/services/psychologist/psychologist.service';
 import { Psychologist } from 'src/app/models/index';
@@ -22,8 +22,12 @@ export class CreatePsychologistComponent implements OnInit {
   register() {
     this.userService.createPsychologist(this.psychologist)
     .subscribe((data: any) => data =
-      console.log(data)
+      this.registerSuccess(data)
     );
+  }
+
+  registerSuccess(data: any) {
+    console.log(data);
     this.route.navigate(['/login']);
   }
 

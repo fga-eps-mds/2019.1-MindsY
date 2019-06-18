@@ -21,7 +21,7 @@ export class UserService {
 
   public createPsychologist(psychologist: Psychologist) {
     const body = {
-      'name': psychologist.name, 
+      'name': psychologist.name,
       'email': psychologist.email,
       'number': psychologist.number,
       'telephone_type': psychologist.telephone_type,
