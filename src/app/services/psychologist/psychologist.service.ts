@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class UserService {
 
-  apiURL: string = 'http://localhost:5000';
+  apiURL: string = 'https://floating-falls-77715.herokuapp.com';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -33,7 +33,6 @@ export class UserService {
     return this.http.post(this.apiURL + '/psychologist', JSON.stringify(body), this.httpOptions);
 
   }
-
 
   public getPsychologist(crp: string) {
     return this.http.get(this.apiURL + '/psychologist/' + crp);
