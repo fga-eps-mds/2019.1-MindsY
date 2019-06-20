@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CreatePsychologistComponent } from './createPsychologist.component';
 import { UserService } from 'src/app/services';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 
 describe('CreatePsychologistComponent', () => {
@@ -11,8 +12,14 @@ describe('CreatePsychologistComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreatePsychologistComponent ],
-      imports: [ HttpClientModule, FormsModule ],
+      declarations: [
+        CreatePsychologistComponent
+      ],
+      imports: [
+        HttpClientModule, 
+        FormsModule, 
+        RouterTestingModule
+      ],
       providers: [ UserService ]
     })
     .compileComponents();

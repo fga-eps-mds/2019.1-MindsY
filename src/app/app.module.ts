@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
 
 import { AppComponent } from './app.component';
@@ -43,7 +43,8 @@ import { EditReportComponent } from './patient/report/edit-report/edit-report.co
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(ROUTES),
-    TextMaskModule
+    TextMaskModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
