@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
 import { Patient } from 'src/app/models/index';
-import { UserService } from '../psychologist/psychologist.service';
-import { Patients } from './patients-mock';
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +12,47 @@ export class PatientService {
     throw new Error("Method not implemented.");
   }
 
-  apiURL: string = 'http//0.0.0.0:5000';
+  apiURL: string = 'https://dry-eyrie-12115.herokuapp.com';
+  patients: Patient[] = [];
+  patient: Patient;
+  patientsJSON: string;
 
-  constructor(
-    private http: HttpClient,
-    private userService: UserService) { }
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
+  constructor(private http: HttpClient) { }
 
   public createPatient(patient: Patient) {
-    return this.http.post(this.apiURL + '/register', patient);
+
+    if(patient.status == null) {
+      patient.status = "andamento";
+    } 
+
+    if(patient.observation == null) {
+      patient.observation = "";
+    }
+
+    const body = {
+      'name': patient.name,
+      'email': patient.email,
+      'number': patient.number,
+      'telephone_type': patient.telephone_type,
+      'date_of_birth': patient.date_of_birth,
+      'scholarity': patient.scholarity,
+      'observation': patient.observation,
+      'manual_domain': patient.manual_domain,
+      'kinship_degree': patient.kinship_degree,
+      'registry_number_acc': patient.registry_number_acc,
+      'registry_number_pat': patient.registry_number_pat,
+      'crp': localStorage.getItem('crp'),
+      'status': patient.status
+    };
+
+    return this.http.post(this.apiURL + '/register-patient', JSON.stringify(body), this.httpOptions);
+
   }
 
   public deletePatient(patient: Patient) {}
@@ -39,8 +72,8 @@ export class PatientService {
 
   public getPatient(id: string) {}
 
-  public getAllPatients(crp: String) {
-    return this.http.get(this.apiURL + '/list-patients/' + crp);
+  public getAllPatients(crp: string) {
+    return  this.http.get(this.apiURL + '/list-patients/' + crp);
   }
 
   public getPatientInfo(idPatient: Number) {

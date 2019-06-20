@@ -33,7 +33,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     var crp = localStorage.getItem('crp'); 
     console.log(crp);
-    // this.currentUser = this.userService.getPsychologistInfo(crp);
   }
 
   ngOnDestroy() {

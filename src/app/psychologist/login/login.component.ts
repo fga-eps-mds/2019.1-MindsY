@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AuthenticationService, UserService } from 'src/app/services/index'; 
+import { AuthenticationService, AlertService } from 'src/app/services/index'; 
 import { Psychologist } from 'src/app/models';
 
 @Component({
@@ -18,12 +18,14 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+  error = 0;
 
   constructor (
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
+    private alertService: AlertService
   ) {
     /*
       redirect to home if already logged in 
@@ -71,10 +73,14 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           localStorage.setItem('crp', this.f.crp.value);
+          this.alertService.success('Login Efetuado com Sucesso!');
           this.router.navigate([this.returnUrl]);
         },
         error => {
-          // this.alertService.error(error);
+          if(error.status != '201') {
+            this.alertService.error('Algo deu errado!');
+            error = 1;
+          }
           this.loading = false;
         });
 

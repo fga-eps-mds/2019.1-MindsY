@@ -19,16 +19,6 @@
                      <!-- <button class="btn btn-primary" style="margin-left: 50px" [routerLink]="['/']">Novo Paciente</button> -->
                     <!-- </span> -->
 
-                    <div>
-                        <select name="relatorios" class="col-md-10 form-control-label">
-                           <option value="" selected disabled hidden>Vizualizar relatórios</option>
-                           <option value="valor1">Paciente 1</option> 
-                           <option value="valor2">Paciente 2</option>
-                           <option value="valor3">Paciente 3</option>
-                           
-                           </select>
-                        </div>
-
                   </div>
               </div>
               
@@ -101,7 +91,7 @@
                  <i class="fa fa-calendar pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;">Data de Nascimento: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="dt_birth" [(ngModel)]="patient.dt_birth" dt_birth="ngModel"  class="col-md-10 form-control-label" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data Nascimento"/>
+                    <input type="text" name="date_of_birth" [(ngModel)]="patient.date_of_birth" date_of_birth="ngModel"  class="col-md-10 form-control-label" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data Nascimento"/>
                  </div>
                
 

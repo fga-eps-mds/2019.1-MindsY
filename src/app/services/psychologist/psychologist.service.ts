@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Psychologist } from 'src/app/models/index';
 import { catchError } from 'rxjs/operators';
+import { Psychologist } from 'src/app/models/index';
 
 
 @Injectable({
