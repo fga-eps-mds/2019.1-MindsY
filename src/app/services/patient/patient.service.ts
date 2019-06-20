@@ -76,7 +76,7 @@ export class PatientService {
     return  this.http.get(this.apiURL + '/list-patients/' + crp);
   }
 
-  public getPatientInfo(idPatient: Number) {
+  public getPatientInfo(idPatient: string) {
     return this.http.get(this.apiURL + '/patient-information/' + idPatient);
   }
 

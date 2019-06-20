@@ -13,6 +13,7 @@ import { AuthenticationService, UserService } from 'src/app/services/index';
 export class NavbarComponent implements OnInit {
   
   currentUser: Psychologist;
+  crp = localStorage.getItem('crp');
   currentUserSubscription: Subscription;
   users: Psychologist[] = [];
 

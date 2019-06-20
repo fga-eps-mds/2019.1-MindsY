@@ -9,7 +9,12 @@
               <div class="col-lg-12 mb-5">
                  <div class="col-xl-12 col-lg-12  mb-xl-0 pt-5">
                     <!-- <h3 class="h6 text-uppercase pl-5"><img src="./../../../assets/img/user_blue.png" alt="" style="max-width: 10rem;float: right" class="img-fluid rounded-circle shadow"></h3>                    -->
-                    <h3 class="h6 text-uppercase pt-1"><span class="" style="border-bottom: 3px solid gray; font-size: 1.5rem">-- Nome do Paciente --</span></h3>
+                    <h3 class="h6 text-uppercase pt-1">
+                       <span class="" style="border-bottom: 3px solid gray; font-size: 1.5rem">
+                           <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                           {{patient.name}}
+                       </span>
+                     </h3>
                     <h3 class="h6 text-uppercase  " style="color: gray"><span>Perfil do Paciente</span></h3> 
 
                     <!-- <span style="margin-left: 55%"> -->
@@ -67,7 +72,7 @@
                  <i class="fa fa-phone pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; ">Telefone para Contato: </label><br>
                  <div class="form-group row">
-                     <input type="text" name="number" [(ngModel)]="patient.number" #number="ngModel" class="col-md-10 form-control-label" placeholder="DDD + Telefone" [textMask]="{mask: maskphone}"/>
+                     <input type="text" name="number" [(ngModel)]="patient.number" #number="ngModel" class="col-md-10 form-control-label" placeholder="DDD + Telefone"/>
                  </div>
 
 
@@ -91,7 +96,7 @@
                  <i class="fa fa-calendar pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;">Data de Nascimento: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="date_of_birth" [(ngModel)]="patient.date_of_birth" date_of_birth="ngModel"  class="col-md-10 form-control-label" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data Nascimento"/>
+                    <input type="text" name="date_of_birth" [(ngModel)]="patient.date_of_birth" date_of_birth="ngModel"  class="col-md-10 form-control-label" placeholder="Data/de/Nascimento"/>
                  </div>
                
 
@@ -109,13 +114,13 @@
                  <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; ">CPF Paciente: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="registry_number_pat" [(ngModel)]="patient.registry_number_pat" #registry_number_pat="ngModel" class="col-md-10 form-control-label" placeholder="___.___.___-__" [textMask]="{mask: maskcpf}"/>
+                    <input type="text" name="registry_number_pat" [(ngModel)]="patient.registry_number_pat" #registry_number_pat="ngModel" class="col-md-10 form-control-label" placeholder="___.___.___-__"/>
                  </div>
 
                  <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; ">CPF Responsável: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="registry_number_acc" [(ngModel)]="patient.registry_number_acc" #registry_number_acc="ngModel" class="col-md-10 form-control-label" placeholder="___.___.___-__" [textMask]="{mask: maskcpf}"/>
+                    <input type="text" name="registry_number_acc" [(ngModel)]="patient.registry_number_acc" #registry_number_acc="ngModel" class="col-md-10 form-control-label" placeholder="___.___.___-__"/>
                  </div>
             
                  <i class="fa fa-universal-access pr-2" aria-hidden="true"></i>

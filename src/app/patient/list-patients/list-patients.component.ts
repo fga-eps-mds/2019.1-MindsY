@@ -12,9 +12,10 @@ import { Patient } from 'src/app/models';
 export class ListPatientsComponent implements OnInit {
 
   patients: Patient[] = [];
+  crp = new String ;
   columns: string[];
   cpf: string[];
-  crp = new String ;
+  id_patient: string[];
 
   constructor(
     private patientService: PatientService ) { }
@@ -22,8 +23,10 @@ export class ListPatientsComponent implements OnInit {
   ngOnInit() {
 
    this.loadAllPatients();
-   this.columns = ['name', 'registry_number'];
-   this.cpf = ['status'];
+   this.columns = ['name', 'registry_number', 'status'];
+   this.cpf = ['id_patient'];
+   this.id_patient = ['id_patient'];
+   
   }
 
   private loadAllPatients() {

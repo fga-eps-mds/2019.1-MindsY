@@ -6,6 +6,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
 import { RouterTestingModule } from '@angular/router/testing';
+import { LoadComponent } from '../load/load.component';
 
 describe('EditPacientComponent', () => {
   let component: EditPacientComponent;
@@ -16,7 +17,8 @@ describe('EditPacientComponent', () => {
       declarations: [ EditPacientComponent ],
       imports: [HttpClientModule, FormsModule, TextMaskModule, RouterTestingModule],
       providers: [
-        PatientService
+        PatientService,
+        LoadComponent
       ]
     })
     .compileComponents();

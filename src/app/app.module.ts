@@ -20,6 +20,7 @@ import { ListPatientsComponent } from './patient/list-patients/list-patients.com
 import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
 import { CreateReportComponent } from './patient/report/create-report/create-report.component';
 import { EditReportComponent } from './patient/report/edit-report/edit-report.component';
+import { LoadComponent } from './patient/load/load.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { EditReportComponent } from './patient/report/edit-report/edit-report.co
     ListPatientsComponent,
     CreateReportComponent,
     EditReportComponent,
+    LoadComponent,
   ],
   exports: [],
   imports: [

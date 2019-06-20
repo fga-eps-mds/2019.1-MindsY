@@ -25,6 +25,7 @@
 
                      <thead style="background-color: #379392">
                            <tr>
+                              <th scope="col">ID</th>
                               <th scope="col">NOME COMPLETO</th>
                               <th scope="col">CPF</th>
                               <th scope="col">STATUS</th>
@@ -32,12 +33,14 @@
                     </thead>
                     <tbody>
                       <tr *ngFor="let patient of patients">
-                         <td *ngFor="let col of columns" scope="row">
-                            {{patient[col]}}
-                         </td>
-                         <td *ngFor="let registry of cpf" scope="row">
-                            <a class="cap" [routerLink]="['/edit-patient/1']">{{patient[registry]}}</a>
-                         </td>
+                        <td *ngFor="let registry of cpf" scope="row">
+                              <a class="cap" [routerLink]="['/load-patient', patient.id_patient]">{{patient[registry]}}</a>
+                        </td> 
+                        <td *ngFor="let col of columns" scope="row">
+                            <div class="cap">
+                                 {{patient[col]}}
+                            </div>
+                         </td> 
                       </tr>
                     </tbody>
 
