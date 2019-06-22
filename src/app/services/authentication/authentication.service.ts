@@ -10,7 +10,7 @@ import { Psychologist } from 'src/app/models/index';
 })
 export class AuthenticationService {
 
-  private apiURL = "https://evening-inlet-25420.herokuapp.com";
+  private apiURL = "https://mindsy-api-gateway.herokuapp.com/api/authentication";
   // private apiURL = "0.0.0.0:5000";
 
   private currentUserSubject: BehaviorSubject<Psychologist>;
@@ -26,24 +26,7 @@ export class AuthenticationService {
   }
 
   login(crp: string, password: string) {
-    return this.http.post<any>(this.apiURL + `/login`, { crp, password })
-      .pipe(map(user => {
-        /*
-        login successful if there's a jwt token in the response
-        */
-
-        if (user && user.token) {
-          /*
-          store user details and jwt token in local storage to keep user logged in between page refreshes
-          */
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          this.currentUserSubject.next(user);
-          
-        }
-
-        return user;
-
-      }));
+    return this.http.post<any>(this.apiURL.concat('/login'), { crp, password });
   }
 
   logout() {

@@ -73,6 +73,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           localStorage.setItem('crp', this.f.crp.value);
+          localStorage.setItem('token', data['access_token']);
           this.alertService.success('Login Efetuado com Sucesso!');
           this.router.navigate([this.returnUrl]);
         },
