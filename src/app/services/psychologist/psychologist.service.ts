@@ -9,9 +9,9 @@ import { Psychologist } from 'src/app/models/index';
 })
 export class UserService {
 
-  apiURL: string = 'https://floating-falls-77715.herokuapp.com';
+  apiURL: string = 'https://mindsy-api-gateway.herokuapp.com/api/psychologists';
   psychologist: Psychologist;
-  psycho: string; 
+  psycho: string;
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -23,16 +23,16 @@ export class UserService {
 
   public createPsychologist(psychologist: Psychologist) {
     const body = {
-      'name': psychologist.name, 
+      'name': psychologist.name,
       'email': psychologist.email,
-      'number': psychologist.number,
-      'telephone_type': psychologist.telephone_type,
+      'phoneNumber': psychologist.number,
+      'phoneType': psychologist.telephone_type,
       'password': psychologist.password,
-      'date_of_birth': psychologist.date_of_birth,
+      'birthDate': psychologist.date_of_birth,
       'crp': psychologist.crp
     };
 
-    return this.http.post(this.apiURL + '/psychologist', JSON.stringify(body), this.httpOptions);
+    return this.http.post(this.apiURL, JSON.stringify(body), this.httpOptions);
 
   }
 

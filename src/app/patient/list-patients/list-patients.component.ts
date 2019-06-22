@@ -11,7 +11,7 @@ import { Patient } from 'src/app/models';
 
 export class ListPatientsComponent implements OnInit {
 
-  patients: Patient[] = [];
+  patients: any = [];
   crp = new String ;
   columns: string[];
   cpf: string[];
@@ -23,19 +23,20 @@ export class ListPatientsComponent implements OnInit {
   ngOnInit() {
 
    this.loadAllPatients();
-   this.columns = ['name', 'registry_number', 'status'];
-   this.cpf = ['id_patient'];
-   this.id_patient = ['id_patient'];
-   
+   this.columns = ['name', 'registryNumberPat', 'status'];
+   this.cpf = ['idPatient'];
+   this.id_patient = ['idPatient'];
+
   }
 
   private loadAllPatients() {
     this.patientService.getAllPatients(localStorage.getItem('crp'))
     .subscribe(
       (res) => {
-        this.patients = res["Patient's Psychologists"];
+        this.patients = res;
+        console.log(res);
         console.log(this.patients);
       });
-  } 
+  }
 
 }

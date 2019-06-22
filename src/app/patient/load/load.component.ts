@@ -28,7 +28,7 @@ export class LoadComponent implements OnInit {
 
   async reload() {
     await this.delay(2000);
-    this.newURL = '/edit-patient/' + this.id; 
+    this.newURL = '/edit-patient/' + this.id;
     this.router.navigate([this.newURL]);
   }
 
@@ -37,7 +37,7 @@ export class LoadComponent implements OnInit {
     .subscribe(
       result => {
         localStorage.setItem('actualPatient', JSON.stringify(result));
-        console.log(result)
+        console.log(result);
       });
   }
 
