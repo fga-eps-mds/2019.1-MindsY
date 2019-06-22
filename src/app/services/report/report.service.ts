@@ -4,9 +4,7 @@ import { HttpClient, HttpHeaders, HttpRequest, HttpErrorResponse} from '@angular
 import { NgForm } from '@angular/forms';
 
 
-const httpOptions = {
-  headersVar: new HttpHeaders({'Content-Type': 'application/json'})
-};
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,25 +27,24 @@ export class ReportService {
     return this.http.get(href);
   }
 
-  createReport(report: Report) {
+  public createReport() {
 
     const body = {
-    //   'name': report.name,
-    //   'email': report.email,
-    //   'number': report.number,
-    //   'telephone_type': report.telephone_type,
-    //   'date_of_birth': report.date_of_birth,
-    //   'scholarity': report.scholarity,
-    //   'observation': report.observation,
-    //   'manual_domain': report.manual_domain,
-    //   'kinship_degree': report.kinship_degree,
-    //   'registry_number_acc': report.registry_number_acc,
-    //   'registry_number_pat': report.registry_number_pat,
-    //   'crp': localStorage.getItem('crp'),
-    //   'status': report.status
+        'conclusion': "sou uma conclusão",
+        'anamnese': " wfwfsfsfs",
+        'dt_start': "2019-08-22",
+        'dt_end': "2019-09-22",
+        'crp': "0459054",
+        'id_patient': "5"
+          // 'conclusion': report.conclusion,
+          // 'anamnese': report.anamnese,
+          // 'dt_start': report.dt_start,
+          // 'dt_end': report.dt_end,
+          // 'crp': report.crp,
+          // 'id_patient': report.id_evaluation
     };
 
-    return this.http.post(this.apiURL + '/evaluation/', JSON.stringify(body), this.httpOptions);
+    return this.http.post(this.apiURL + '/evaluation', JSON.stringify(body), this.httpOptions);
   }
 
   // public createPatient(patient: Patient) {

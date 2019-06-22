@@ -20,7 +20,10 @@
                     <!-- <span style="margin-left: 55%"> -->
                      <button class="btn btn-success" style="margin-top: 25px">Novo Teste 
                         <i class="fa fa-user-md pl-1" aria-hidden="true"></i> 
-                     </button> 
+                     </button>
+                     <button [routerLink]="['/create-report/' + id]" class="btn btn-success" style="margin-top: 25px">Novo Avaliação 
+                        <i class="fa fa-user-md pl-1" aria-hidden="true"></i> 
+                     </button>  
                      <!-- <button class="btn btn-primary" style="margin-left: 50px" [routerLink]="['/']">Novo Paciente</button> -->
                     <!-- </span> -->
 
@@ -32,7 +35,7 @@
               <form class="form-horizontal">
 
                <div class="col-md-6" style="float: right; margin-right: 100px; margin-top: 2.5%">
-                        <iframe src="./../../../assets/PDFslides_fluxoSang.pdf" width="115%" height="705px" class="centerImg padB40"></iframe>
+                        <iframe src="./../../../assets/ModeloLaudoAdolescente.pdf" width="115%" height="705px" class="centerImg padB40"></iframe>
                </div>
 
                  <i class="fa fa-user pr-2" aria-hidden="true"></i>

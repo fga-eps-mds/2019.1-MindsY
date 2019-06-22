@@ -2,7 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { ReportService } from '../../../services/report/report.service';
+import { PatientService } from '../../../services/patient/patient.service';
 import { Report } from '../../../models/index';
+import { Patient } from '../../../models/index';
 
 import { HttpClient, HttpHeaders, HttpRequest, HttpErrorResponse} from '@angular/common/http';
 import {first} from "rxjs/operators";
@@ -15,16 +17,19 @@ declare var $: any;
   selector: 'app-edit-report',
   templateUrl: './edit-report.component.html',
   styleUrls: ['./edit-report.component.scss'],
-  providers: [ReportService],
+  providers: [ReportService, PatientService],
 })
 export class EditReportComponent implements OnInit {
 
   @ViewChild('formReport') formReport: NgForm;
   report: Report;
+  patient: Patient;
   http: any;
+  crp: string;
 
   constructor(
     private reportService: ReportService,
+    private patientService: PatientService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -33,11 +38,18 @@ export class EditReportComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.report = new Report();
-
+    var crp = localStorage.getItem('crp');
+    
     this.reportService.getReportInfo(this.route.snapshot.paramMap.get('id')) 
-    .subscribe((data: any) => data =
-      this.report = data
-    );    
+    .subscribe((data: any) => {
+      data =
+      this.report = data;
+      this.patientService.getPatientInfo(this.route.snapshot.paramMap.get('id_patient'))
+      .subscribe((res: any) => {
+        res.birthDate = res.birthDate.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3");
+        this.patient = res;
+      });
+    });    
 
     //window.print();
 
@@ -46,7 +58,9 @@ export class EditReportComponent implements OnInit {
   }
 
 
-
+  testando() {
+    console.log(this.report);
+  }
 
   initSubmit(){
       if($(".check-icon").show()){
