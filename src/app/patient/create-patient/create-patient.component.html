@@ -69,9 +69,9 @@
                  <div class="form-group row">
                     <select name="telephone_type" [(ngModel)]="patient.telephone_type" #telephone_type="ngModel" class="col-md-8 form-control-label">
                      <option value="" selected disabled hidden>Tipo de Telefone</option>
-                     <option value="pessoal">Pessoal</option>
-                     <option value="residencial">Residencial</option>
-                     <option value="comercial">Comercial</option>
+                     <option value="PERSONAL">Pessoal</option>
+                     <option value="RESIDENTIAL">Residencial</option>
+                     <option value="COMMERCIAL">Comercial</option>
                     </select>
                  </div>
 
@@ -104,8 +104,8 @@
                  <label class="col-md- form-control-label" style="color: black;">Domínio Manual: </label><br>
                  <div class="form-group row">
                     <select name="manual_domain" [(ngModel)]="patient.manual_domain" #manual_domain="ngModel" class="col-md-8 form-control-label">
-                     <option value="destro">Mão Direita</option>
-                     <option value="canhoto">Mão Esquerda</option>
+                     <option value="DESTRO">Mão Direita</option>
+                     <option value="CANHOTO">Mão Esquerda</option>
                     </select>
 
                  </div>
@@ -143,9 +143,9 @@
                  <div class="form-group row">
                     <select name="status" [(ngModel)]="patient.status" #status="ngModel" class="col-md-8 form-control-label">
                      <option value="" selected hidden>Status do Atendimento</option>
-                     <option value="aguardando">Aguardando</option>
-                     <option value="andamento">Em Andamento</option>
-                     <option value="finalizado">Finalizado</option>
+                     <option value="WAITING">Aguardando</option>
+                     <option value="IN_PROGRESS">Em Andamento</option>
+                     <option value="FINALIZED">Finalizado</option>
                     </select>
                  </div>
                 
