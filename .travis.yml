@@ -23,7 +23,7 @@ matrix:
        - ng build --prod
 
       after_script:
-       - ng test --watch=false --code-coverage
+      #  - ng test --watch=false --code-coverage
 
     - language: java
       addons:
