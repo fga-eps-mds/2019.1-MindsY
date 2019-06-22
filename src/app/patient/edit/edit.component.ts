@@ -15,7 +15,7 @@ export class EditPacientComponent implements OnInit {
   reload = true;
   patient: Patient = new Patient;
   constructor (
-    private patientService: PatientService, 
+    private patientService: PatientService,
     private route: ActivatedRoute
   ) { }
 
@@ -23,7 +23,7 @@ export class EditPacientComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.setAndFormat(); 
+    this.setAndFormat();
 
   }
 
@@ -44,19 +44,19 @@ export class EditPacientComponent implements OnInit {
 
     this.patient.name = patient["name"];
     this.patient.email = patient["email"];
-    this.patient.kinship_degree = patient["kinship_degree"];
-    this.patient.number = patient["telephone"][0]["number"];
+    this.patient.kinship_degree = patient["kinshipDegree"];
+    this.patient.number = patient["phone"][0]["phoneNumber"];
     this.patient.scholarity = patient["scholarity"];
     this.patient.observation = patient["observation"];
 
-    if(patient["manual_domain"] == "canhoto") {
+    if(patient["manualDomain"] == "canhoto") {
       this.patient.manual_domain = "Mão Esquerda";
     } else {
       this.patient.manual_domain = "Mão Direita";
     }
 
-    this.patient.registry_number_pat = patient["registry_number"];
-    this.patient.registry_number_acc = patient["registry_number"];
+    this.patient.registry_number_pat = patient["registryNumberAcc"];
+    this.patient.registry_number_acc = patient["registryNumberPat"];
     
   }
 
@@ -64,7 +64,7 @@ export class EditPacientComponent implements OnInit {
     var patientJson = localStorage.getItem('actualPatient');
     var patient = JSON.parse(patientJson);
 
-    var birthday = patient["date of birth"];
+    var birthday = patient["birthDate"];
     var date = new Date(birthday.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3"))
 
     this.patient.date_of_birth = date.toLocaleDateString();

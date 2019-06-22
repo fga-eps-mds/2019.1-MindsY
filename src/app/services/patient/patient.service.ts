@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-
 import { Patient } from 'src/app/models/index';
 
 @Injectable({
@@ -12,14 +10,16 @@ export class PatientService {
     throw new Error("Method not implemented.");
   }
 
-  apiURL: string = 'https://dry-eyrie-12115.herokuapp.com';
+  apiURL: string = 'https://mindsy-api-gateway.herokuapp.com/api/patients';
   patients: Patient[] = [];
   patient: Patient;
   patientsJSON: string;
 
   private httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': localStorage.getItem('token'),
+      'crp': localStorage.getItem('crp')
     })
   };
 
@@ -73,11 +73,11 @@ export class PatientService {
   public getPatient(id: string) {}
 
   public getAllPatients(crp: string) {
-    return  this.http.get(this.apiURL + '/list-patients/' + crp);
+    return this.http.get(this.apiURL + '/psychologist/' + crp, this.httpOptions);
   }
 
   public getPatientInfo(idPatient: string) {
-    return this.http.get(this.apiURL + '/patient-information/' + idPatient);
+    return this.http.get(this.apiURL + '/' + idPatient, this.httpOptions);
   }
 
 }

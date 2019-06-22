@@ -34,7 +34,7 @@
                     <tbody>
                       <tr *ngFor="let patient of patients">
                         <td *ngFor="let registry of cpf" scope="row">
-                              <a class="cap" [routerLink]="['/load-patient', patient.id_patient]">{{patient[registry]}}</a>
+                              <a class="cap" [routerLink]="['/load-patient', patient.idPatient]">{{patient[registry]}}</a>
                         </td> 
                         <td *ngFor="let col of columns" scope="row">
                             <div class="cap">
