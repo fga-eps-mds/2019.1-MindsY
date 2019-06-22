@@ -1,15 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { first } from 'rxjs/operators';
+
 import Chart from 'chart.js';
 import * as $ from 'jquery';
+
+import { Psychologist } from 'src/app/models';
+import { UserService, AuthenticationService } from 'src/app/services/index';
+
 @Component({
   selector: 'app-section-home',
   templateUrl: './section-home.component.html',
   styleUrls: ['./section-home.component.css']
 })
 export class SectionHomeComponent implements OnInit {
-  title = 'mindsy';
 
-  constructor() { }
+  title = 'mindsy';
+  currentUser: Psychologist;
+  currentUserSubscription: Subscription;
+  users: Psychologist[] = [];
+
+  constructor(
+    private authenticationService: AuthenticationService
+  ) { 
+      this.currentUserSubscription = this.authenticationService.currentUser
+        .subscribe(user => {
+          this.currentUser = user;
+        });
+  }
 
   ngOnInit() {
 
@@ -129,4 +147,12 @@ export class SectionHomeComponent implements OnInit {
       });
 
     }
+
+  ngOnDestroy() {
+      /*
+        unsubscribe to ensure no memory leaks
+      */ 
+      this.currentUserSubscription.unsubscribe();
+  }
+
   }

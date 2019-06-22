@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SectionHomeComponent } from './section-home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('SectionHomeComponent', () => {
   let component: SectionHomeComponent;
@@ -8,7 +9,10 @@ describe('SectionHomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SectionHomeComponent ]
+      declarations: [ SectionHomeComponent ],
+      imports: [
+        HttpClientModule
+      ]
     })
     .compileComponents();
   }));

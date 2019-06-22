@@ -24,7 +24,6 @@ export class ReportService {
   public getReport(id: number){
     const href = this.apiURL + '/evaluation/' + id;
     return this.http.get(href);
-    // .toPromise().then(res = );
   }
 
 

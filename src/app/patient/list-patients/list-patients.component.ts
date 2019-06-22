@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { PatientService, UserService } from 'src/app/services/index';
+import { FormsModule } from '@angular/forms';
 import { Patient } from 'src/app/models';
 
 @Component({
@@ -11,35 +12,30 @@ import { Patient } from 'src/app/models';
 export class ListPatientsComponent implements OnInit {
 
   patients: Patient[] = [];
-  columns: string[];
   crp = new String ;
+  columns: string[];
+  cpf: string[];
+  id_patient: string[];
 
   constructor(
-    private patientService: PatientService,
-    private userService: UserService, 
-    private chRef: ChangeDetectorRef) { }
-
-  template:`
-    ASsafsdf
-    asfdasdf
-    asdfa
-    sdfas
-    fasf
-  `
+    private patientService: PatientService ) { }
 
   ngOnInit() {
 
-    this.patientService.getAllPatients(localStorage.getItem('crp'))
-    .subscribe(
-      patients => {
-        this.patients.pop();
-      } 
-    );
-
-    this.columns = ['name', 'registry_number_pat', 'number'];
-
+   this.loadAllPatients();
+   this.columns = ['name', 'registry_number', 'status'];
+   this.cpf = ['id_patient'];
+   this.id_patient = ['id_patient'];
+   
   }
 
-
+  private loadAllPatients() {
+    this.patientService.getAllPatients(localStorage.getItem('crp'))
+    .subscribe(
+      (res) => {
+        this.patients = res["Patient's Psychologists"];
+        console.log(this.patients);
+      });
+  } 
 
 }
