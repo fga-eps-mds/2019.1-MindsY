@@ -22,5 +22,5 @@ import { LoadComponent } from './patient/load/load.component';
     { path: 'list-patients', component: ListPatientsComponent},
     { path: 'create-patient', component: CreatePatientComponent},
     { path: 'create-report', component: CreateReportComponent},
-    { path: 'edit-report', component: EditReportComponent},
+    { path: 'edit-report/:id', component: EditReportComponent},
     { path: 'login', component: LoginComponent} ];

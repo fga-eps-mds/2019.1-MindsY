@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Report } from 'src/app/models/index';
+import { ReportService } from 'src/app/services';
+
+import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -10,19 +14,23 @@ export class CreateReportComponent implements OnInit {
 
   name: string;
 
-  constructor() { }
-
+  constructor(
+    private reportService: ReportService,
+    private router: Router
+    ) { }
+  public report: Report = new Report;
+  
   ngOnInit() {
-    this.name = 'Paciente';
-    //var HTMLstring = '<div><p style="text-align:center"><b>Hello, world</b></p><p>Meu nome é: '+ this.name +'</p></div>';
-//Essa linha de baixo quebra alguns testes
-    // $('#summernote').summernote({
-    //   height: 2500
+  }
 
-    // });
+  register() {
 
-    
-   // window.print();
+    this.reportService.createReport(this.report)
+    .subscribe(
+      (data: any) => 
+        data = 
+        console.log(this.report));
+        this.router.navigate(['/']);
   }
 
 

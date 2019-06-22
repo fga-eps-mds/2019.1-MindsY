@@ -6,7 +6,7 @@ import { Report } from '../../../models/index';
 
 import { HttpClient, HttpHeaders, HttpRequest, HttpErrorResponse} from '@angular/common/http';
 import {first} from "rxjs/operators";
-import { Router,NavigationEnd } from '@angular/router';
+import { ActivatedRoute,Router,NavigationEnd } from '@angular/router';
 import { load } from '@angular/core/src/render3';
 
 declare var $: any;
@@ -25,13 +25,16 @@ export class EditReportComponent implements OnInit {
 
   constructor(
     private reportService: ReportService,
+    private route: ActivatedRoute,
     private router: Router
   ) { }
+  id: string;
 
-  ngOnInit() {    
+  ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
     this.report = new Report();
 
-    this.reportService.getReport(1) 
+    this.reportService.getReportInfo(this.route.snapshot.paramMap.get('id')) 
     .subscribe((data: any) => data =
       this.report = data
     );    
@@ -41,6 +44,8 @@ export class EditReportComponent implements OnInit {
    // $('#summernote').summernote();    
     $(".check-icon").hide();
   }
+
+
 
 
   initSubmit(){
@@ -90,18 +95,18 @@ export class EditReportComponent implements OnInit {
   }
 
   onSubmit(f: NgForm){
-    
-   this.load();
-   return this.reportService.updateReport(f)
+   $(this).addClass('out');
+   $('body').removeClass('modal-active');
+   console.log(this.id);
+   return this.reportService.editReport(f, this.id)
    .add(
-     (data: any) => data =
-     console.log(data)
-   );
+     (data: any) => {data =
+     console.log(data);
+      this.load();
+     });
   }
 
   load() {
     location.reload()
   }
-
-
 }
