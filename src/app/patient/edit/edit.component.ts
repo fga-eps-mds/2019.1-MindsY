@@ -39,12 +39,16 @@ export class EditPacientComponent implements OnInit {
     localStorage.removeItem('reports');
   }
 
+  teste(){
+    console.log(this.reports);
+  }
+
   private loadAllReports() {
     this.reportService.getReportsPatient(localStorage.getItem('crp'), this.route.snapshot.paramMap.get('id'))
     .subscribe(
       (res) => {
         this.reports = res;
-        console.log(res);
+        console.log(JSON.stringify(res));
         localStorage.setItem('reports', JSON.stringify(res));
         this.setReportInfo();
         this.reportIds = JSON.parse(localStorage.getItem('reports'));

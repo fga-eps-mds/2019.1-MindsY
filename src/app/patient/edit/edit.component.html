@@ -21,7 +21,7 @@
                      <button class="btn btn-success" style="margin-top: 25px">Novo Teste 
                         <i class="fa fa-user-md pl-1" aria-hidden="true"></i> 
                      </button>
-                     <button [routerLink]="['/create-report/' + id]" class="btn btn-success" style="margin-top: 25px">Novo Avaliação 
+                     <button [routerLink]="['/create-report/' + id]" class="btn btn-success ml-2" style="margin-top: 25px">Novo Avaliação 
                         <i class="fa fa-user-md pl-1" aria-hidden="true"></i> 
                      </button>  
                      <!-- <button class="btn btn-primary" style="margin-left: 50px" [routerLink]="['/']">Novo Paciente</button> -->
@@ -35,31 +35,22 @@
               <form class="form-horizontal">
 
                <div class="col-md-6" style="float: right; margin-right: 100px; margin-top: 2.5%">
-                     <!-- <div class="col-xl-12 col-lg-12 ">
-                           <table class="display" style="width:100%">
-            
-                                 <thead style="background-color: #379392">
-                                       <tr>
-                                          <th scope="col">ID</th>
-                                          <th scope="col">anamnese</th>
-                                       </tr>
-                                </thead>
-                                <tbody>
-                                  <tr *ngFor="let report of reports">
-                                    <td  scope="row">
-                                          <a class="cap" [routerLink]="['/edit-report', report.id_evaluation]">{{ reportIds[evaluations][0][id_evaluation] }}</a>
-                                    </td> 
-                                    <td *ngFor="let col of columns" scope="row">
-                                        <div class="cap">
-                                             {{report[col]}}
-                                        </div>
-                                     </td> 
-                                  </tr>
-                                </tbody>
-            
-                           </table>
-            
-                        </div> -->
+                        <div class="col-xl-12 col-lg-12 " style="border-left: 1px solid black;border-top: 1px solid black;">
+                           <h5>
+                              <strong>Escolha uma Avaliação para edição/visualização:</strong>
+                           </h5>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 ">
+                           <select class="form-group" style=" width:60%">
+                                 <option value="default">
+                                       Selecione...
+                                 </option>
+                                 <option [routerLink]="['/edit-report', report.id_evaluation, id]" *ngFor="let report of reports['evaluations']; let i = index">
+                                       Avaliação {{ i + 1}}
+                                 </option>
+                           </select>
+                        </div>
+                        
                         <iframe src="./../../../assets/ModeloLaudoAdolescente.pdf" width="115%" height="705px" class="centerImg padB40"></iframe>
                </div>
 
