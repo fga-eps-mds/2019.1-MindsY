@@ -23,7 +23,7 @@ export class EditReportComponent implements OnInit {
 
   @ViewChild('formReport') formReport: NgForm;
   report: Report;
-  patient: Patient;
+  patient: any;
   http: any;
   crp: string;
 
@@ -44,6 +44,7 @@ export class EditReportComponent implements OnInit {
     .subscribe((data: any) => {
       data =
       this.report = data;
+      console.log(JSON.stringify(this.report));
       this.patientService.getPatientInfo(this.route.snapshot.paramMap.get('id_patient'))
       .subscribe((res: any) => {
         res.birthDate = res.birthDate.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3");

@@ -35,6 +35,31 @@
               <form class="form-horizontal">
 
                <div class="col-md-6" style="float: right; margin-right: 100px; margin-top: 2.5%">
+                     <!-- <div class="col-xl-12 col-lg-12 ">
+                           <table class="display" style="width:100%">
+            
+                                 <thead style="background-color: #379392">
+                                       <tr>
+                                          <th scope="col">ID</th>
+                                          <th scope="col">anamnese</th>
+                                       </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let report of reports">
+                                    <td  scope="row">
+                                          <a class="cap" [routerLink]="['/edit-report', report.id_evaluation]">{{ reportIds[evaluations][0][id_evaluation] }}</a>
+                                    </td> 
+                                    <td *ngFor="let col of columns" scope="row">
+                                        <div class="cap">
+                                             {{report[col]}}
+                                        </div>
+                                     </td> 
+                                  </tr>
+                                </tbody>
+            
+                           </table>
+            
+                        </div> -->
                         <iframe src="./../../../assets/ModeloLaudoAdolescente.pdf" width="115%" height="705px" class="centerImg padB40"></iframe>
                </div>
 

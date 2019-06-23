@@ -3,6 +3,8 @@ import { Report, Patient } from 'src/app/models/index';
 import { ReportService } from 'src/app/services';
 import { PatientService } from 'src/app/services';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { DatePipe } from  '@angular/common';
+
 declare var $: any;
 
 @Component({
@@ -20,11 +22,15 @@ export class CreateReportComponent implements OnInit {
     private patientService: PatientService,
     private router: Router,
     private route: ActivatedRoute
-    ) { }
+    ) { 
+    }
   public report: Report = new Report;
-  patient: Patient;
+  patient: any;
   crp = localStorage.getItem('crp');
 
+  pipe = new DatePipe('en-US');
+  today = Date.now();
+  
   ngOnInit() 
   {
     var crp = localStorage.getItem('crp');
@@ -37,11 +43,12 @@ export class CreateReportComponent implements OnInit {
   }
 
   register() {
-    this.reportService.createReport()
+    
+    this.reportService.createReport(this.report, this.id, this.crp)
     .subscribe(
       (data: any) => 
         data = 
-        console.log(this.report));
+        console.log(data));
     this.router.navigate(['/load-patient/' + this.id]);
   }
 

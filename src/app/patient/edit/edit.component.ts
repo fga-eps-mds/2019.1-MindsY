@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 import { PatientService } from 'src/app/services/index';
+import { ReportService } from 'src/app/services/index';
 import { Patient } from 'src/app/models/index';
 
 
@@ -16,20 +17,48 @@ export class EditPacientComponent implements OnInit {
   patient: Patient = new Patient;
   constructor (
     private patientService: PatientService,
+    private reportService: ReportService,
     private route: ActivatedRoute
   ) { }
-
+  
+  reports: any = [];
   id: string;
+  columns: string[];
+  reportIds: any = [];
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.setAndFormat();
+    this.loadAllReports();
+    
 
   }
 
   ngOnDestroy() {
     localStorage.removeItem('actualPatient');
+    localStorage.removeItem('reports');
   }
+
+  private loadAllReports() {
+    this.reportService.getReportsPatient(localStorage.getItem('crp'), this.route.snapshot.paramMap.get('id'))
+    .subscribe(
+      (res) => {
+        this.reports = res;
+        console.log(res);
+        localStorage.setItem('reports', JSON.stringify(res));
+        this.setReportInfo();
+        this.reportIds = JSON.parse(localStorage.getItem('reports'));
+      });
+  }
+
+  private setReportInfo()
+  {
+    var reportJson = localStorage.getItem('reports');
+    var reports = JSON.parse(reportJson);
+    console.log(reportJson);
+  }
+
+  
 
   edit() {
     this.patientService.editPatient(this.patient)

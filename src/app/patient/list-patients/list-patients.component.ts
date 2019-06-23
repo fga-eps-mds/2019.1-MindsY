@@ -1,7 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { PatientService, UserService } from 'src/app/services/index';
-import { FormsModule } from '@angular/forms';
-import { Patient } from 'src/app/models';
 
 @Component({
   selector: 'app-list-patients',
@@ -35,7 +33,6 @@ export class ListPatientsComponent implements OnInit {
       (res) => {
         this.patients = res;
         console.log(res);
-        console.log(this.patients);
       });
   }
 
