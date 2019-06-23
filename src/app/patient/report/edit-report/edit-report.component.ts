@@ -34,12 +34,14 @@ export class EditReportComponent implements OnInit {
     private router: Router
   ) { }
   id: string;
+  id_patient: string;
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.report = new Report();
-    var crp = localStorage.getItem('crp');
-    
+    this.crp = localStorage.getItem('crp');
+    this.id_patient = this.route.snapshot.paramMap.get('id_patient');
+
     this.reportService.getReportInfo(this.route.snapshot.paramMap.get('id')) 
     .subscribe((data: any) => {
       data =
