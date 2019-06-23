@@ -25,42 +25,26 @@
 
                      <thead style="background-color: #379392">
                            <tr>
+                              <th scope="col">ID</th>
                               <th scope="col">NOME COMPLETO</th>
                               <th scope="col">CPF</th>
-                              <th scope="col">TELEFONE</th>
+                              <th scope="col">STATUS</th>
                            </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let patient of patients">
-                         <td *ngFor="let col of columns" scope="row" >
-                            {{patient[col]}}
-                         </td>
+                        <td *ngFor="let registry of cpf" scope="row">
+                              <a class="cap" [routerLink]="['/load-patient', patient.idPatient]">{{patient[registry]}}</a>
+                        </td> 
+                        <td *ngFor="let col of columns" scope="row">
+                            <div class="cap">
+                                 {{patient[col]}}
+                            </div>
+                         </td> 
                       </tr>
                     </tbody>
 
                </table>
-
-               <!--<table #dataTable class="display" style="width:100%">
-                     <thead>
-                         <tr>
-                             <th>Name</th>
-                             <th>Position</th>
-                             <th>Office</th>
-                             <th>Age</th>
-                             <th>Start date</th>
-                             <th>Salary</th>
-                         </tr>
-                     </thead>
-                     <tbody>
-
-                       <tr *ngFor="let patient of patients">
-                          <td *ngFor="let col of columns" scope="row" >
-                             {{patient[col]}}
-                          </td>
-                       </tr>
-
-                     </tbody>
-                 </table> -->
 
             </div>
          </div>

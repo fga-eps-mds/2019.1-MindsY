@@ -10,13 +10,17 @@
   import { CreateReportComponent } from './patient/report/create-report/create-report.component';
   import { EditReportComponent } from './patient/report/edit-report/edit-report.component';
 
+  import { LoginComponent } from './psychologist/login/login.component';
+import { LoadComponent } from './patient/load/load.component';
 
   export const ROUTES: Routes = [
     { path: '', component: SectionHomeComponent },
     { path: 'profileview',      component: SectionProfileComponent},
     { path: 'create-psychologist', component: CreatePsychologistComponent},
     { path: 'edit-patient/:id', component: EditPacientComponent},
+    { path: 'load-patient/:id', component: LoadComponent},
     { path: 'list-patients', component: ListPatientsComponent},
     { path: 'create-patient', component: CreatePatientComponent},
-    { path: 'create-report', component: CreateReportComponent},
-    { path: 'edit-report', component: EditReportComponent} ];
+    { path: 'create-report/:id', component: CreateReportComponent},
+    { path: 'edit-report/:id/:id_patient', component: EditReportComponent},
+    { path: 'login', component: LoginComponent} ];

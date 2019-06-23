@@ -1,9 +1,5 @@
-import { Component, OnInit, ElementRef, HostListener, AfterViewInit, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { PatientService } from 'src/app/services/index';
-import { Patient } from 'src/app/models';
-
-import * as $ from 'jquery';
-//import 'datatables.net'
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { PatientService, UserService } from 'src/app/services/index';
 
 @Component({
   selector: 'app-list-patients',
@@ -13,32 +9,31 @@ import * as $ from 'jquery';
 
 export class ListPatientsComponent implements OnInit {
 
-  patients: Patient[];
+  patients: any = [];
+  crp = new String ;
   columns: string[];
+  cpf: string[];
+  id_patient: string[];
 
-  //@ViewChild('dataTable') table;
-  //dataTable: any;
-
-  constructor(private patientService: PatientService, private chRef: ChangeDetectorRef) { }
-
-  template:`
-    ASsafsdf
-    asfdasdf
-    asdfa
-    sdfas
-    fasf
-  `
+  constructor(
+    private patientService: PatientService ) { }
 
   ngOnInit() {
 
-    //TODO: Pegar is do psicólogo que está logado.
-    this.patients = this.patientService.getAllPatients('01-122454');
-    this.columns = ['name', 'registry_number_pat', 'number'];
+   this.loadAllPatients();
+   this.columns = ['name', 'registryNumberPat', 'status'];
+   this.cpf = ['idPatient'];
+   this.id_patient = ['idPatient'];
 
-    //this.dataTable = $(this.table.nativeElement);
-    //this.dataTable.DataTable();
   }
 
-
+  private loadAllPatients() {
+    this.patientService.getAllPatients(localStorage.getItem('crp'))
+    .subscribe(
+      (res) => {
+        this.patients = res;
+        console.log(res);
+      });
+  }
 
 }

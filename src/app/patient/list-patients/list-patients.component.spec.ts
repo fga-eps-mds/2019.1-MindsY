@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ListPatientsComponent } from './list-patients.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+
+import { ListPatientsComponent } from './list-patients.component';
 import { PatientService } from 'src/app/services';
 
 describe('ListPatientsComponent', () => {
@@ -12,7 +13,7 @@ describe('ListPatientsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ListPatientsComponent ],
-      imports: [HttpClientModule, FormsModule],
+      imports: [HttpClientModule, FormsModule, RouterTestingModule],
       providers: [
         PatientService
       ]

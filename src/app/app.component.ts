@@ -12,6 +12,7 @@ import * as $ from 'jquery';
 
 export class AppComponent {
   title = 'mindsy';
+  login = null;
 
   ngOnInit(){
     

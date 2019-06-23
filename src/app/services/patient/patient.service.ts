@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Patient } from 'src/app/models/index';
-import {Patients} from './patients-mock';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +10,50 @@ export class PatientService {
     throw new Error("Method not implemented.");
   }
 
-  readonly apiURL: string = 'http//localhost:3001';
+  apiURL: string = 'https://mindsy-api-gateway.herokuapp.com/api/patients';
+  patients: Patient[] = [];
+  patient: Patient;
+  patientsJSON: string;
+
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': localStorage.getItem('token'),
+      'crp': localStorage.getItem('crp')
+    })
+  };
 
   constructor(private http: HttpClient) { }
 
-  public createPatient(patient: Patient) {}
+  public createPatient(patient: Patient) {
+
+    if(patient.status == null) {
+      patient.status = "andamento";
+    } 
+
+    if(patient.observation == null) {
+      patient.observation = "";
+    }
+
+    const body = {
+      'name': patient.name,
+      'email': patient.email,
+      'phoneNumber': patient.number,
+      'phoneType': patient.telephone_type,
+      'birthDate': patient.date_of_birth,
+      'scholarity': patient.scholarity,
+      'observation': patient.observation,
+      'manualDomain': patient.manual_domain,
+      'kinshipDegree': patient.kinship_degree,
+      'registryNumberAcc': patient.registry_number_acc,
+      'registryNumberPat': patient.registry_number_pat,
+      'crp': localStorage.getItem('crp'),
+      'status': patient.status
+    };
+    
+    return this.http.post(this.apiURL, JSON.stringify(body), this.httpOptions);
+
+  }
 
   public deletePatient(patient: Patient) {}
 
@@ -34,13 +72,12 @@ export class PatientService {
 
   public getPatient(id: string) {}
 
-  public getAllPatients(idPsychologist: string) {
-    return Patients;
-    // return this.http.get(this.apiURL + '/list/' + idPsychologist);
+  public getAllPatients(crp: string) {
+    return this.http.get(this.apiURL + '/psychologist/' + crp, this.httpOptions);
   }
 
-  public getPatientInfo(idPatient: Number) {
-    return this.http.get(this.apiURL + '/patient-information/' + idPatient);
+  public getPatientInfo(idPatient: string) {
+    return this.http.get(this.apiURL + '/' + idPatient, this.httpOptions);
   }
 
 }

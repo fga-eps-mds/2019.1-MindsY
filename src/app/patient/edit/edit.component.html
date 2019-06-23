@@ -9,25 +9,23 @@
               <div class="col-lg-12 mb-5">
                  <div class="col-xl-12 col-lg-12  mb-xl-0 pt-5">
                     <!-- <h3 class="h6 text-uppercase pl-5"><img src="./../../../assets/img/user_blue.png" alt="" style="max-width: 10rem;float: right" class="img-fluid rounded-circle shadow"></h3>                    -->
-                    <h3 class="h6 text-uppercase pt-1"><span class="" style="border-bottom: 3px solid gray; font-size: 1.5rem">-- Nome do Paciente --</span></h3>
+                    <h3 class="h6 text-uppercase pt-1">
+                       <span class="" style="border-bottom: 3px solid gray; font-size: 1.5rem">
+                           <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                           {{patient.name}}
+                       </span>
+                     </h3>
                     <h3 class="h6 text-uppercase  " style="color: gray"><span>Perfil do Paciente</span></h3> 
 
                     <!-- <span style="margin-left: 55%"> -->
                      <button class="btn btn-success" style="margin-top: 25px">Novo Teste 
                         <i class="fa fa-user-md pl-1" aria-hidden="true"></i> 
-                     </button> 
+                     </button>
+                     <button [routerLink]="['/create-report/' + id]" class="btn btn-success" style="margin-top: 25px">Novo Avaliação 
+                        <i class="fa fa-user-md pl-1" aria-hidden="true"></i> 
+                     </button>  
                      <!-- <button class="btn btn-primary" style="margin-left: 50px" [routerLink]="['/']">Novo Paciente</button> -->
                     <!-- </span> -->
-
-                    <div>
-                        <select name="relatorios" class="col-md-10 form-control-label">
-                           <option value="" selected disabled hidden>Vizualizar relatórios</option>
-                           <option value="valor1">Paciente 1</option> 
-                           <option value="valor2">Paciente 2</option>
-                           <option value="valor3">Paciente 3</option>
-                           
-                           </select>
-                        </div>
 
                   </div>
               </div>
@@ -37,7 +35,32 @@
               <form class="form-horizontal">
 
                <div class="col-md-6" style="float: right; margin-right: 100px; margin-top: 2.5%">
-                        <iframe src="./../../../assets/PDFslides_fluxoSang.pdf" width="115%" height="705px" class="centerImg padB40"></iframe>
+                     <!-- <div class="col-xl-12 col-lg-12 ">
+                           <table class="display" style="width:100%">
+            
+                                 <thead style="background-color: #379392">
+                                       <tr>
+                                          <th scope="col">ID</th>
+                                          <th scope="col">anamnese</th>
+                                       </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let report of reports">
+                                    <td  scope="row">
+                                          <a class="cap" [routerLink]="['/edit-report', report.id_evaluation]">{{ reportIds[evaluations][0][id_evaluation] }}</a>
+                                    </td> 
+                                    <td *ngFor="let col of columns" scope="row">
+                                        <div class="cap">
+                                             {{report[col]}}
+                                        </div>
+                                     </td> 
+                                  </tr>
+                                </tbody>
+            
+                           </table>
+            
+                        </div> -->
+                        <iframe src="./../../../assets/ModeloLaudoAdolescente.pdf" width="115%" height="705px" class="centerImg padB40"></iframe>
                </div>
 
                  <i class="fa fa-user pr-2" aria-hidden="true"></i>
@@ -77,7 +100,7 @@
                  <i class="fa fa-phone pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; ">Telefone para Contato: </label><br>
                  <div class="form-group row">
-                     <input type="text" name="number" [(ngModel)]="patient.number" #number="ngModel" class="col-md-10 form-control-label" placeholder="DDD + Telefone" [textMask]="{mask: maskphone}"/>
+                     <input type="text" name="number" [(ngModel)]="patient.number" #number="ngModel" class="col-md-10 form-control-label" placeholder="DDD + Telefone"/>
                  </div>
 
 
@@ -101,7 +124,7 @@
                  <i class="fa fa-calendar pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black;">Data de Nascimento: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="dt_birth" [(ngModel)]="patient.dt_birth" dt_birth="ngModel"  class="col-md-10 form-control-label" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data Nascimento"/>
+                    <input type="text" name="date_of_birth" [(ngModel)]="patient.date_of_birth" date_of_birth="ngModel"  class="col-md-10 form-control-label" placeholder="Data/de/Nascimento"/>
                  </div>
                
 
@@ -119,13 +142,13 @@
                  <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; ">CPF Paciente: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="registry_number_pat" [(ngModel)]="patient.registry_number_pat" #registry_number_pat="ngModel" class="col-md-10 form-control-label" placeholder="___.___.___-__" [textMask]="{mask: maskcpf}"/>
+                    <input type="text" name="registry_number_pat" [(ngModel)]="patient.registry_number_pat" #registry_number_pat="ngModel" class="col-md-10 form-control-label" placeholder="___.___.___-__"/>
                  </div>
 
                  <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
                  <label class="col-md- form-control-label" style="color: black; ">CPF Responsável: </label><br>
                  <div class="form-group row">
-                    <input type="text" name="registry_number_acc" [(ngModel)]="patient.registry_number_acc" #registry_number_acc="ngModel" class="col-md-10 form-control-label" placeholder="___.___.___-__" [textMask]="{mask: maskcpf}"/>
+                    <input type="text" name="registry_number_acc" [(ngModel)]="patient.registry_number_acc" #registry_number_acc="ngModel" class="col-md-10 form-control-label" placeholder="___.___.___-__"/>
                  </div>
             
                  <i class="fa fa-universal-access pr-2" aria-hidden="true"></i>

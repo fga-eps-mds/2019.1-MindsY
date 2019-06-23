@@ -24,12 +24,17 @@
       </div>
       <div id="coluna-2">
         <input [(ngModel)]="psychologist.number" type="text"  name="telefone" placeholder="Telefone"/>
-        <input [(ngModel)]="psychologist.telephone_type" type="text"  name="telefone" placeholder="Tipo do Telefone"/>
+        <select name="telephone_type" [(ngModel)]="psychologist.telephone_type" #telephone_type="ngModel" class="col-md-8 form-control-label">
+          <option value="" selected disabled hidden>Tipo de Telefone</option>
+          <option value="PERSONAL">Pessoal</option>
+          <option value="RESIDENTIAL">Residencial</option>
+          <option value="COMMERCIAL">Comercial</option>
+         </select>
         <input [(ngModel)]="psychologist.email" type="text" name="email" placeholder="Email"/>
         <input type="password" name="confirmar_senha" placeholder="Confirmar senha"/>
-      </div>      
-
-      <button (click)="register()">Entrar</button>
+      </div>
+      
+      <button (click)="register()">Cadastrar</button>
       
       <div class="clearfix"></div>
       

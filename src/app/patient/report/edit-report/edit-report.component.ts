@@ -2,11 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { ReportService } from '../../../services/report/report.service';
+import { PatientService } from '../../../services/patient/patient.service';
 import { Report } from '../../../models/index';
+import { Patient } from '../../../models/index';
 
 import { HttpClient, HttpHeaders, HttpRequest, HttpErrorResponse} from '@angular/common/http';
 import {first} from "rxjs/operators";
-import { Router,NavigationEnd } from '@angular/router';
+import { ActivatedRoute,Router,NavigationEnd } from '@angular/router';
 import { load } from '@angular/core/src/render3';
 
 declare var $: any;
@@ -15,26 +17,40 @@ declare var $: any;
   selector: 'app-edit-report',
   templateUrl: './edit-report.component.html',
   styleUrls: ['./edit-report.component.scss'],
-  providers: [ReportService],
+  providers: [ReportService, PatientService],
 })
 export class EditReportComponent implements OnInit {
 
   @ViewChild('formReport') formReport: NgForm;
   report: Report;
+  patient: any;
   http: any;
+  crp: string;
 
   constructor(
     private reportService: ReportService,
+    private patientService: PatientService,
+    private route: ActivatedRoute,
     private router: Router
   ) { }
+  id: string;
 
-  ngOnInit() {    
+  ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
     this.report = new Report();
-
-    this.reportService.getReport(1) 
-    .subscribe((data: any) => data =
-      this.report = data
-    );    
+    var crp = localStorage.getItem('crp');
+    
+    this.reportService.getReportInfo(this.route.snapshot.paramMap.get('id')) 
+    .subscribe((data: any) => {
+      data =
+      this.report = data;
+      console.log(JSON.stringify(this.report));
+      this.patientService.getPatientInfo(this.route.snapshot.paramMap.get('id_patient'))
+      .subscribe((res: any) => {
+        res.birthDate = res.birthDate.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3");
+        this.patient = res;
+      });
+    });    
 
     //window.print();
 
@@ -42,6 +58,10 @@ export class EditReportComponent implements OnInit {
     $(".check-icon").hide();
   }
 
+
+  testando() {
+    console.log(this.report);
+  }
 
   initSubmit(){
       if($(".check-icon").show()){
@@ -90,18 +110,18 @@ export class EditReportComponent implements OnInit {
   }
 
   onSubmit(f: NgForm){
-    
-   this.load();
-   return this.reportService.updateReport(f)
+   $(this).addClass('out');
+   $('body').removeClass('modal-active');
+   console.log(this.id);
+   return this.reportService.editReport(f, this.id)
    .add(
-     (data: any) => data =
-     console.log(data)
-   );
+     (data: any) => {data =
+     console.log(data);
+      this.load();
+     });
   }
 
   load() {
     location.reload()
   }
-
-
 }

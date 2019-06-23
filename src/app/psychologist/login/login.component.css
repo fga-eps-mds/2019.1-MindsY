@@ -31,17 +31,9 @@ strong {
 }
 
 .forgotPassword-link {
-    display: block;
     cursor: pointer;
-    text-decoration: none;
-    margin-right: 3%;
-    margin-top: 4px;
     color: #0675B7;
-    float: right;
-    font-size: 15px;
-    
-        
-      
+    font-size: 15px; 
  }
 
 .right-box {
@@ -79,9 +71,8 @@ input[type="password"]
     transition: 0.2s ease;
 }
 
-input[type="submit"] {
-    margin-bottom: 28px;
-    margin-top: 50px;
+button {
+    margin-top: 20px;
     margin-left: 73px;
     width: 150px;
     height: 32px;
@@ -94,10 +85,10 @@ input[type="submit"] {
     text-transform: uppercase;
     transition: 0.2s ease;
     cursor: pointer;
-  
-  }
-input[type="submit"]:hover,
-input[type="submit"]:focus
+}
+
+button:hover,
+button:focus
 {
     background: #ff6722;
     transition: 0.2s ease;
