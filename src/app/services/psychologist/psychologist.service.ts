@@ -15,7 +15,9 @@ export class UserService {
 
   private httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': localStorage.getItem('token'),
+      'crp': localStorage.getItem('crp')
     })
   };
 
@@ -45,6 +47,11 @@ export class UserService {
       return this.psycho;
 
   }
+
+  public getPsychologistData(crp:string){
+    return this.http.get(this.apiURL + '/' + crp, this.httpOptions)
+  }
+
 
   public getPsychologistInfo(crp: string) {
     var userInfo = this.getPsychologist(crp);

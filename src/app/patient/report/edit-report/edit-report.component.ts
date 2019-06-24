@@ -3,7 +3,8 @@ import { NgForm } from '@angular/forms';
 
 import { ReportService } from '../../../services/report/report.service';
 import { PatientService } from '../../../services/patient/patient.service';
-import { Report } from '../../../models/index';
+import { UserService } from '../../../services/psychologist/psychologist.service';
+import { Report, Psychologist } from '../../../models/index';
 import { Patient } from '../../../models/index';
 
 import { HttpClient, HttpHeaders, HttpRequest, HttpErrorResponse} from '@angular/common/http';
@@ -24,12 +25,14 @@ export class EditReportComponent implements OnInit {
   @ViewChild('formReport') formReport: NgForm;
   report: Report;
   patient: any;
+  user: Psychologist;
   http: any;
   crp: string;
 
   constructor(
     private reportService: ReportService,
     private patientService: PatientService,
+    private userService: UserService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -37,6 +40,11 @@ export class EditReportComponent implements OnInit {
   id_patient: string;
 
   ngOnInit() {
+    this.userService.getPsychologistData(localStorage.getItem('crp'))
+    .subscribe(
+      (data: any) => {
+        this.user = data;            
+      });
     this.id = this.route.snapshot.paramMap.get('id');
     this.report = new Report();
     this.crp = localStorage.getItem('crp');

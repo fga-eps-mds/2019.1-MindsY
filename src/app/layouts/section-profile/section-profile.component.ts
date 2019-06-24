@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { first } from 'rxjs/operators';
+
+import { Psychologist } from 'src/app/models';
+import { AuthenticationService, UserService } from 'src/app/services/index';
 
 @Component({
   selector: 'app-section-profile',
@@ -7,9 +12,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authenticationService: AuthenticationService,
+    private userService: UserService
+    ) { }
+
+  currentUser: Psychologist;
 
   ngOnInit() {
+    var crp = localStorage.getItem('crp'); 
+    this.userService.getPsychologistData(localStorage.getItem('crp'))
+    .subscribe(
+      (data: any) => {
+        this.currentUser = data;
+        console.log(this.currentUser);
+      });
   }
 
 }
