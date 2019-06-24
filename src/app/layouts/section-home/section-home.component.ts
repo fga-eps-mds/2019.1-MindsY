@@ -16,7 +16,7 @@ import { UserService, AuthenticationService } from 'src/app/services/index';
 export class SectionHomeComponent implements OnInit {
 
   title = 'mindsy';
-  currentUser: Psychologist;
+  currentUser: any;
   currentUserSubscription: Subscription;
   users: Psychologist[] = [];
 

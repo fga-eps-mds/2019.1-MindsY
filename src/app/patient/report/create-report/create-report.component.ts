@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Report, Patient } from 'src/app/models/index';
 import { ReportService } from 'src/app/services';
 import { PatientService } from 'src/app/services';
+import { UserService } from 'src/app/services';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { DatePipe } from  '@angular/common';
 
@@ -20,6 +21,7 @@ export class CreateReportComponent implements OnInit {
   constructor(
     private reportService: ReportService,
     private patientService: PatientService,
+    private userService: UserService,
     private router: Router,
     private route: ActivatedRoute
     ) { 
@@ -27,12 +29,15 @@ export class CreateReportComponent implements OnInit {
   public report: Report = new Report;
   patient: any;
   crp = localStorage.getItem('crp');
-
+  
+  user: any;
+  
   pipe = new DatePipe('en-US');
   today = Date.now();
   
   ngOnInit() 
   {
+    this.callCurrentUser();
     var crp = localStorage.getItem('crp');
     this.id = this.route.snapshot.paramMap.get('id');
     this.patientService.getPatientInfo(this.route.snapshot.paramMap.get('id'))
@@ -40,6 +45,14 @@ export class CreateReportComponent implements OnInit {
       data.birthDate = data.birthDate.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3");
       this.patient = data;
     });
+  }
+
+  callCurrentUser(){
+    this.userService.getPsychologistData(localStorage.getItem('crp'))
+    .subscribe(
+      (data: any) => {
+        this.user = data;            
+      });
   }
 
   register() {

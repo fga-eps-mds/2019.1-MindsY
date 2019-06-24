@@ -12,7 +12,7 @@ import { AuthenticationService, UserService } from 'src/app/services/index';
 })
 export class NavbarComponent implements OnInit {
   
-  currentUser: Psychologist;
+  currentUser: any;
   crp = localStorage.getItem('crp');
   currentUserSubscription: Subscription;
   users: Psychologist[] = [];

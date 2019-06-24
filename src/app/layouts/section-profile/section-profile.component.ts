@@ -17,7 +17,7 @@ export class SectionProfileComponent implements OnInit {
     private userService: UserService
     ) { }
 
-  currentUser: Psychologist;
+  currentUser: any;
 
   ngOnInit() {
     var crp = localStorage.getItem('crp'); 

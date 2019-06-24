@@ -25,7 +25,7 @@ export class EditReportComponent implements OnInit {
   @ViewChild('formReport') formReport: NgForm;
   report: Report;
   patient: any;
-  user: Psychologist;
+  user: any;
   http: any;
   crp: string;
 
