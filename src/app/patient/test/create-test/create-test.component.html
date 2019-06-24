@@ -1,0 +1,70 @@
+<div class="page-holder w-100 d-flex flex-wrap " style="background: #ECECEC ">
+  <div class="container-fluid px-xl-5">
+     <section class="py-2 " style="text-align: center">
+        <div class="col-xl-12 col-lg-12">    
+            <button [routerLink]="['/load-patient', id_patient]"class="btn " style="background-color: #4B2D00;margin-top: 25px; float:left">
+              Voltar({{ patient.name }})                      
+            </button>
+          </div> 
+        <div class="row mt-4 pb-4" style="margin-left:29%;width: 45%;border-radius: 50px;background-color: white;text-align: center"   >
+           <div class="col-xl-12 col-lg-12 mb-4 mb-xl-0">
+              <!-- Form Elements -->
+              <div class="col-lg-12 mb-5">
+                 <div class="col-xl-12 col-lg-12 pt-3 pb-3" >
+                    <!-- <h3 class="h6 text-uppercase pl-5"><img src="./../../../assets/img/user_blue.png" alt="" style="max-width: 10rem;float: right" class="img-fluid rounded-circle shadow"></h3>                    -->
+                    
+                    <h3 class="h6 text-uppercase  " style="color: gray"><span>Criação de Teste</span></h3> 
+                    <img src="../../assets/img/test.png" style="width:20%;height:22% " class="px-2">
+                  </div>
+              </div>
+              
+           </div>
+                <div class="col-lg-12" style="text-align: center">
+                  <div class="row mx-auto" >
+                      <h3 class="h6 text-uppercase" style="text-align: center;color: gray"><span>Selecione o tipo do teste:</span></h3>
+                  </div> 
+                  <div class="row mx-auto" style="text-align: center">
+                    <select name="id_test" [(ngModel)]="result.id_test" ngModel #id_test="ngModel" id="id_test">
+                      <option > Selecione...          
+                      </option>
+                      <option (click)="changeTest(test.id_test)" value="{{test.id_test}}" *ngFor="let test of tests">
+                          {{ test.name }}
+                      </option>
+                    </select>     
+                  </div>
+                  <div class="row mx-auto pt-3">
+                      Ponto Ponderado: 
+                      <input style="margin-left:5px;width:15%" type="text" name="considerate_score" [(ngModel)]="result.considerate_score" ngModel #considerate_score="ngModel" id="considerate_score" >
+                      <strong class="pl-4">Máximo do teste: <span style="color: #600601">{{ actualTest.maximum_score }}</span></strong>
+                    
+                  </div>
+                  <div class="row mx-auto pt-3">
+                      Escore Obtido: 
+                        <input style="margin-left:6.8%;width:15%" type="text" name="gross_score" [(ngModel)]="result.gross_score" ngModel #gross_score="ngModel" id="gross_score" >
+                        <strong class="pl-4">Tipo do Teste: <span style="color: #600601">{{ actualTest.type }}</span></strong>
+                      
+                  </div>
+                </div>
+                <div class="col-lg-12" style="text-align: center;">
+                  <button class="btn btn-success mt-4" (click)="createReport()" >Criar</button>
+                </div>
+                </div>  
+      
+      
+     </section>
+  </div>
+
+  <footer class="footer shadow align-self-end py-3 px-xl-5 w-100" style="background:#EFEDE6">
+     <div class="container-fluid">
+        <div class="row">
+           <div class="col-md-6 text-center text-md-left text-black">
+              <p class="mb-2 mb-md-0">MINDSY &copy; 2019</p>
+           </div>
+           <div class="col-md-6 text-center text-md-right text-black-400">
+              <p class="mb-0">Design by <a href="https://fga-eps-mds.github.io/2019.1-MindsY/docs.html" class="external text-blue-400">Mindsy Team</a></p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+           </div>
+        </div>
+     </div>
+  </footer>
+</div>

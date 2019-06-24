@@ -70,7 +70,6 @@ export class PatientService {
     return this.http.put(this.apiURL + '/edit_patient/', patient);
   }
 
-  public getPatient(id: string) {}
 
   public getAllPatients(crp: string) {
     return this.http.get(this.apiURL + '/psychologist/' + crp, this.httpOptions);

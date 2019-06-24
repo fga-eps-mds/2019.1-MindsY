@@ -33,12 +33,6 @@ export class ReportService {
   public createReport(report: Report, id_pacient: string, crp: string) {
 
     const body = {
-        // 'conclusion': "sou uma conclusão",
-        // 'anamnese': " wfwfsfsfs",
-        // 'dt_start': "22-08-2019",
-        // 'dt_end': "22-09-2019",
-        // 'crp': "0459054",
-        // 'id_patient': "5"
         'conclusion': report.conclusion,
         'anamnese': report.anamnese,
         'dt_start': this.pipe.transform(this.today, 'dd-MM-yyyy'),

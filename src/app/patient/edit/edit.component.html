@@ -18,9 +18,44 @@
                     <h3 class="h6 text-uppercase  " style="color: gray"><span>Perfil do Paciente</span></h3> 
 
                     <!-- <span style="margin-left: 55%"> -->
-                     <button class="btn btn-success" style="margin-top: 25px">Novo Teste 
+                     <span type="button" (click)="showPopupModal()" class="btn btn-success" style="margin-top: 25px">Novo Teste 
                         <i class="fa fa-user-md pl-1" aria-hidden="true"></i> 
-                     </button>
+                     </span>
+                   
+                         <div id="myModal_piso" class="modal" >
+                             <!-- Modal content -->
+                             <div class="modal-content">
+                               <span id="piso" (click)="closePopupModal()"  class="close">&times;</span>
+                               <div class="content"  >
+                                 <div class="container-fluid" >
+                                   <div class="row">
+                                     
+                                     <div class="col-md-12">
+                                       <div class="card" >
+                                           <div class="card-header" style="text-align: center">
+                                               <h5>Escolha a avaliação que deseja fazer o teste:</h5>  
+                                           </div>
+                                           <div class="card-body table-responsive" style = "overflow-x:auto;">
+                                                <div class="col-xl-12 col-lg-12 ">
+                                                      <select class="form-group" style=" width:60%">
+                                                            <option value="default">
+                                                                  Selecione...
+                                                            </option>
+                                                            <option [routerLink]="['/create-test', report.id_evaluation, id]" *ngFor="let report of reports['evaluations']; let i = index">
+                                                                  Teste para Avaliação {{ i + 1}}
+                                                            </option>
+                                                      </select>
+                                                   </div>                                             
+                                           </div>
+                                         </div>
+                                       </div>
+                                     </div>
+                                   </div>
+                                 </div>
+                               </div>
+                             </div>
+
+
                      <button [routerLink]="['/create-report/' + id]" class="btn btn-success ml-2" style="margin-top: 25px">Novo Avaliação 
                         <i class="fa fa-user-md pl-1" aria-hidden="true"></i> 
                      </button>  

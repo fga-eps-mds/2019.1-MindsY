@@ -9,7 +9,7 @@ import { Patient } from 'src/app/models/index';
 @Component({
   selector: 'app-editpacient',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  styleUrls: ['./edit.component.scss']
 })
 export class EditPacientComponent implements OnInit {
 
@@ -39,16 +39,12 @@ export class EditPacientComponent implements OnInit {
     localStorage.removeItem('reports');
   }
 
-  teste(){
-    console.log(this.reports);
-  }
-
   private loadAllReports() {
     this.reportService.getReportsPatient(localStorage.getItem('crp'), this.route.snapshot.paramMap.get('id'))
     .subscribe(
       (res) => {
         this.reports = res;
-        console.log(JSON.stringify(res));
+        console.log(res);
         localStorage.setItem('reports', JSON.stringify(res));
         this.setReportInfo();
         this.reportIds = JSON.parse(localStorage.getItem('reports'));
@@ -107,6 +103,40 @@ export class EditPacientComponent implements OnInit {
   setAndFormat() {
     this.setPatientInfo();
     this.formatInfo();
+  }
+
+  showPopupModal(){
+    var modal2 = document.getElementById('myModal_piso');
+  
+    // Get the button that opens the modal
+
+    // When the user clicks the button, open the modal
+      modal2.style.display = "block";
+
+    // When the user clicks anywhere outside of the modal, close it
+      if (event.target == modal2) {
+        modal2.style.display = "none";
+      }
+    
+  }
+
+  closePopupModal(){
+    var modal2 = document.getElementById('myModal_piso');
+  
+    // Get the button that opens the modal
+    var btn2 = document.getElementById("myBtn_piso");
+  
+    // Get the <span> element that closes the modal
+    var span2 = document.getElementById("piso");
+
+      modal2.style.display = "none";
+    
+  }
+
+
+  closeModal(){
+    $(this).addClass('out');
+    $('body').removeClass('modal-active');
   }
 
 }

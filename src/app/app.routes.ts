@@ -9,13 +9,14 @@
   import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
   import { CreateReportComponent } from './patient/report/create-report/create-report.component';
   import { EditReportComponent } from './patient/report/edit-report/edit-report.component';
+  import { CreateTestComponent } from './patient/test/create-test/create-test.component';
 
   import { LoginComponent } from './psychologist/login/login.component';
-import { LoadComponent } from './patient/load/load.component';
+  import { LoadComponent } from './patient/load/load.component';
 
   export const ROUTES: Routes = [
     { path: '', component: SectionHomeComponent },
-    { path: 'profileview',      component: SectionProfileComponent},
+    { path: 'profileview',  component: SectionProfileComponent},
     { path: 'create-psychologist', component: CreatePsychologistComponent},
     { path: 'edit-patient/:id', component: EditPacientComponent},
     { path: 'load-patient/:id', component: LoadComponent},
@@ -23,4 +24,5 @@ import { LoadComponent } from './patient/load/load.component';
     { path: 'create-patient', component: CreatePatientComponent},
     { path: 'create-report/:id', component: CreateReportComponent},
     { path: 'edit-report/:id/:id_patient', component: EditReportComponent},
+    { path: 'create-test/:id/:id_patient', component: CreateTestComponent},
     { path: 'login', component: LoginComponent} ];
