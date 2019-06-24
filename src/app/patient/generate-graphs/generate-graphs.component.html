@@ -2,29 +2,79 @@
     <div class="container-fluid px-xl-5">
        <section class="py-2 " style="text-align: center">
 
-        <select>
-          <option (click)="getReports('-1')">
-                Selecione...
-          </option>
-          <option (click)="getReports(patient.idPatient)" *ngFor="let patient of patients">
-            {{ patient.name }}
-          </option>
-        </select>
-        <select class="form-group" style=" width:60%">
-          <option value="default">
-                Selecione...
-          </option>
-          <option (click)="getResultValues(report.id_evaluation)" *ngFor="let report of reports['evaluations']; let i = index">
-                Gerar Gráficos sobre a Avaliação {{ i + 1}}
-          </option>
-        </select>
+        
 
         <section>
             <div class="row">
               <div class="col-lg-12 mb-4 mb-lg-0">
+                  
                 <div class="card">
                   <div class="card-header">
-                    <h2 class="h6 text-uppercase mb-0">Estatísticas de todos os distúrbios (Pacientes x Mês)</h2>
+                    <h2 class="h6 text-uppercase mb-0">Tabela - WISC IV</h2>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-4 mb-4 mb-lg-0">
+                        <strong>Selecione um paciente:</strong>
+                        <select class="form-group ">/                          
+                            <option (click)="getReports('-1')">
+                                  Selecione...
+                            </option>
+                            <option (click)="getReports(patient.idPatient)" *ngFor="let patient of patients">
+                              {{ patient.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="col-lg-4 mb-4 mb-lg-0">
+                            <strong>Selecione uma avaliação para análise:</strong>
+                          <select class="form-group " style=" width:80%">
+                            <option value="default">
+                                  Selecione...
+                            </option>
+                            <option (click)="getResultValues(report.id_evaluation)" *ngFor="let report of reports['evaluations']; let i = index">
+                                  Gerar Gráficos sobre a Avaliação {{ i + 1}}
+                            </option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 mb-4 mb-lg-0">
+                        <div class="table-responsive " style="padding-top:25px;">
+                          <table id="teste" class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th style="font-size:15px;"><b>Nome do Teste</b></th>
+                                <th style="font-size:15px;"><b>Escore Máximo</b></th>
+                                <th style="font-size:15px;"><b>Escore Obtido</b></th>
+                                <th style="font-size:15px;"><b>Ponto Ponderado</b></th>
+                                <th style="font-size:15px;"><b>Classificação</b></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let result of results; let i = index">
+                                  <td style="font-size:13px;">{{ result.tests.name }}</td> 
+                                  <td style="font-size:13px;">{{ result.tests.maximum_score }}</td>
+                                  <td style="font-size:13px;">{{ result.gross_score }}</td>
+                                  <td style="font-size:13px;">{{ result.considerate_score }}</td>
+                                  <td style="font-size:13px;"><strong>{{ result.classification }}</strong></td>                                 
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <section class="mt-2 pb-3">
+            <div class="row">
+              <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="h6 text-uppercase mb-0">Gráfico - WISC IV</h2>
                   </div>
                   <div class="card-body">
                     <div class="chart-holder" id="chartAnchor">
@@ -35,6 +85,8 @@
               </div>
             </div>
           </section>
+
+          
         </section>
       </div>
     

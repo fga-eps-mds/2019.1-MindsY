@@ -31,7 +31,8 @@ export class GenerateGraphsComponent implements OnInit {
 
   considerate_score: any = [];
   labels: any = [];
-
+  
+  results: any = [];
   patients: any = [];
   reports: any = [];
 
@@ -106,6 +107,7 @@ export class GenerateGraphsComponent implements OnInit {
     this.reportService.loadResultValues(id_evaluation)
     .subscribe(
       (data: any) => {
+        
         //console.log(data);
         if(data['results'].length < 1){
           this.emptyGraph();
@@ -120,9 +122,11 @@ export class GenerateGraphsComponent implements OnInit {
           this.considerate_score= [];
           this.labels= [];
           this.initColumGraph(this.labels,this.executivo_cScore,this.verbal_cScore,this.bgExecutivo, this.borderExecutivo,this.bgVerbal, this.borderVerbal );
-      
+          this.results = [];
         }
         else{
+          this.results = data['results'];
+          console.log(this.results);
           this.emptyGraph();
           this.executivo_cScore= [];
           this.bgExecutivo= [];
@@ -141,7 +145,7 @@ export class GenerateGraphsComponent implements OnInit {
 
             var k = 1;
             this.verbal_cScore[0] = 0;
-            console.log(data);
+            //console.log(data);
           for (var i = 0; i < data['results'].length; i++) {
             if(data['results'][i]['tests']['type'].toString() == "executivo"){
               this.executivo_cScore[i] = data['results'][i]['considerate_score'];
@@ -152,8 +156,8 @@ export class GenerateGraphsComponent implements OnInit {
               this.executivo_cScore[i] = 0;
             }
             this.labels[i] = data['results'][i]['tests']['name'].toString();
-            console.log(this.labels[i]);
-            console.log(this.considerate_score[i]);
+            //console.log(this.labels[i]);
+            //console.log(this.considerate_score[i]);
             
           }
 
@@ -215,7 +219,7 @@ export class GenerateGraphsComponent implements OnInit {
   }
 
   initColumGraph(labels: any[], considerate_scoreExecutive: number[], considerate_scoreVerbal: number[], bgExecutivo: any[], borderExecutivo: any[], bgVerbal: any[], borderVerbal: any[]){
-    console.log(labels);
+    //console.log(labels);
     $('#lineChart').remove(); // this is my <canvas> element
     $('#chartAnchor').append('<canvas id="lineChart"></canvas>');  
     var canvas : any = document.getElementById("lineChart");
