@@ -64,7 +64,7 @@ export class CreateTestComponent implements OnInit {
     (data: any) => 
       data = 
       console.log(data));
-    this.router.navigate(['/']);
+    this.router.navigate(['/load-patient/' + this.id_patient]);
   }
 
 }

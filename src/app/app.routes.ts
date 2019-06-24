@@ -10,6 +10,7 @@
   import { CreateReportComponent } from './patient/report/create-report/create-report.component';
   import { EditReportComponent } from './patient/report/edit-report/edit-report.component';
   import { CreateTestComponent } from './patient/test/create-test/create-test.component';
+  import { GenerateGraphsComponent } from './patient/generate-graphs/generate-graphs.component';
 
   import { LoginComponent } from './psychologist/login/login.component';
   import { LoadComponent } from './patient/load/load.component';
@@ -25,4 +26,6 @@
     { path: 'create-report/:id', component: CreateReportComponent},
     { path: 'edit-report/:id/:id_patient', component: EditReportComponent},
     { path: 'create-test/:id/:id_patient', component: CreateTestComponent},
-    { path: 'login', component: LoginComponent} ];
+    { path: 'general-statistics', component: GenerateGraphsComponent},
+    { path: 'login', component: LoginComponent} 
+  ];

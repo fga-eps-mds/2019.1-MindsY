@@ -1,0 +1,54 @@
+<div class="page-holder w-100 d-flex flex-wrap " style="background: #ECECEC ">
+    <div class="container-fluid px-xl-5">
+       <section class="py-2 " style="text-align: center">
+
+        <select>
+          <option (click)="getReports('-1')">
+                Selecione...
+          </option>
+          <option (click)="getReports(patient.idPatient)" *ngFor="let patient of patients">
+            {{ patient.name }}
+          </option>
+        </select>
+        <select class="form-group" style=" width:60%">
+          <option value="default">
+                Selecione...
+          </option>
+          <option (click)="getResultValues(report.id_evaluation)" *ngFor="let report of reports['evaluations']; let i = index">
+                Gerar Gráficos sobre a Avaliação {{ i + 1}}
+          </option>
+        </select>
+
+        <section>
+            <div class="row">
+              <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="h6 text-uppercase mb-0">Estatísticas de todos os distúrbios (Pacientes x Mês)</h2>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-holder" id="chartAnchor">
+                      <canvas id="lineChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+    
+      <footer class="footer shadow align-self-end py-3 px-xl-5 w-100" style="background:#EFEDE6">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-6 text-center text-md-left text-black">
+                  <p class="mb-2 mb-md-0">MINDSY &copy; 2019</p>
+               </div>
+               <div class="col-md-6 text-center text-md-right text-black-400">
+                  <p class="mb-0">Design by <a href="https://fga-eps-mds.github.io/2019.1-MindsY/docs.html" class="external text-blue-400">Mindsy Team</a></p>
+                  <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+               </div>
+            </div>
+         </div>
+      </footer>
+    </div>

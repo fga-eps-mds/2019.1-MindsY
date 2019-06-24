@@ -47,6 +47,10 @@ export class ReportService {
     return this.http.get(this.apiURL + '/psychologist-evaluation/' + crp + '/' + id, this.httpOptions);
   }
 
+  loadResultValues(id_evaluation: string){
+    return this.http.get(this.apiURL + '/result/' + id_evaluation, this.httpOptions); 
+  }
+
   editReport(f: NgForm, id: string) {
     console.log("VALOR DO ID:" + id);
     

@@ -47,8 +47,9 @@ export class CreateReportComponent implements OnInit {
     this.reportService.createReport(this.report, this.id, this.crp)
     .subscribe(
       (data: any) => 
-        data = 
-        console.log(data));
+      {
+        console.log(data);
+      });
     this.router.navigate(['/load-patient/' + this.id]);
   }
 
