@@ -21,6 +21,7 @@ import { CreatePatientComponent } from './patient/create-patient/create-patient.
 import { CreateReportComponent } from './patient/report/create-report/create-report.component';
 import { EditReportComponent } from './patient/report/edit-report/edit-report.component';
 import { LoadComponent } from './patient/load/load.component';
+import { HomeLoadComponent } from './psychologist/load/load.component';
 import { LoadReportComponent } from './patient/report/load-report/load-report.component';
 import { CreateTestComponent } from './patient/test/create-test/create-test.component';
 import { GenerateGraphsComponent } from './patient/generate-graphs/generate-graphs.component';
@@ -43,6 +44,7 @@ import { GenerateGraphsComponent } from './patient/generate-graphs/generate-grap
     LoadComponent,
     LoadReportComponent,
     CreateTestComponent,
+    HomeLoadComponent,
     GenerateGraphsComponent
   ],
   exports: [],

@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { first } from 'rxjs/operators';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ReportService } from 'src/app/services';
 
 import { Psychologist } from 'src/app/models';
 import { AuthenticationService, UserService } from 'src/app/services/index';
@@ -21,7 +23,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private authenticationService: AuthenticationService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) { 
       this.currentUserSubscription = this.authenticationService.currentUser
         .subscribe
@@ -42,6 +45,10 @@ export class NavbarComponent implements OnInit {
     console.log(crp);
   }
   
+  logout(){
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
+  }
 
   ngOnDestroy() {
     /*

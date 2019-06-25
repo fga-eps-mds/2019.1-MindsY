@@ -26,6 +26,7 @@ export class AuthenticationService {
   }
 
   login(crp: string, password: string) {
+
     return this.http.post<any>(this.apiURL.concat('/login'), { crp, password });
   }
 
@@ -33,7 +34,8 @@ export class AuthenticationService {
     /*
     remove user from local storage to log user out
     */
-
+    localStorage.removeItem('crp');
+    localStorage.removeItem('token');
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
 

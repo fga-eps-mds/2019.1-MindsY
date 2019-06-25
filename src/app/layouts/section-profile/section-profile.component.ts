@@ -18,7 +18,8 @@ export class SectionProfileComponent implements OnInit {
     ) { }
 
   currentUser: any;
-
+  crp: string;
+  
   ngOnInit() {
     var crp = localStorage.getItem('crp'); 
     this.userService.getPsychologistData(localStorage.getItem('crp'))
