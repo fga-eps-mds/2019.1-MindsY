@@ -9,7 +9,7 @@
 <h1 align="center"> MindsY - Sistema gerenciador de relatórios psicológicos</h1>
 
   <p align="center">
-    <a href="https://fga-eps-mds.github.io/2019.1-MindsY/"><strong>MindsY GitHub Pages &raquo;</strong></a>
+    <a href="https://mindsy-app.firebaseapp.com"><strong>Teste a MindsY</strong></a>
     <br>
   </p>
 </p>
