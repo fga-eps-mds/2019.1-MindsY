@@ -7,36 +7,47 @@
 <body>
   <div id="signup-Box">
     <div class="center-box">
+        
       <strong>
-          <h1>Sign up</h1>
-      </strong>      
-      <strong>
-          <h2>Insira suas informações</h2>
-      </strong>      
-
-
-      <div id="coluna-1">
-        <input [(ngModel)]="psychologist.name" type="text" name="nome" placeholder="Nome"/>
-        <input [(ngModel)]="psychologist.crp" type="text" name="crp" placeholder="CRP"/>
-        <input [(ngModel)]="psychologist.date_of_birth" type="text" name="dt_nascimento" placeholder="Data de nascimento">
-        <input [(ngModel)]="psychologist.password" type="password" name="senha" placeholder="Senha"/>
-      
+          <h1>Cadastro</h1>
+      </strong>     
+      <div class="col-lg-12 mt-2 mb-2" style="text-align: center;">
+          <div class="row pl-4" style="text-align: center;">
+          </div>
       </div>
-      <div id="coluna-2">
-        <input [(ngModel)]="psychologist.number" type="text"  name="telefone" placeholder="Telefone"/>
-        <select name="telephone_type" [(ngModel)]="psychologist.telephone_type" #telephone_type="ngModel" class="col-md-8 form-control-label">
-          <option value="" selected disabled hidden>Tipo de Telefone</option>
-          <option value="PERSONAL">Pessoal</option>
-          <option value="RESIDENTIAL">Residencial</option>
-          <option value="COMMERCIAL">Comercial</option>
-         </select>
-        <input [(ngModel)]="psychologist.email" type="text" name="email" placeholder="Email"/>
-        <input type="password" name="confirmar_senha" placeholder="Confirmar senha"/>
-      </div>
-      
-      <button (click)="register()">Cadastrar</button>
-      
-      <div class="clearfix"></div>
+      <div class=" col-lg-12 mt-2 mb-2">
+          <div class="row">
+            <div class="col-lg-6 mt-2 mb-2">
+                  <input style="float:left" [(ngModel)]="psychologist.name" type="text" name="nome" placeholder="Nome"/>
+                  <input style="float:left" [(ngModel)]="psychologist.crp" type="text" name="crp" placeholder="CRP"/>
+                  <input style="float:left" [(ngModel)]="psychologist.date_of_birth" type="text" name="dt_nascimento" placeholder="Data de nascimento">
+                  <input style="float:left" [(ngModel)]="psychologist.number" type="text"  name="telefone" placeholder="Telefone"/>
+                  
+              </div>
+              
+              <div class="col-lg-6 mt-2 mb-2">   
+                  <select style="float:right" name="telephone_type" [(ngModel)]="psychologist.telephone_type" #telephone_type="ngModel" class="col-md-8 form-control-label">
+                    <option value="PERSONAL">Pessoal</option>
+                    <option value="RESIDENTIAL">Residencial</option>
+                    <option value="COMMERCIAL">Comercial</option>
+                  </select>
+                  <input style="float:right" [(ngModel)]="psychologist.email" type="text" name="email" placeholder="Email"/>
+                    
+                  <input style="float:right" [(ngModel)]="psychologist.password" type="password" name="senha" placeholder="Senha"/>
+                  <input style="float:right" type="password" name="confirmar_senha" placeholder="Confirmar senha"/>
+                  
+              </div>
+            
+          </div>
+          <div class="col-xl-12 col-lg-12" style="display:flex;align-items: center;">
+              <div class="row" style="display:flex;align-items: center;">
+                <span type="button" [routerLink]="['/login']" style="float:right" class="mt-3 btn btn-warning">Voltar</span>
+                <button class="mt-3 ml-2 btn btn-success" style="float:right" (click)="register()">Cadastrar</button>
+              </div>
+          </div>
+          
+          
+        </div>
       
       
     </div>
