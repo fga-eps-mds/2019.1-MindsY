@@ -47,6 +47,7 @@
                                 <th style="font-size:15px;"><b>Escore Máximo</b></th>
                                 <th style="font-size:15px;"><b>Escore Obtido</b></th>
                                 <th style="font-size:15px;"><b>Ponto Ponderado</b></th>
+                                <th style="font-size:15px;"><b>Tipo de Teste</b></th>
                                 <th style="font-size:15px;"><b>Classificação</b></th>
                               </tr>
                             </thead>
@@ -56,6 +57,7 @@
                                   <td style="font-size:13px;">{{ result.tests.maximum_score }}</td>
                                   <td style="font-size:13px;">{{ result.gross_score }}</td>
                                   <td style="font-size:13px;">{{ result.considerate_score }}</td>
+                                  <td style="font-size:13px; text-transform: capitalize">{{ result.tests.type }}</td>
                                   <td style="font-size:13px;"><strong>{{ result.classification }}</strong></td>                                 
                                 </tr>
                             </tbody>
