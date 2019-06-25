@@ -16,11 +16,14 @@ export class AppComponent {
   title = 'mindsy';
   login = null;
 
+  isLoggedin: boolean;
+
   constructor(private router: Router){}
 
   ngOnInit(){
-    console.log(this.router.url)
-    
+    if(!localStorage.hasOwnProperty('crp')) {
+      this.router.navigate(['/login'])
+    }
   }
 
   
