@@ -4,13 +4,14 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    frameworks: ['jasmine', '@angular-devkit/build-angular','jquery-3.2.1'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),
+      require('karma-jquery')
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
@@ -20,7 +21,13 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
-    reporters: ['progress', 'kjhtml'],
+    customLaunchers: {
+      Chrome_travis_ci: {
+          base: 'Chrome',
+          flags: ['--headless', '--disable-gpu', '--no-sandbox', '--remote-debugging-port=9222']
+      }
+  },
+    reporters: ['coverage-istanbul', 'progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -29,4 +36,8 @@ module.exports = function (config) {
     singleRun: false,
     restartOnFileChange: true
   });
+
+  if(process.env.TRAVIS){
+    config.browsers = ['Chrome_travis_ci'];
+  }
 };

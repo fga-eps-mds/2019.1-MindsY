@@ -1,4 +1,4 @@
-# 2019.1 Grupo 2
+# 2019.1 MindsY
 
 Links úteis:
  - [Documentação (Wiki)](#documentação)

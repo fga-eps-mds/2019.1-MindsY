@@ -9,6 +9,7 @@
 
 package-lock.json
 # dependencies
+mindsy/node_modules
 /node_modules
 
 # profiling files

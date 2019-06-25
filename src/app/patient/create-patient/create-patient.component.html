@@ -1,0 +1,187 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="page-holder w-100 d-flex flex-wrap " style="background: #ECECEC ">
+  <div class="container-fluid px-xl-5">
+     <section class="py-2 ">
+        <div class="row">
+           <div class="col-xl-12 col-lg-12 mb-4 mb-xl-0">
+              <!-- Form Elements -->
+              <div class="col-lg-12 mb-5">
+                 <div class="col-xl-12 col-lg-12  mb-xl-0 pt-5" style="padding-left: 25%">
+                    <!-- <h3 class="h6 text-uppercase pl-5"><img src="./../../../assets/img/user_blue.png" alt="" style="max-width: 10rem;float: right" class="img-fluid rounded-circle shadow"></h3>                    -->
+                    <h3 class="h6 text-uppercase pt-1"><span class="" style="text-align: center" style="border-bottom: 3px solid gray; font-size: 1.5rem">-- Cadastro do Paciente --</span></h3>
+                    
+                  </div>
+              </div>
+           </div>
+
+           <div class="card-body px-5">
+              <form class="form-horizontal" style="padding-left: 20%">
+
+                 <i class="fa fa-user pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="text-align: center" style="color: black;">Nome do Paciente: </label><br>
+                 <div class="form-group row">
+                    <input type="text" name="name" [(ngModel)]="patient.name" #name="ngModel" class="col-md-8 form-control-label" minlength="8" placeholder="Nome do Paciente" required/>
+                 </div>
+                 <div class="row">
+                     <div *ngIf="name.errors && (name.dirty)" class="alert alert-danger col-md-8">
+                        <div [hidden]="!name.errors.required">
+                           Nome é obrigatório
+                        </div>
+                        <div [hidden]="!name.errors.minlength">
+                           Nome inválido
+                        </div>
+                     </div>
+                 </div>
+
+                 <i class="fa fa-envelope pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black;">E-mail: </label><br>
+                 <div class="form-group row">
+                  <input type="text" name="email" [(ngModel)]="patient.email" #email="ngModel" class="col-md-8 form-control-label" placeholder="exemplo@exemplo.com" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+                 </div>
+                 <div class="row">
+                     <div *ngIf="email.errors && (email.dirty)" class="alert alert-danger col-md-8">
+                           <div [hidden]="!email.errors.required">
+                              Email é obrigatório.
+                           </div>
+                           <div [hidden]="!email.errors.pattern">
+                              O email deve seguir o padrão:
+                              <small><b>exemplo@exemplo.com</b></small>
+                           </div>
+                       </div>
+                 </div>
+
+                 <i class="fa fa-phone pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black; ">Telefone para Contato: </label><br>
+                 <div class="form-group row">
+                     <input type="text" name="number" [(ngModel)]="patient.number" #number="ngModel" class="col-md-8 form-control-label" placeholder="DDD + Telefone" />
+                 </div>
+                 <div class="row">
+                     <div *ngIf="number.errors && (number.dirty)" class="alert alert-danger col-md-8">
+                           <div [hidden]="!number.errors.pattern">
+                              Digite apenas números
+                           </div>
+                       </div>
+                 </div>
+
+                 <i class="fa fa-mobile pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black">Tipo de Telefone</label><br>
+                 <div class="form-group row">
+                    <select name="telephone_type" [(ngModel)]="patient.telephone_type" #telephone_type="ngModel" class="col-md-8 form-control-label">
+                     <option value="" selected disabled hidden>Tipo de Telefone</option>
+                     <option value="PERSONAL">Pessoal</option>
+                     <option value="RESIDENTIAL">Residencial</option>
+                     <option value="COMMERCIAL">Comercial</option>
+                    </select>
+                 </div>
+
+                 <i class="fa fa-calendar pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black;">Data de Nascimento: </label><br>
+                 <div class="form-group row">
+                    <input type="text" name="date_of_birth" [(ngModel)]="patient.date_of_birth" date_of_birth="ngModel"  class="col-md-8 form-control-label" placeholder="Data Nascimento"/>
+                 </div>
+
+
+                 <i class="fa fa-pencil pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black">Escolaridade</label><br>
+                 <div class="form-group row">
+                    <!-- <input type="text" name="scholarity" [(ngModel)]="patient.scholarity" #scholarity="ngModel" class="col-md-8 form-control-label" placeholder="Escolaridade"/> -->
+                    <select name="scholarity" [(ngModel)]="patient.scholarity" #scholarity="ngModel" class="col-md-8 form-control-label">
+                     <option value="" selected disabled hidden>Escolaridade</option>
+                     <option value="Infantil Incompleto">Infantil Incompleto</option>
+                     <option value="Infantil Completo">Infantil Completo</option>
+                     <option value="Médio Incompleto">Médio Incompleto</option>
+                     <option value="Médio Completo">Médio Completo</option>
+                     <option value="Superior Incompleto">Superior Incompleto</option>
+                     <option value="Superior Completo">Superior Completo</option>  
+                     <option value="Mestrado">Mestrado</option>
+                     <option value="Doutorado">Doutorado</option>
+                    </select>
+                 </div>
+
+
+                 <i class="fa fa-hand-paper-o pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black;">Domínio Manual: </label><br>
+                 <div class="form-group row">
+                    <select name="manual_domain" [(ngModel)]="patient.manual_domain" #manual_domain="ngModel" class="col-md-8 form-control-label">
+                     <option value="DESTRO">Mão Direita</option>
+                     <option value="CANHOTO">Mão Esquerda</option>
+                    </select>
+
+                 </div>
+
+                 <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black; ">CPF Paciente: </label><br>
+                 <div class="form-group row">
+                    <input type="text" name="registry_number_pat" [(ngModel)]="patient.registry_number_pat" #registry_number_pat="ngModel" class="col-md-8 form-control-label" placeholder="___.___.___-__"  />
+                 </div>
+
+                 <i class="fa fa-address-card pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black; ">CPF Responsável: </label><br>
+                 <div class="form-group row">
+                    <input type="text" name="registry_number_acc" [(ngModel)]="patient.registry_number_acc" #registry_number_acc="ngModel" class="col-md-8 form-control-label" placeholder="___.___.___-__" />
+                 </div>
+
+                 <i class="fa fa-universal-access pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black; ">Grau de Parentesco Responsável: </label><br>
+                 <div class="form-group row">
+                    <!-- <input type="text" name="kinship_degree" [(ngModel)]="patient.kinship_degree" #kinship_degree="ngModel" class="col-md-8 form-control-label" placeholder="Grau de Parentesco"/> -->
+                    <select name="kinship_degree" [(ngModel)]="patient.kinship_degree" #kinship_degree="ngModel" class="col-md-8 form-control-label">
+                     <option value="" selected hidden>Grau de Parentesco</option>
+                     <option value="Irmã">Irmã</option>
+                     <option value="Irmão">Irmão</option>
+                     <option value="Mãe">Mãe</option>
+                     <option value="Pai">Pai</option>
+                     <option value="Padrasto">Padrasto</option>
+                     <option value="Madrasta">Madrasta</option>  
+                     <option value="Outro">Outro</option>
+                    </select>
+                 </div>
+                
+                 <i class="fa fa-user-md pr-2" aria-hidden="true"></i>
+                 <label class="col-md- form-control-label" style="color: black; ">Status do Atendimento: </label><br>
+                 <div class="form-group row">
+                    <select name="status" [(ngModel)]="patient.status" #status="ngModel" class="col-md-8 form-control-label">
+                     <option value="" selected hidden>Status do Atendimento</option>
+                     <option value="WAITING">Aguardando</option>
+                     <option value="IN_PROGRESS">Em Andamento</option>
+                     <option value="FINALIZED">Finalizado</option>
+                    </select>
+                 </div>
+                
+                
+                 <i class="fa fa-info pr-2"></i>
+                 <label class="col-md- form-control-label" style="color: black">Observações</label><br>
+                 <div class="form-group row">
+                    <textarea type="text" name="observation" [(ngModel)]="patient.observation" #observation="ngModel" class="col-md-8 form-control-label" placeholder="Observações"> </textarea>
+                 </div>
+
+                 <div class="line"></div>
+                 <div class="col-md- form-control-label">
+                    <div class="col-md-6" style="padding-left: 16%;">
+                       <button (click)="register()" class="btn btn-success" >Cadastrar</button> |
+                       <button class="btn btn-info" [routerLink]="['/']">Voltar</button>
+                    </div>
+                 </div>
+              </form>
+           </div>
+        </div>
+     </section>
+  </div>
+
+
+
+  <footer class="footer shadow align-self-end py-3 px-xl-5 w-100" style="background:#EFEDE6">
+     <div class="container-fluid">
+        <div class="row">
+           <div class="col-md-6 text-center text-md-left text-black">
+              <p class="mb-2 mb-md-0">MINDSY &copy; 2019</p>
+           </div>
+           <div class="col-md-6 text-center text-md-right text-black-400">
+              <p class="mb-0">Design by <a href="https://fga-eps-mds.github.io/2019.1-MindsY/docs.html" class="external text-blue-400">Mindsy Team</a></p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+           </div>
+        </div>
+     </div>
+  </footer>
+</div>

@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { first } from 'rxjs/operators';
+
 import Chart from 'chart.js';
 import * as $ from 'jquery';
-declare var jquery:any;
-declare var $ :any;
+
+import { Psychologist } from 'src/app/models';
+import { UserService, AuthenticationService } from 'src/app/services/index';
 
 @Component({
   selector: 'app-section-home',
@@ -10,11 +14,23 @@ declare var $ :any;
   styleUrls: ['./section-home.component.css']
 })
 export class SectionHomeComponent implements OnInit {
-  title = 'mindsy';
 
-  constructor() { }
+  title = 'mindsy';
+  currentUser: Psychologist;
+  currentUserSubscription: Subscription;
+  users: Psychologist[] = [];
+
+  constructor(
+    private authenticationService: AuthenticationService
+  ) { 
+      this.currentUserSubscription = this.authenticationService.currentUser
+        .subscribe(user => {
+          this.currentUser = user;
+        });
+  }
 
   ngOnInit() {
+
       $('.count').each(function() {
           $(this).prop('Counter', 0).animate({
               Counter: $(this).text()
@@ -31,7 +47,7 @@ export class SectionHomeComponent implements OnInit {
 
       function updateValue() {
 
-          $('#count').html(Math.floor(Math.random() * (1000 - 1)) + 1);
+          //$('#count').html(Math.floor(Math.random() * (1000 - 1)) + 1);
           $('#count').each(function() {
 
               $(this).prop('Counter', 0).animate({
@@ -131,4 +147,12 @@ export class SectionHomeComponent implements OnInit {
       });
 
     }
+
+  ngOnDestroy() {
+      /*
+        unsubscribe to ensure no memory leaks
+      */ 
+      this.currentUserSubscription.unsubscribe();
+  }
+
   }
